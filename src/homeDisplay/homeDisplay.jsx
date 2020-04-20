@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import './homeDisplay.css';
+import {Link} from 'react-router-dom';
+
 class HomeDisplay extends Component {
     
     
@@ -8,19 +10,21 @@ class HomeDisplay extends Component {
         
         const display = this.props.servers.map((element) => {
                 return (
-                    <h1>{element.name}</h1>
+                    <Link key={element.id} to={{
+                        pathname: element.name,
+                      }} style={{ textDecoration: 'none' }}><h1 >{element.name}</h1></Link>
                     );
                 });
         
         return (
-            <div class="home-display">
-                <div class="sign-center">
-                    <div class="sign-div">
+            <div className="home-display">
+                <div className="sign-center">
+                    <div className="sign-div">
                         <h2>Lists of servers</h2>
                         {display}
                     </div>
                 </div>
-                <img src="https://www.creativevirtual.com/wp-content/uploads/2018/10/people-on-devices-707x350.png"></img>
+                <img alt="" src="https://www.creativevirtual.com/wp-content/uploads/2018/10/people-on-devices-707x350.png"></img>
             </div>
         );
     }
