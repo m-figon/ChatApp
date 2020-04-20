@@ -1,21 +1,19 @@
 import React, { Component } from 'react'
 import './homeDisplay.css';
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 class HomeDisplay extends Component {
-    
-    
     render() {
         console.log(this.props.servers);
-        
+
         const display = this.props.servers.map((element) => {
-                return (
-                    <Link key={element.id} to={{
-                        pathname: element.name,
-                      }} style={{ textDecoration: 'none' }}><h1 >{element.name}</h1></Link>
-                    );
-                });
-        
+            return (
+                <Link key={element.id} to={{
+                    pathname: element.name,
+                }} style={{ textDecoration: 'none' }}><h1 >{element.name}</h1></Link>
+            );
+        });
+
         return (
             <div className="home-display">
                 <div className="sign-center">

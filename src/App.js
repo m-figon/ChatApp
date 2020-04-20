@@ -5,9 +5,9 @@ import NavigationBar from './navigationBar/navigationBar.jsx';
 import HomeDisplay from './homeDisplay/homeDisplay.jsx';
 import ChannelDisplay from './channelDisplay/channelDisplay.jsx';
 class App extends Component {
-  constructor(){
+  constructor() {
     super();
-    this.state={
+    this.state = {
       channels: []
     }
   }
@@ -32,11 +32,17 @@ class App extends Component {
     }
     const ChannelComponent = (props) => {
       console.log(props.location.pathname);
-      //here you should compare pathname to name in channels array and give props id to channelDisplay
+      var idValue;
+      this.state.channels.forEach(element => {
+        console.log("/" + element.name);
+        if ('/' + element.name === props.location.pathname) {
+          idValue = element.id;
+        }
+      })
       return (
         <>
           <NavigationBar />
-          <ChannelDisplay servers={this.state.channels}/>
+          <ChannelDisplay id={idValue} servers={this.state.channels} />
         </>
       );
     }
