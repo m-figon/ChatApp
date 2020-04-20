@@ -21,6 +21,21 @@ class App extends Component {
         });
       })
   }
+  addComment() {
+    fetch('http://localhost:3000/channels?id=0', {
+      method: 'POST',
+      body: JSON.stringify({
+        user: "test",
+        title: "test",
+        post: 'test',
+        userId: 1
+      }),
+      headers: {
+        "Content-type": "application/json; charset=UTF-8"
+      }
+      
+    })
+  }
   render() {
     const HomeComponent = () => {
       return (
@@ -31,10 +46,8 @@ class App extends Component {
       );
     }
     const ChannelComponent = (props) => {
-      console.log(props.location.pathname);
       var idValue;
       this.state.channels.forEach(element => {
-        console.log("/" + element.name);
         if ('/' + element.name === props.location.pathname) {
           idValue = element.id;
         }
@@ -42,7 +55,7 @@ class App extends Component {
       return (
         <>
           <NavigationBar />
-          <ChannelDisplay id={idValue} servers={this.state.channels} />
+          <ChannelDisplay comment={this.addComment} id={idValue} servers={this.state.channels} />
         </>
       );
     }
