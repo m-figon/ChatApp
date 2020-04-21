@@ -8,32 +8,46 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      channels: []
+      channels: [],
+      GamingArmy: [],
+      ElMusico: [],
+      WeLoveCooking: [],
+      Fitnez: [],
+      WhyNotGardening: [],
+      FootballMadness: []
     }
   }
-  componentDidMount() {
-    console.log('fetching');
-    fetch("http://localhost:3000/channels")
+  fetchData(array){
+    console.log(array);
+    fetch("http://localhost:3000/"+array)
       .then(response => response.json())
       .then(json => {
         this.setState({
-          channels: json
+          [array]: json
         });
       })
   }
-  addComment() {
-    fetch('http://localhost:3000/channels?id=0', {
+  componentDidMount() {
+    console.log('fetching');
+    this.fetchData("channels");
+    this.fetchData("GamingArmy");
+    this.fetchData("ElMusico");
+    this.fetchData("WeLoveCooking");
+    this.fetchData("Fitnez");
+    this.fetchData("WhyNotGardening");
+    this.fetchData("FootballMadness");
+  }
+  addComment(nameOfChannel) {
+    fetch('http://localhost:3000/'+nameOfChannel, {
       method: 'POST',
       body: JSON.stringify({
-        user: "test",
-        title: "test",
-        post: 'test',
-        userId: 1
+        author: "TestUser",
+        date: "2020-04-20T15:25:43.511Z",
+        content: 'im new here!',
       }),
       headers: {
         "Content-type": "application/json; charset=UTF-8"
       }
-      
     })
   }
   render() {
@@ -46,16 +60,18 @@ class App extends Component {
       );
     }
     const ChannelComponent = (props) => {
-      var idValue;
+      var channelName;
       this.state.channels.forEach(element => {
         if ('/' + element.name === props.location.pathname) {
-          idValue = element.id;
+          channelName = element.name;
+          console.log("Name of the channel:" +channelName);
         }
       })
       return (
         <>
           <NavigationBar />
-          <ChannelDisplay comment={this.addComment} id={idValue} servers={this.state.channels} />
+          <ChannelDisplay comment={this.addComment} name={channelName} GamingArmy={this.state.GamingArmy} ElMusico={this.state.ElMusico}
+          WeLoveCooking={this.state.WeLoveCooking} Fitnez={this.state.Fitnez} WhyNotGardening={this.state.WhyNotGardening} FootballMadness={this.state.FootballMadness}  />
         </>
       );
     }
