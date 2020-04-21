@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import ReactDOM from 'react-dom';
 import './channelDisplay.css';
 class ChannelDisplay extends Component {
     constructor() {
@@ -12,7 +13,17 @@ class ChannelDisplay extends Component {
             newPost: e.target.value
         })
     }
-    
+    componentDidMount() {
+        const node = ReactDOM.findDOMNode(this);
+
+        // Get child nodes
+        if (node instanceof HTMLElement) {
+            const child = node.querySelector('.input-container');
+            console.log(child);
+            child.scrollIntoView({ behavior: 'auto', block: 'start' })
+        }
+
+    }
     render() {
         var timeDif;
         var messages;
@@ -26,10 +37,10 @@ class ChannelDisplay extends Component {
                 }
             }
         }
-        function displayPosts(propsName,name,array){
+        function displayPosts(propsName, name, array) {
             if (propsName === name) {
                 messages = array.map((element) => {
-    
+
                     const currentDate = new Date();
                     const postDate = new Date(element.date);
                     timeDif = (currentDate.getTime() - postDate.getTime()) / 1000;
@@ -39,7 +50,7 @@ class ChannelDisplay extends Component {
                     timeCondition(timeDif >= 86400 && timeDif < 86400 * 30, "day", 86400);
                     timeCondition(timeDif >= 86400 * 30 && timeDif < 86400 * 30 * 12, "month", 2592000);
                     timeCondition(timeDif >= 86400 * 30 * 12, "year", 2592000 * 12);
-    
+
                     return (
                         <>
                             <h2 id="time">{timeDif}</h2>
@@ -48,16 +59,16 @@ class ChannelDisplay extends Component {
                                 <h1>{element.content}</h1>
                             </div></>
                     );
-    
+
                 })
             }
         }
-        displayPosts(this.props.name,"GamingArmy",this.props.GamingArmy);
-        displayPosts(this.props.name,"ElMusico",this.props.ElMusico);
-        displayPosts(this.props.name,"WeLoveCooking",this.props.WeLoveCooking);
-        displayPosts(this.props.name,"Fitnez",this.props.Fitnez);
-        displayPosts(this.props.name,"WhyNotGardening",this.props.WhyNotGardening);
-        displayPosts(this.props.name,"FootballMadness",this.props.FootballMadness);
+        displayPosts(this.props.name, "GamingArmy", this.props.GamingArmy);
+        displayPosts(this.props.name, "ElMusico", this.props.ElMusico);
+        displayPosts(this.props.name, "WeLoveCooking", this.props.WeLoveCooking);
+        displayPosts(this.props.name, "Fitnez", this.props.Fitnez);
+        displayPosts(this.props.name, "WhyNotGardening", this.props.WhyNotGardening);
+        displayPosts(this.props.name, "FootballMadness", this.props.FootballMadness);
         console.log(messages);
         return (
             <div className="channel-display">
@@ -67,7 +78,7 @@ class ChannelDisplay extends Component {
                     <div class="input-container">
                         <h1>Gogobatman:</h1>
                         <input value={this.state.newPost} onChange={(e) => this.inputChange(e)} />
-                        <button onClick={() => this.props.comment(this.props.name)}><img alt="" src="https://img.icons8.com/color/48/000000/chat.png" /></button>
+                        <button onClick={() => this.props.comment(this.props.name, "Gogobatman", new Date(), this.state.newPost)}><img alt="" src="https://img.icons8.com/color/48/000000/chat.png" /></button>
                     </div>
                     {/*only if logged*/}
                 </div>

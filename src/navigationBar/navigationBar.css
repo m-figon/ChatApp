@@ -2,6 +2,7 @@
     width:100vw;
     height:5vh;
     position: fixed;
+    z-index: 3;
     background-color: rgb(1, 1, 53);
     display: grid;
     grid-template-areas:
