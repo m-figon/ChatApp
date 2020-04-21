@@ -1,7 +1,7 @@
 import React from 'react'
 import './navigationBar.css';
 import { Link } from 'react-router-dom';
-function NavigationBar() {
+function NavigationBar(props) {
     return (
         <div className="navigation-bar">
             <div className="left-part">
@@ -11,7 +11,7 @@ function NavigationBar() {
             <div className="middle-part">
             </div>
             <div className="right-part">
-                <h1>Log in</h1>
+                <h1 onClick={()=>props.loginHandler()}>Log in</h1>
                 <h1>Register</h1>
             </div>
         </div>

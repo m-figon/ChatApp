@@ -4,6 +4,7 @@ import { Route } from 'react-router-dom';
 import NavigationBar from './navigationBar/navigationBar.jsx';
 import HomeDisplay from './homeDisplay/homeDisplay.jsx';
 import ChannelDisplay from './channelDisplay/channelDisplay.jsx';
+import Login from './login/login.jsx';
 class App extends Component {
   constructor() {
     super();
@@ -14,9 +15,11 @@ class App extends Component {
       WeLoveCooking: [],
       Fitnez: [],
       WhyNotGardening: [],
-      FootballMadness: []
-      }
-      //this.addComment = this.addComment.bind(this);
+      FootballMadness: [],
+      login: false
+    }
+    //this.addComment = this.addComment.bind(this);
+    this.settingLogin=this.settingLogin.bind(this);
   }
   fetchData(array) {
     console.log(array);
@@ -51,16 +54,43 @@ class App extends Component {
         "Content-type": "application/json; charset=UTF-8"
       }
     })
+    /*
+    this.fetchData("channels");
+    this.fetchData("GamingArmy");
+    this.fetchData("ElMusico");
+    this.fetchData("WeLoveCooking");
+    this.fetchData("Fitnez");
+    this.fetchData("WhyNotGardening");
+    this.fetchData("FootballMadness");
+    */
     window.location.reload();
+  }
+  settingLogin() {
+    this.setState({
+      login: !this.state.login
+  })
   }
   render() {
     const HomeComponent = () => {
-      return (
-        <>
-          <NavigationBar />
-          <HomeDisplay servers={this.state.channels} />
-        </>
-      );
+      if (!this.state.login) {
+        return (
+          <>
+            <NavigationBar loginHandler={this.settingLogin} />
+            <HomeDisplay servers={this.state.channels} />
+          </>
+        );
+      } else {
+        return (
+          <>
+          <div class="blured">
+            <NavigationBar loginHandler={this.settingLogin} />
+            <HomeDisplay servers={this.state.channels} />
+          </div>
+          <Login loginHandler={this.settingLogin}/>
+          </>
+        );
+      }
+
     }
     const ChannelComponent = (props) => {
       var channelName;
@@ -69,13 +99,27 @@ class App extends Component {
           channelName = element.name;
         }
       })
-      return (
-        <>
-          <NavigationBar />
-          <ChannelDisplay comment={this.addComment} name={channelName} GamingArmy={this.state.GamingArmy} ElMusico={this.state.ElMusico}
-            WeLoveCooking={this.state.WeLoveCooking} Fitnez={this.state.Fitnez} WhyNotGardening={this.state.WhyNotGardening} FootballMadness={this.state.FootballMadness} />
-        </>
-      );
+      if (!this.state.login) {
+        return (
+          <>
+            <NavigationBar loginHandler={this.settingLogin}/>
+            <ChannelDisplay comment={this.addComment} name={channelName} GamingArmy={this.state.GamingArmy} ElMusico={this.state.ElMusico}
+              WeLoveCooking={this.state.WeLoveCooking} Fitnez={this.state.Fitnez} WhyNotGardening={this.state.WhyNotGardening} FootballMadness={this.state.FootballMadness} />
+          </>
+        );
+      }
+      else {
+        return (
+          <>
+          <div class="blured">
+            <NavigationBar loginHandler={this.settingLogin}/>
+            <ChannelDisplay comment={this.addComment} name={channelName} GamingArmy={this.state.GamingArmy} ElMusico={this.state.ElMusico}
+              WeLoveCooking={this.state.WeLoveCooking} Fitnez={this.state.Fitnez} WhyNotGardening={this.state.WhyNotGardening} FootballMadness={this.state.FootballMadness} />
+          </div>
+          <Login loginHandler={this.settingLogin}/>
+          </>
+        );
+      }
     }
     return (
       <>

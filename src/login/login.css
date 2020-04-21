@@ -1,0 +1,31 @@
+.login{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100wh;
+    height: 100vh;
+}
+.login-form{
+    position: absolute;
+    z-index: 5;
+    width:60vw;
+    height: 60vh;
+    background-color: #ffffff;
+    border-radius: 3%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+#XButton{
+    position: absolute;
+    margin-left: 25vw;
+    margin-top: -20vh;
+}
+#loginButton{
+    margin-top: 5vh;
+}
+#loginButton:hover,
+#XButton:hover{
+    cursor: pointer;
+}

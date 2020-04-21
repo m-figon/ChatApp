@@ -26,6 +26,9 @@
     grid-area: middle; 
 
 }
+.right-part h1:hover{
+    cursor: pointer;
+}
 .right-part{
     display: flex;
     align-items: center;
