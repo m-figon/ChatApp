@@ -88,7 +88,7 @@ class ChannelDisplay extends Component {
                         <div class="input-container">
                             <h1>{this.props.logedAs}</h1>
                             <input value={this.state.newPost} onChange={(e) => this.inputChange(e)} />
-                            <button onClick={() => this.props.comment(this.props.name, "Gogobatman", new Date(), this.state.newPost)}><img alt="" src="https://img.icons8.com/color/48/000000/chat.png" /></button>
+                            <button onClick={() => this.props.comment(this.props.name, this.props.logedAs, new Date(), this.state.newPost)}><img alt="" src="https://img.icons8.com/color/48/000000/chat.png" /></button>
                         </div>
                         {/*only if logged*/}
                     </div>

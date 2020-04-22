@@ -30,20 +30,43 @@ class Register extends Component{
             this.setState({
                 [id]: "incorrect",
                 [tooltip]: "visible"
-            })     
+            })
+            return false;   
         }
         else{
             this.setState({
                 [id]: "correct",
                 [tooltip]: "hidden"
             })   
+            return true;
         }
     }
+    addUser(emailValue,accountValue,passwordValue){
+        fetch('http://localhost:3000/accounts', {
+      method: 'POST',
+      body: JSON.stringify({
+        email: emailValue,
+        account: accountValue,
+        password: passwordValue
+      }),
+      headers: {
+        "Content-type": "application/json; charset=UTF-8"
+      }
+    })
+    }
     validateData(){
-       this.checkValue(this.state.emailValue.match(/^[a-z0-9\._\-]+@[a-z0-9\.\-]+\.[a-z]{2,4}$/) === null,"emailId","tooltipEmailId");
-       this.checkValue(this.state.accountValue.match(/^[a-zA-Z0-9\.\-_]{4,10}$/) === null,"accountId","tooltipAccountId");
-       this.checkValue(this.state.passwordValue.match(/^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[\.\-_@$!%*#?&])[A-Za-z\d\.\-_@$!%*#?&]{8,13}$/) === null,"passwordId","tooltipPasswordId");
-       this.checkValue(!(this.state.passwordValue === this.state.password2Value && this.state.password2Value!==""),"password2Id","tooltipPassword2Id");
+        var correctFlag=true;
+        if(this.checkValue(this.state.emailValue.match(/^[a-z0-9\._\-]+@[a-z0-9\.\-]+\.[a-z]{2,4}$/) === null,"emailId","tooltipEmailId")){
+        }else{correctFlag=false;}
+        if(this.checkValue(this.state.accountValue.match(/^[a-zA-Z0-9\.\-_]{4,10}$/) === null,"accountId","tooltipAccountId")){
+        }else{ correctFlag=false;}
+        if(this.checkValue(this.state.passwordValue.match(/^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[\.\-_@$!%*#?&])[A-Za-z\d\.\-_@$!%*#?&]{8,13}$/) === null,"passwordId","tooltipPasswordId")){
+        }else{ correctFlag=false;}
+        if(this.checkValue(!(this.state.passwordValue === this.state.password2Value && this.state.password2Value!==""),"password2Id","tooltipPassword2Id")){
+        }else{ correctFlag=false;}
+        if(correctFlag){
+            this.addUser(this.state.emailValue,this.state.accountValue,this.state.passwordValue);
+        }
     }
     render(){
         return (
