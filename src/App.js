@@ -5,6 +5,7 @@ import NavigationBar from './navigationBar/navigationBar.jsx';
 import HomeDisplay from './homeDisplay/homeDisplay.jsx';
 import ChannelDisplay from './channelDisplay/channelDisplay.jsx';
 import Login from './login/login.jsx';
+import Register from './register/register.jsx';
 class App extends Component {
   constructor() {
     super();
@@ -18,11 +19,13 @@ class App extends Component {
       FootballMadness: [],
       accounts: [],
       login: false,
+      register: false,
       logedAs: "",
       loginOperation: "Sign in"
     }
     //this.addComment = this.addComment.bind(this);
     this.settingLogin=this.settingLogin.bind(this);
+    this.settingRegister=this.settingRegister.bind(this);
     this.settingState=this.settingState.bind(this);
   }
   fetchData(array) {
@@ -74,6 +77,10 @@ class App extends Component {
     this.setState({
       login: !this.state.login
   })
+  }settingRegister() {
+    this.setState({
+      register: !this.state.register
+  })
   }
   settingState(array1,value1,array2,value2){
     this.setState({
@@ -83,21 +90,31 @@ class App extends Component {
   }
   render() {
     const HomeComponent = () => {
-      if (!this.state.login) {
+      if (!this.state.login && !this.state.register) {
         return (
           <>
-            <NavigationBar settingState={this.settingState} loginOperation={this.state.loginOperation} logedAs={this.state.logedAs} loginHandler={this.settingLogin} />
+            <NavigationBar settingState={this.settingState} loginOperation={this.state.loginOperation} logedAs={this.state.logedAs} registerHandler={this.settingRegister} loginHandler={this.settingLogin} />
             <HomeDisplay servers={this.state.channels} />
           </>
         );
-      } else {
+      } else if(this.state.login && !this.state.register) {
         return (
           <>
           <div class="blured">
-            <NavigationBar settingState={this.settingState} loginOperation={this.state.loginOperation} logedAs={this.state.logedAs} loginHandler={this.settingLogin} />
+            <NavigationBar settingState={this.settingState} loginOperation={this.state.loginOperation} logedAs={this.state.logedAs} registerHandler={this.settingRegister} loginHandler={this.settingLogin} />
             <HomeDisplay servers={this.state.channels} />
           </div>
           <Login settingState={this.settingState} accounts={this.state.accounts} loginHandler={this.settingLogin}/>
+          </>
+        );
+      }else if(!this.state.login && this.state.register) {
+        return (
+          <>
+          <div class="blured">
+            <NavigationBar settingState={this.settingState} loginOperation={this.state.loginOperation} logedAs={this.state.logedAs} registerHandler={this.settingRegister} loginHandler={this.settingLogin} />
+            <HomeDisplay servers={this.state.channels} />
+          </div>
+          <Register registerHandler={this.settingRegister} settingState={this.settingState} accounts={this.state.accounts} loginHandler={this.settingLogin}/>
           </>
         );
       }
@@ -110,24 +127,36 @@ class App extends Component {
           channelName = element.name;
         }
       })
-      if (!this.state.login) {
+      if (!this.state.login && !this.state.register) {
         return (
           <>
-            <NavigationBar settingState={this.settingState} loginOperation={this.state.loginOperation} logedAs={this.state.logedAs} loginHandler={this.settingLogin}/>
+            <NavigationBar settingState={this.settingState} loginOperation={this.state.loginOperation} logedAs={this.state.logedAs} registerHandler={this.settingRegister} loginHandler={this.settingLogin}/>
             <ChannelDisplay logedAs={this.state.logedAs} comment={this.addComment} name={channelName} GamingArmy={this.state.GamingArmy} ElMusico={this.state.ElMusico}
               WeLoveCooking={this.state.WeLoveCooking} Fitnez={this.state.Fitnez} WhyNotGardening={this.state.WhyNotGardening} FootballMadness={this.state.FootballMadness} />
           </>
         );
       }
-      else {
+      else if (this.state.login && !this.state.register){
         return (
           <>
           <div class="blured">
-            <NavigationBar settingState={this.settingState} loginOperation={this.state.loginOperation} logedAs={this.state.logedAs} loginHandler={this.settingLogin}/>
+            <NavigationBar settingState={this.settingState} loginOperation={this.state.loginOperation} logedAs={this.state.logedAs} registerHandler={this.settingRegister} loginHandler={this.settingLogin}/>
             <ChannelDisplay logedAs={this.state.logedAs} comment={this.addComment} name={channelName} GamingArmy={this.state.GamingArmy} ElMusico={this.state.ElMusico}
               WeLoveCooking={this.state.WeLoveCooking} Fitnez={this.state.Fitnez} WhyNotGardening={this.state.WhyNotGardening} FootballMadness={this.state.FootballMadness} />
           </div>
           <Login settingState={this.settingState} accounts={this.state.accounts} loginHandler={this.settingLogin}/>
+          </>
+        );
+      }
+      else if (!this.state.login && this.state.register){
+        return (
+          <>
+          <div class="blured">
+            <NavigationBar settingState={this.settingState} loginOperation={this.state.loginOperation} logedAs={this.state.logedAs} registerHandler={this.settingRegister} loginHandler={this.settingLogin}/>
+            <ChannelDisplay logedAs={this.state.logedAs} comment={this.addComment} name={channelName} GamingArmy={this.state.GamingArmy} ElMusico={this.state.ElMusico}
+              WeLoveCooking={this.state.WeLoveCooking} Fitnez={this.state.Fitnez} WhyNotGardening={this.state.WhyNotGardening} FootballMadness={this.state.FootballMadness} />
+          </div>
+          <Register registerHandler={this.settingRegister} settingState={this.settingState} accounts={this.state.accounts} loginHandler={this.settingLogin}/>
           </>
         );
       }

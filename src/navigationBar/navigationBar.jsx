@@ -20,7 +20,7 @@ function NavigationBar(props) {
             </div>
             <div className="right-part">
                 <h1 onClick={() => login()}>{props.loginOperation}</h1>
-                <h1>Register</h1>
+                <h1 onClick={() => props.registerHandler()}>Register</h1>
                 <h1> {props.logedAs}</h1>
             </div>
 
