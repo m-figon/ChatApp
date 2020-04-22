@@ -14,13 +14,13 @@ class ChannelDisplay extends Component {
         })
     }
     componentDidMount() {
-        const node = ReactDOM.findDOMNode(this);
-
-        // Get child nodes
-        if (node instanceof HTMLElement) {
-            const child = node.querySelector('.input-container');
-            console.log(child);
-            child.scrollIntoView({ behavior: 'auto', block: 'start' })
+        if (this.props.logedAs !== "") {
+            const node = ReactDOM.findDOMNode(this);
+            if (node instanceof HTMLElement) {
+                const child = node.querySelector('.input-container');
+                console.log(child);
+                child.scrollIntoView({ behavior: 'auto', block: 'start' })
+            }
         }
 
     }
@@ -70,21 +70,33 @@ class ChannelDisplay extends Component {
         displayPosts(this.props.name, "WhyNotGardening", this.props.WhyNotGardening);
         displayPosts(this.props.name, "FootballMadness", this.props.FootballMadness);
         console.log(messages);
-        return (
-            <div className="channel-display">
-                <div className="channel">
-                    {messages}
-                    {/*only if logged*/}
-                    <div class="input-container">
-                        <h1>Gogobatman:</h1>
-                        <input value={this.state.newPost} onChange={(e) => this.inputChange(e)} />
-                        <button onClick={() => this.props.comment(this.props.name, "Gogobatman", new Date(), this.state.newPost)}><img alt="" src="https://img.icons8.com/color/48/000000/chat.png" /></button>
+        if (this.props.logedAs === "") {
+            return (
+                <div className="channel-display">
+                    <div className="channel">
+                        {messages}
                     </div>
-                    {/*only if logged*/}
+                    <img alt="" src="https://www.creativevirtual.com/wp-content/uploads/2018/10/people-on-devices-707x350.png"></img>
                 </div>
-                <img alt="" src="https://www.creativevirtual.com/wp-content/uploads/2018/10/people-on-devices-707x350.png"></img>
-            </div>
-        );
+            );
+        } else {
+            return (
+                <div className="channel-display">
+                    <div className="channel">
+                        {messages}
+                        {/*only if logged*/}
+                        <div class="input-container">
+                            <h1>{this.props.logedAs}</h1>
+                            <input value={this.state.newPost} onChange={(e) => this.inputChange(e)} />
+                            <button onClick={() => this.props.comment(this.props.name, "Gogobatman", new Date(), this.state.newPost)}><img alt="" src="https://img.icons8.com/color/48/000000/chat.png" /></button>
+                        </div>
+                        {/*only if logged*/}
+                    </div>
+                    <img alt="" src="https://www.creativevirtual.com/wp-content/uploads/2018/10/people-on-devices-707x350.png"></img>
+                </div>
+            );
+        }
+
     }
 
 }

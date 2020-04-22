@@ -2,6 +2,14 @@ import React from 'react'
 import './navigationBar.css';
 import { Link } from 'react-router-dom';
 function NavigationBar(props) {
+    function login() {
+        if (props.loginOperation === " Sign out") {
+            props.settingState("logedAs", "",
+            "loginOperation", "Sign in");
+        } else if (props.loginOperation === "Sign in") {
+            props.loginHandler();
+        }
+    }
     return (
         <div className="navigation-bar">
             <div className="left-part">
@@ -11,9 +19,11 @@ function NavigationBar(props) {
             <div className="middle-part">
             </div>
             <div className="right-part">
-                <h1 onClick={()=>props.loginHandler()}>Log in</h1>
+                <h1 onClick={() => login()}>{props.loginOperation}</h1>
                 <h1>Register</h1>
+                <h1> {props.logedAs}</h1>
             </div>
+
         </div>
     );
 }

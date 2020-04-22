@@ -16,10 +16,14 @@ class App extends Component {
       Fitnez: [],
       WhyNotGardening: [],
       FootballMadness: [],
-      login: false
+      accounts: [],
+      login: false,
+      logedAs: "",
+      loginOperation: "Sign in"
     }
     //this.addComment = this.addComment.bind(this);
     this.settingLogin=this.settingLogin.bind(this);
+    this.settingState=this.settingState.bind(this);
   }
   fetchData(array) {
     console.log(array);
@@ -40,6 +44,7 @@ class App extends Component {
     this.fetchData("Fitnez");
     this.fetchData("WhyNotGardening");
     this.fetchData("FootballMadness");
+    this.fetchData("accounts");
   }
 
   addComment(nameOfChannel, authorValue, dateValue, contentValue) {
@@ -70,12 +75,18 @@ class App extends Component {
       login: !this.state.login
   })
   }
+  settingState(array1,value1,array2,value2){
+    this.setState({
+      [array1]: value1,
+      [array2]: value2
+    })
+  }
   render() {
     const HomeComponent = () => {
       if (!this.state.login) {
         return (
           <>
-            <NavigationBar loginHandler={this.settingLogin} />
+            <NavigationBar settingState={this.settingState} loginOperation={this.state.loginOperation} logedAs={this.state.logedAs} loginHandler={this.settingLogin} />
             <HomeDisplay servers={this.state.channels} />
           </>
         );
@@ -83,10 +94,10 @@ class App extends Component {
         return (
           <>
           <div class="blured">
-            <NavigationBar loginHandler={this.settingLogin} />
+            <NavigationBar settingState={this.settingState} loginOperation={this.state.loginOperation} logedAs={this.state.logedAs} loginHandler={this.settingLogin} />
             <HomeDisplay servers={this.state.channels} />
           </div>
-          <Login loginHandler={this.settingLogin}/>
+          <Login settingState={this.settingState} accounts={this.state.accounts} loginHandler={this.settingLogin}/>
           </>
         );
       }
@@ -102,8 +113,8 @@ class App extends Component {
       if (!this.state.login) {
         return (
           <>
-            <NavigationBar loginHandler={this.settingLogin}/>
-            <ChannelDisplay comment={this.addComment} name={channelName} GamingArmy={this.state.GamingArmy} ElMusico={this.state.ElMusico}
+            <NavigationBar settingState={this.settingState} loginOperation={this.state.loginOperation} logedAs={this.state.logedAs} loginHandler={this.settingLogin}/>
+            <ChannelDisplay logedAs={this.state.logedAs} comment={this.addComment} name={channelName} GamingArmy={this.state.GamingArmy} ElMusico={this.state.ElMusico}
               WeLoveCooking={this.state.WeLoveCooking} Fitnez={this.state.Fitnez} WhyNotGardening={this.state.WhyNotGardening} FootballMadness={this.state.FootballMadness} />
           </>
         );
@@ -112,11 +123,11 @@ class App extends Component {
         return (
           <>
           <div class="blured">
-            <NavigationBar loginHandler={this.settingLogin}/>
-            <ChannelDisplay comment={this.addComment} name={channelName} GamingArmy={this.state.GamingArmy} ElMusico={this.state.ElMusico}
+            <NavigationBar settingState={this.settingState} loginOperation={this.state.loginOperation} logedAs={this.state.logedAs} loginHandler={this.settingLogin}/>
+            <ChannelDisplay logedAs={this.state.logedAs} comment={this.addComment} name={channelName} GamingArmy={this.state.GamingArmy} ElMusico={this.state.ElMusico}
               WeLoveCooking={this.state.WeLoveCooking} Fitnez={this.state.Fitnez} WhyNotGardening={this.state.WhyNotGardening} FootballMadness={this.state.FootballMadness} />
           </div>
-          <Login loginHandler={this.settingLogin}/>
+          <Login settingState={this.settingState} accounts={this.state.accounts} loginHandler={this.settingLogin}/>
           </>
         );
       }
