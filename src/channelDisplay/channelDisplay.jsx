@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import ReactDOM from 'react-dom';
 import './channelDisplay.css';
 class ChannelDisplay extends Component {
-    
     constructor() {
         super();
         this.state = {
@@ -77,13 +76,11 @@ class ChannelDisplay extends Component {
             <div className="channel-display">
                 <div className="channel">
                     {messages}
-                    {/*only if logged*/}
                     <div class="input-container">
                         <h1>{this.props.logedAs}</h1>
                         <input value={this.state.newPost} class={this.state.inputId} onChange={(e) => this.inputChange(e)} />
                         <button class={this.state.inputId} onClick={() => this.props.comment(this.props.name, this.props.logedAs, new Date(), this.state.newPost)}><img alt="" src="https://img.icons8.com/color/48/000000/chat.png" /></button>
                     </div>
-                    {/*only if logged*/}
                 </div>
                 <img alt="" src="https://www.creativevirtual.com/wp-content/uploads/2018/10/people-on-devices-707x350.png"></img>
             </div>

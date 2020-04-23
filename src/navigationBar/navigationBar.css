@@ -1,40 +1,42 @@
-.navigation-bar{
-    width:100vw;
-    height:5vh;
-    position: fixed;
-    z-index: 3;
-    background-color: rgb(1, 1, 53);
-    display: grid;
-    grid-template-areas:
-    'none left middle middle right right'
+.navigation-bar {
+  width: 100vw;
+  height: 5vh;
+  position: fixed;
+  z-index: 3;
+  background-color: #0090b4;
+  display: grid;
+  grid-template-areas: "none left middle middle right right";
+}
+.navigation-bar img {
+  width: 5vh;
+  height: 5vh;
+}
+.navigation-bar h1 {
+  font-size: 2rem;
+  margin-top: 5px;
+  color: #e7faff;
+}
 
+.left-part {
+  grid-area: left;
+  display: flex;
 }
-.navigation-bar img{
-    height: 5vh;
-    width: 5vh;
-}
-.navigation-bar h1{
-    font-size: 2rem;
-    margin-top: 5px;
-    color: white
-}
-.left-part{
-    grid-area: left; 
-    display: flex;
-}
-.middle-part{
-    grid-area: middle; 
 
+.middle-part {
+  grid-area: middle;
 }
-.right-part h1:hover{
-    cursor: pointer;
+
+.right-part {
+  display: flex;
+  align-items: center;
+  grid-area: right;
 }
-.right-part{
-    display: flex;
-    align-items: center;
-    grid-area: right; 
+.right-part h1 {
+  font-size: 1.5rem;
+  margin-right: 5vw;
 }
-.right-part h1{
-    font-size: 1.5rem;
-    margin-right: 5vw;
+.right-part h1:hover {
+  cursor: pointer;
 }
+
+/*# sourceMappingURL=navigationBar.css.map */

@@ -1,0 +1,11 @@
+$main-color: #0090b4;
+$background-color: lighten($main-color, 60%);
+@mixin flex-box() {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+@mixin width-height($width,$height) {
+    width: $width;
+    height: $height;
+}

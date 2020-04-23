@@ -1,0 +1,101 @@
+@import "../_module.scss";
+@mixin margins-width($left, $top, $height) {
+    margin: {
+        left: $left;
+        top: $top;
+    }
+    height: $height;
+}
+.register {
+    @include flex-box();
+    @include width-height(100wh,100vh);
+}
+.register-form {
+    position: absolute;
+    z-index: 5;
+    @include width-height(43vw, 55vh);
+    border-radius: 3%;
+    @include flex-box();
+    flex-direction: column;
+    background: url("https://www.creativevirtual.com/wp-content/uploads/2018/10/people-on-devices-707x350.png");
+    input {
+        font-size: 1.5rem;
+        border: 2px solid $main-color;
+    }
+    h1 {
+        font-size: 1.5rem;
+        color: $background-color;
+    }
+}
+   
+#registerButton {
+    margin-top: 5vh;
+    @include width-height(4rem, 2rem);
+    background-color: $main-color;
+    border-radius: 8px;
+    border: 2px solid black;
+    color: white;
+    &:hover {
+        cursor: pointer;
+    }
+}
+#correct {
+    border: 2px solid rgb(0, 255, 0);
+}
+#incorrect {
+    border: 2px solid rgb(255, 0, 0);
+}
+.emailTooltip,
+.accountTooltip,
+.passwordTooltip,
+.password2Tooltip {
+    position: absolute;
+    background-color: $main-color;
+    padding:{
+        left: 5px;
+        right: 5px;
+    }   
+    @include width-height(4rem, 10vw);
+    font-size: 1rem;
+    border-radius: 6px;
+    color: white;
+}
+.for-blur {
+    @include flex-box();
+    flex-direction: column;
+    backdrop-filter: blur(5px);
+    @include width-height(100%, 100%);
+}
+.emailTooltip {
+    @include margins-width(15vw, -17vh, 2vh);
+}
+.accountTooltip {
+    @include margins-width(15vw, -5vh, 6vh);
+}
+.passwordTooltip {
+    @include margins-width(15vw, 5vh, 12vh);
+}
+.password2Tooltip {
+    @include margins-width(15vw, 15vh, 6vh);
+}
+#hidden {
+    display: none;
+}
+#visible {
+    display: block;
+}
+#X2Button {
+    background-color: $main-color;
+    border-radius: 8px;
+    border: 2px solid black;
+    color: white;
+    position: absolute;
+    margin:{
+        left: 15vw;
+        top: -20vh;
+    }
+    
+    &:hover {
+        cursor: pointer;
+    }
+}

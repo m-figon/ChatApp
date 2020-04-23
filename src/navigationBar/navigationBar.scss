@@ -1,0 +1,37 @@
+@import "../_module.scss";
+.navigation-bar {
+    @include width-height(100vw,5vh);
+    position: fixed;
+    z-index: 3;
+    background-color: $main-color;
+    display: grid;
+    grid-template-areas: "none left middle middle right right";
+    img {
+        @include width-height(5vh,5vh);
+    }
+    h1 {
+        font-size: 2rem;
+        margin-top: 5px;
+        color: $background-color;
+    }
+}
+
+.left-part {
+    grid-area: left;
+    display: flex;
+}
+.middle-part {
+    grid-area: middle;
+}
+.right-part {
+    display: flex;
+    align-items: center;
+    grid-area: right;
+    h1 {
+        font-size: 1.5rem;
+        margin-right: 5vw;
+        &:hover {
+            cursor: pointer;
+        }
+    }
+}

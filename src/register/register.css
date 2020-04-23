@@ -1,106 +1,121 @@
-.register{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100wh;
-    height: 100vh;
-}
-.register-form{
-    position: absolute;
-    z-index: 5;
-    width:43vw;
-    height: 55vh;
-    background-color: #ffffff;
-    border-radius: 3%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    background:  url('https://www.creativevirtual.com/wp-content/uploads/2018/10/people-on-devices-707x350.png');
+.register {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100wh;
+  height: 100vh;
 }
 
-.register-form input{
-    font-size: 1.5rem;
-    border: 2px solid  rgb(1, 1, 53);
+.register-form {
+  position: absolute;
+  z-index: 5;
+  width: 43vw;
+  height: 55vh;
+  border-radius: 3%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: url("https://www.creativevirtual.com/wp-content/uploads/2018/10/people-on-devices-707x350.png");
 }
-.register-form h1{
-    font-size: 1.5rem;
+.register-form input {
+  font-size: 1.5rem;
+  border: 2px solid #0090b4;
 }
-#registerButton{
-    margin-top: 5vh;
-    width: 4rem;
-    height: 2rem;
-    background-color: rgb(1, 1, 53);
-    border-radius: 8px;
-    border: 2px solid black;
-    color: white;
+.register-form h1 {
+  font-size: 1.5rem;
+  color: #e7faff;
 }
-#correct{
-    border: 2px solid rgb(0, 255, 0);
+
+#registerButton {
+  margin-top: 5vh;
+  width: 4rem;
+  height: 2rem;
+  background-color: #0090b4;
+  border-radius: 8px;
+  border: 2px solid black;
+  color: white;
 }
-#incorrect{
-    border: 2px solid rgb(255, 0, 0);
+#registerButton:hover {
+  cursor: pointer;
 }
+
+#correct {
+  border: 2px solid lime;
+}
+
+#incorrect {
+  border: 2px solid red;
+}
+
 .emailTooltip,
 .accountTooltip,
 .passwordTooltip,
-.password2Tooltip{
-    position: absolute;
-    background-color: rgb(1, 1, 53);
-    padding-left: 5px;
-    padding-right: 5px;
-    height: 4rem;
-    width:10vw;
-    font-size: 1rem;
-    border-radius: 6px;
-    color: white;
-}
-.for-blur{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    backdrop-filter: blur(5px);
-    width: 100%;
-    height: 100%;
-}
-.emailTooltip{
-    margin-left: 15vw;
-    margin-top: -17vh;
-    height: 2vh;
-}
-.accountTooltip{
-    margin-left: 15vw;
-    margin-top: -5vh;
-    height: 6vh;
-}
-.passwordTooltip{
-    margin-left: 15vw;
-    margin-top: 5vh;
-    height: 12vh;
-}
-.password2Tooltip{
-    margin-left: 15vw;
-    margin-top: 15vh;
-    height: 6vh;
-}
-#hidden{
-    display: none;
-}
-#visible{
-    display:block;
-}
-#X2Button{
-    background-color: rgb(1, 1, 53);
-    border-radius: 8px;
-    border: 2px solid black;
-    color: white;
-    position: absolute;
-    margin-left: 15vw;
-    margin-top: -20vh;
+.password2Tooltip {
+  position: absolute;
+  background-color: #0090b4;
+  padding-left: 5px;
+  padding-right: 5px;
+  width: 4rem;
+  height: 10vw;
+  font-size: 1rem;
+  border-radius: 6px;
+  color: white;
 }
 
-#registerButton:hover,
-#X2Button:hover{
-    cursor: pointer;
+.for-blur {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  backdrop-filter: blur(5px);
+  width: 100%;
+  height: 100%;
 }
+
+.emailTooltip {
+  margin-left: 15vw;
+  margin-top: -17vh;
+  height: 2vh;
+}
+
+.accountTooltip {
+  margin-left: 15vw;
+  margin-top: -5vh;
+  height: 6vh;
+}
+
+.passwordTooltip {
+  margin-left: 15vw;
+  margin-top: 5vh;
+  height: 12vh;
+}
+
+.password2Tooltip {
+  margin-left: 15vw;
+  margin-top: 15vh;
+  height: 6vh;
+}
+
+#hidden {
+  display: none;
+}
+
+#visible {
+  display: block;
+}
+
+#X2Button {
+  background-color: #0090b4;
+  border-radius: 8px;
+  border: 2px solid black;
+  color: white;
+  position: absolute;
+  margin-left: 15vw;
+  margin-top: -20vh;
+}
+#X2Button:hover {
+  cursor: pointer;
+}
+
+/*# sourceMappingURL=register.css.map */

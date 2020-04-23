@@ -1,75 +1,82 @@
-.channel-display{
-    position: absolute;
-    margin-top: 5vh;
-    width: 100vw;
-    height: 100vh;
-    position: absolute;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.channel-display {
+  position: absolute;
+  margin-top: 5vh;
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.channel-display img{
-    height: 100vh;
-    width: 100vw;
-    filter: opacity(40%);
+.channel-display img {
+  width: 100vw;
+  height: 100vh;
+  filter: opacity(40%);
 }
-.channel{
-    margin-top: 5vh;
-    background-color: rgb(1, 1, 53);
-    z-index: 3;
-    width: 30vw;
-    height: 85vh;
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    overflow: scroll;
+
+.channel {
+  margin-top: 5vh;
+  background-color: #0090b4;
+  z-index: 3;
+  width: 30vw;
+  height: 85vh;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: scroll;
 }
-.post{
-    margin-left: 15vw;
-    width: 100%;
-    display: flex;
-    justify-content: flex-start;
+
+.post {
+  margin-left: 15vw;
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
 }
+
 .post h1,
-.input-container h1{
-    margin-right: 0.5rem;
-    color:white;
-    font-size: 1.0rem;
+.input-container h1 {
+  margin-right: 0.5rem;
+  color: #e7faff;
+  font-size: 1rem;
 }
-#time{
-    color:white;
-    font-size: 0.7rem;
-}
-.input-container{
-    width: 100%;
-    display: flex;
-    margin-top: 5vh;
-    margin-left: 9vw;
-}
-.input-container input{
-    width: 70%;
-    margin-top: 1.4%;
-    height: 1.5rem;
-    margin-left: 1%;
-}
-.input-container button{
-    margin-top: 0.8rem;
-    width:2vw;
-    height:1.6vw;
-}
-.input-container h1{
-    margin-right: 0;
 
+#time {
+  color: #e7faff;
+  font-size: 0.7rem;
 }
-.input-container img{
-   width:100%;
-   height:100%;
 
+.input-container {
+  width: 100%;
+  display: flex;
+  margin-top: 5vh;
+  margin-left: 9vw;
 }
-.hiddenInput{
-    display:none
+.input-container input {
+  width: 70%;
+  height: 1.5rem;
+  margin-left: 1%;
+  margin-top: 1.4%;
 }
-.visibleInput{
-    display:flex
+.input-container button {
+  margin-top: 0.8rem;
+  width: 2vw;
+  height: 1.6vh;
 }
+.input-container h1 {
+  margin-right: 0;
+}
+.input-container img {
+  width: 100%;
+  height: 100%;
+}
+
+.hiddenInput {
+  display: none;
+}
+
+.visibleInput {
+  display: flex;
+}
+
+/*# sourceMappingURL=channelDisplay.css.map */
