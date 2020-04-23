@@ -14,10 +14,11 @@
     filter: opacity(40%);
 }
 .channel{
+    margin-top: 5vh;
     background-color: rgb(1, 1, 53);
     z-index: 3;
-    width: 50vw;
-    height: 80vh;
+    width: 30vw;
+    height: 85vh;
     position: absolute;
     display: flex;
     flex-direction: column;
@@ -25,7 +26,7 @@
     overflow: scroll;
 }
 .post{
-    margin-left: 10%;
+    margin-left: 15vw;
     width: 100%;
     display: flex;
     justify-content: flex-start;
@@ -34,17 +35,17 @@
 .input-container h1{
     margin-right: 0.5rem;
     color:white;
-    font-size: 1.5rem;
+    font-size: 1.0rem;
 }
 #time{
     color:white;
-    font-size: 1.0rem;
+    font-size: 0.7rem;
 }
 .input-container{
     width: 100%;
     display: flex;
     margin-top: 5vh;
-    margin-left: 5vw;
+    margin-left: 9vw;
 }
 .input-container input{
     width: 70%;
@@ -65,4 +66,10 @@
    width:100%;
    height:100%;
 
+}
+.hiddenInput{
+    display:none
+}
+.visibleInput{
+    display:flex
 }

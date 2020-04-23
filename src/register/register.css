@@ -8,7 +8,7 @@
 .register-form{
     position: absolute;
     z-index: 5;
-    width:55vw;
+    width:43vw;
     height: 55vh;
     background-color: #ffffff;
     border-radius: 3%;
@@ -16,12 +16,9 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    background:  url('https://www.creativevirtual.com/wp-content/uploads/2018/10/people-on-devices-707x350.png');
 }
-#XButton{
-    position: absolute;
-    margin-left: 21vw;
-    margin-top: -22vh;
-}
+
 .register-form input{
     font-size: 1.5rem;
     border: 2px solid  rgb(1, 1, 53);
@@ -58,6 +55,15 @@
     border-radius: 6px;
     color: white;
 }
+.for-blur{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    backdrop-filter: blur(5px);
+    width: 100%;
+    height: 100%;
+}
 .emailTooltip{
     margin-left: 15vw;
     margin-top: -17vh;
@@ -66,17 +72,17 @@
 .accountTooltip{
     margin-left: 15vw;
     margin-top: -5vh;
-    height: 4vh;
+    height: 6vh;
 }
 .passwordTooltip{
     margin-left: 15vw;
     margin-top: 5vh;
-    height: 4vh;
+    height: 12vh;
 }
 .password2Tooltip{
     margin-left: 15vw;
     margin-top: 15vh;
-    height: 4vh;
+    height: 6vh;
 }
 #hidden{
     display: none;
@@ -84,13 +90,17 @@
 #visible{
     display:block;
 }
-#XButton{
+#X2Button{
     background-color: rgb(1, 1, 53);
     border-radius: 8px;
     border: 2px solid black;
     color: white;
+    position: absolute;
+    margin-left: 15vw;
+    margin-top: -20vh;
 }
+
 #registerButton:hover,
-#XButton:hover{
+#X2Button:hover{
     cursor: pointer;
 }

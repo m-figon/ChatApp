@@ -72,12 +72,14 @@ class Register extends Component{
         return (
             <div class="register">
                 <div class="register-form">
-                    <button id="XButton" onClick={()=>this.props.registerHandler()}>X</button>
+                    <div class="for-blur">
+                    <button id="X2Button" onClick={()=>this.props.registerHandler()}>X</button>
                     <h1>Email</h1><input id={this.state.emailId} value={this.state.emailValue} onChange={(e)=>this.onInputChange("emailValue",e)}/><div id={this.state.tooltipEmailId} class="emailTooltip">Invalid email address</div>
                     <h1>Login</h1><input id={this.state.accountId} value={this.state.loginValue} onChange={(e)=>this.onInputChange("accountValue",e)}/><div id={this.state.tooltipAccountId} class="accountTooltip">Account name should be a letter,digit between 4-10 letters</div>
                     <h1>Password</h1><input id={this.state.passwordId} value={this.state.passwordValue} onChange={(e)=>this.onInputChange("passwordValue",e)}/><div id={this.state.tooltipPasswordId} class="passwordTooltip">Password must contain one uppercase, one lowercase letter,number,special sig, have from 18 to 13 letters length</div>
                     <h1>Confirm password</h1><input id={this.state.password2Id} value={this.state.password2Value} onChange={(e)=>this.onInputChange("password2Value",e)}/><div id={this.state.tooltipPassword2Id} class="password2Tooltip">Passwords doesn't match or confirm password is empty</div>
                     <button onClick={()=>this.validateData()} id="registerButton">Register</button>
+                    </div>
                 </div>
             </div>
         )

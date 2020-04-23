@@ -29,7 +29,6 @@ class App extends Component {
     this.settingState = this.settingState.bind(this);
   }
   fetchData(array) {
-    console.log(array);
     fetch("http://localhost:3000/" + array)
       .then(response => response.json())
       .then(json => {
@@ -39,7 +38,7 @@ class App extends Component {
       })
   }
   componentDidMount() {
-    console.log('fetching');
+    //console.log('fetching');
     this.fetchData("channels");
     this.fetchData("GamingArmy");
     this.fetchData("ElMusico");
