@@ -31,7 +31,8 @@ class Login extends Component {
         this.state.accounts.map((element) => {
             if (element.account === this.state.loginValue && element.password === this.state.passwordValue) {
                 loginFlag = true;
-                this.props.settingState("logedAs", this.state.loginValue, "loginOperation", " Sign out");
+                console.log(element.img);
+                this.props.settingState("logedAs", this.state.loginValue, "loginOperation", " Sign out","logedImg",element.img);
                 this.props.loginHandler();
             }
         })

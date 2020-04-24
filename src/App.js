@@ -21,6 +21,7 @@ class App extends Component {
       login: false,
       register: false,
       logedAs: "",
+      logedImg: "",
       loginOperation: "Sign in"
     }
     this.addComment = this.addComment.bind(this);
@@ -82,16 +83,17 @@ class App extends Component {
       register: !this.state.register
     })
   }
-  settingState(array1, value1, array2, value2) {
+  settingState(array1, value1, array2, value2,array3,value3) {
     this.setState({
       [array1]: value1,
-      [array2]: value2
+      [array2]: value2,
+      [array3]: value3
     })
   }
   render() {
     console.log("accounts: " + this.state.accounts);
     const navigationProps = {
-      settingState: this.settingState, loginOperation: this.state.loginOperation, logedAs: this.state.logedAs, registerHandler: this.settingRegister, loginHandler: this.settingLogin
+      logedImg: this.state.logedImg, settingState: this.settingState, loginOperation: this.state.loginOperation, logedAs: this.state.logedAs, registerHandler: this.settingRegister, loginHandler: this.settingLogin
     };
     const channelProps = {
       logedAs: this.state.logedAs, comment: this.addComment, GamingArmy: this.state.GamingArmy, ElMusico: this.state.ElMusico,

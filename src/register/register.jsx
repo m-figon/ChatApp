@@ -8,6 +8,7 @@ class Register extends Component{
             accountValue: "",
             passwordValue: "",
             password2Value: "",
+            imgValue: "",
             emailId: "",
             accountId: "",
             passwordId: "",
@@ -19,6 +20,11 @@ class Register extends Component{
 
         }
         this.checkValue = this.checkValue.bind(this);
+    }
+    settingImg(array,e){
+        this.setState({
+            [array]: e.target.src
+        })
     }
     onInputChange(array,e){
         this.setState({
@@ -41,13 +47,14 @@ class Register extends Component{
             return true;
         }
     }
-    addUser(emailValue,accountValue,passwordValue){
+    addUser(emailValue,accountValue,passwordValue,imgValue){
         fetch('http://localhost:3000/accounts', {
       method: 'POST',
       body: JSON.stringify({
         email: emailValue,
         account: accountValue,
-        password: passwordValue
+        password: passwordValue,
+        img: imgValue
       }),
       headers: {
         "Content-type": "application/json; charset=UTF-8"
@@ -65,7 +72,7 @@ class Register extends Component{
         if(this.checkValue(!(this.state.passwordValue === this.state.password2Value && this.state.password2Value!==""),"password2Id","tooltipPassword2Id")){
         }else{ correctFlag=false;}
         if(correctFlag){
-            this.addUser(this.state.emailValue,this.state.accountValue,this.state.passwordValue);
+            this.addUser(this.state.emailValue,this.state.accountValue,this.state.passwordValue,this.state.imgValue);
         }
     }
     render(){
@@ -78,6 +85,12 @@ class Register extends Component{
                     <h1>Login</h1><input id={this.state.accountId} value={this.state.loginValue} onChange={(e)=>this.onInputChange("accountValue",e)}/><div id={this.state.tooltipAccountId} class="accountTooltip">Account name should be a letter,digit between 4-10 letters</div>
                     <h1>Password</h1><input id={this.state.passwordId} value={this.state.passwordValue} onChange={(e)=>this.onInputChange("passwordValue",e)}/><div id={this.state.tooltipPasswordId} class="passwordTooltip">Password must contain one uppercase, one lowercase letter,number,special sig, have from 18 to 13 letters length</div>
                     <h1>Confirm password</h1><input id={this.state.password2Id} value={this.state.password2Value} onChange={(e)=>this.onInputChange("password2Value",e)}/><div id={this.state.tooltipPassword2Id} class="password2Tooltip">Passwords doesn't match or confirm password is empty</div>
+                    <h1>Choose avatar</h1>
+                    <div class="flex">
+                        <img onClick={(e)=>this.settingImg("imgValue",e)} src="https://img.icons8.com/wired/64/000000/user.png"/>
+                        <img onClick={(e)=>this.settingImg("imgValue",e)} src="https://img.icons8.com/nolan/64/user.png"/>
+                        <img onClick={(e)=>this.settingImg("imgValue",e)} src="https://img.icons8.com/carbon-copy/100/000000/user.png"/>
+                    </div>
                     <button onClick={()=>this.validateData()} id="registerButton">Register</button>
                     </div>
                 </div>

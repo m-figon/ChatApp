@@ -13,7 +13,7 @@
 .register-form {
     position: absolute;
     z-index: 5;
-    @include width-height(43vw, 55vh);
+    @include width-height(43vw, 65vh);
     border-radius: 3%;
     @include flex-box();
     flex-direction: column;
@@ -40,11 +40,11 @@
             width:80%;
         }
     }
-    @media screen and (max-height: 800px) {
-        height: 70vh;
+    @media screen and (max-height: 900px) {
+        height: 80vh;
     }
-    @media screen and (max-height: 600px) {
-        height: 75vh;
+    @media screen and (max-height: 700px) {
+        height: 85vh;
     }
 }
    
@@ -112,7 +112,7 @@
     position: absolute;
     margin:{
         left: 15vw;
-        top: -22vh;
+        top: -30vh;
     }
     @media screen and (max-width: 1200px) {
         margin-left:17vw;
@@ -121,12 +121,27 @@
         margin-left:20vw;
     }
     @media screen and (max-height: 800px) {
-        margin-top: -25vh;
+        margin-top: -35vh;
     }
     @media screen and (max-width: 700px) {
-        margin-top: -28vh;
+        margin-top: -40vh;
     }
     &:hover {
         cursor: pointer;
     }
 }
+.flex{
+    display: flex;
+    img{
+        margin-left: 1vw;
+        margin-right: 1vw;
+        border-radius: 50%;
+        width: 7vw;
+        height: 7vh;
+        &:hover{
+            box-shadow: 0px 0px 30px 9px $background-color;
+            cursor: pointer;
+        }
+    }
+}
+

@@ -53,6 +53,11 @@
 .right-part h1:hover {
   cursor: pointer;
 }
+.right-part img {
+  margin-top: -2vh;
+  height: 5vh;
+  width: 5vw;
+}
 @media screen and (max-height: 800px) {
   .right-part h1 {
     font-size: 1.2rem;

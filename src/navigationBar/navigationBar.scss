@@ -50,6 +50,11 @@
             cursor: pointer;
         }
     }
+    img{
+        margin-top: -2vh;
+        height: 5vh;
+        width: 5vw;
+    }
     @media screen and (max-height: 800px) {
         h1 {
             font-size: 1.2rem;
