@@ -40,7 +40,7 @@ class ChannelDisplay extends Component {
                 }
             }
         }
-        function displayPosts(propsName, name, array) {
+        function displayPosts(propsName, name, array, accountsArray) {
             if (propsName === name) {
                 messages = array.map((element) => {
 
@@ -54,24 +54,35 @@ class ChannelDisplay extends Component {
                     timeCondition(timeDif >= 86400 * 30 && timeDif < 86400 * 30 * 12, "month", 2592000);
                     timeCondition(timeDif >= 86400 * 30 * 12, "year", 2592000 * 12);
 
+                    var imgSrc;
+                    for (const item of accountsArray) {
+                        if (element.author === item.account) {
+                            imgSrc = item.img;
+                        }
+                    }
                     return (
                         <>
-                            <h2 id="time">{timeDif}</h2>
+                            <hr/>
                             <div className="post">
-                                <h1>{element.author}:</h1>
-                                <h1>{element.content}</h1>
-                            </div></>
+                                <img src={imgSrc} />
+                                <h1 id="author">{element.author}</h1>
+                                <h2 id="time">{timeDif}</h2>
+                            </div>
+                            <div className="post">
+                            <h1>{element.content}</h1>
+                            </div>
+                        </>
                     );
 
                 })
             }
         }
-        displayPosts(this.props.name, "GamingArmy", this.props.GamingArmy);
-        displayPosts(this.props.name, "ElMusico", this.props.ElMusico);
-        displayPosts(this.props.name, "WeLoveCooking", this.props.WeLoveCooking);
-        displayPosts(this.props.name, "Fitnez", this.props.Fitnez);
-        displayPosts(this.props.name, "WhyNotGardening", this.props.WhyNotGardening);
-        displayPosts(this.props.name, "FootballMadness", this.props.FootballMadness);
+        displayPosts(this.props.name, "GamingArmy", this.props.GamingArmy, this.props.accounts);
+        displayPosts(this.props.name, "ElMusico", this.props.ElMusico, this.props.accounts);
+        displayPosts(this.props.name, "WeLoveCooking", this.props.WeLoveCooking, this.props.accounts);
+        displayPosts(this.props.name, "Fitnez", this.props.Fitnez, this.props.accounts);
+        displayPosts(this.props.name, "WhyNotGardening", this.props.WhyNotGardening, this.props.accounts);
+        displayPosts(this.props.name, "FootballMadness", this.props.FootballMadness, this.props.accounts);
         return (
             <div className="channel-display">
                 <div className="channel">

@@ -26,6 +26,20 @@
         @include width-height(70vw, 85vh);
     }
 }
+#author{
+    color:blue;
+}
+.post img{
+    height: 4vh;
+    width: 4vh;
+}
+hr{
+    margin-left: 2vw;
+    border: 1px solid $background-color;
+    height: 1px;
+    width: 100%;
+    
+}
 .post {
     margin-left: 9vw;
     width: 94%;

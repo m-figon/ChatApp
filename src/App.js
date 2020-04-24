@@ -46,6 +46,7 @@ class App extends Component {
     this.fetchData("Fitnez");
     this.fetchData("WhyNotGardening");
     this.fetchData("FootballMadness");
+    this.fetchData("accounts");
   }
 
   addComment(nameOfChannel, authorValue, dateValue, contentValue) {
@@ -68,7 +69,8 @@ class App extends Component {
     this.fetchData("Fitnez");
     this.fetchData("WhyNotGardening");
     this.fetchData("FootballMadness");
-    
+    this.fetchData("accounts");
+
   }
 
   settingLogin() {
@@ -87,12 +89,13 @@ class App extends Component {
     })
   }
   render() {
+    console.log("accounts: " + this.state.accounts);
     const navigationProps = {
       settingState: this.settingState, loginOperation: this.state.loginOperation, logedAs: this.state.logedAs, registerHandler: this.settingRegister, loginHandler: this.settingLogin
     };
     const channelProps = {
       logedAs: this.state.logedAs, comment: this.addComment, GamingArmy: this.state.GamingArmy, ElMusico: this.state.ElMusico,
-      WeLoveCooking: this.state.WeLoveCooking, Fitnez: this.state.Fitnez, WhyNotGardening: this.state.WhyNotGardening, FootballMadness: this.state.FootballMadness
+      WeLoveCooking: this.state.WeLoveCooking, Fitnez: this.state.Fitnez, WhyNotGardening: this.state.WhyNotGardening, FootballMadness: this.state.FootballMadness, accounts: this.state.accounts
     };
     const HomeComponent = () => {
       if (!this.state.login && !this.state.register) {
