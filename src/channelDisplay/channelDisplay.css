@@ -1,6 +1,7 @@
 .channel-display {
   position: absolute;
   margin-top: 5vh;
+  background-color: #e7faff;
   width: 100vw;
   height: 100vh;
   position: absolute;
@@ -18,7 +19,7 @@
   margin-top: 5vh;
   background-color: #0090b4;
   z-index: 3;
-  width: 30vw;
+  width: 50vw;
   height: 85vh;
   position: absolute;
   display: flex;
@@ -26,16 +27,20 @@
   align-items: center;
   overflow: scroll;
 }
+@media screen and (max-width: 1300px) {
+  .channel {
+    width: 70vw;
+    height: 85vh;
+  }
+}
 
 .post {
-  margin-left: 15vw;
-  width: 100%;
+  margin-left: 9vw;
+  width: 94%;
   display: flex;
   justify-content: flex-start;
 }
-
-.post h1,
-.input-container h1 {
+.post h1 {
   margin-right: 0.5rem;
   color: #e7faff;
   font-size: 1rem;
@@ -49,22 +54,24 @@
 .input-container {
   width: 100%;
   display: flex;
-  margin-top: 5vh;
-  margin-left: 9vw;
+  margin-top: 3vh;
+  margin-left: 12vw;
 }
 .input-container input {
-  width: 70%;
-  height: 1.5rem;
+  width: 80%;
+  height: 1rem;
   margin-left: 1%;
   margin-top: 1.4%;
 }
 .input-container button {
   margin-top: 0.8rem;
   width: 2vw;
-  height: 1.6vh;
+  height: 1.5rem;
 }
 .input-container h1 {
-  margin-right: 0;
+  margin-right: 0rem;
+  color: #e7faff;
+  font-size: 1rem;
 }
 .input-container img {
   width: 100%;

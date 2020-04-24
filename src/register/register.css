@@ -26,6 +26,32 @@
   font-size: 1.5rem;
   color: #e7faff;
 }
+@media screen and (max-width: 1100px) {
+  .register-form input {
+    width: 65%;
+  }
+}
+@media screen and (max-width: 800px) {
+  .register-form {
+    width: 55vw;
+  }
+  .register-form h1 {
+    font-size: 1.3rem;
+  }
+  .register-form input {
+    width: 80%;
+  }
+}
+@media screen and (max-height: 800px) {
+  .register-form {
+    height: 70vh;
+  }
+}
+@media screen and (max-height: 600px) {
+  .register-form {
+    height: 75vh;
+  }
+}
 
 #registerButton {
   margin-top: 5vh;
@@ -112,7 +138,27 @@
   color: white;
   position: absolute;
   margin-left: 15vw;
-  margin-top: -20vh;
+  margin-top: -22vh;
+}
+@media screen and (max-width: 1200px) {
+  #X2Button {
+    margin-left: 17vw;
+  }
+}
+@media screen and (max-width: 900px) {
+  #X2Button {
+    margin-left: 20vw;
+  }
+}
+@media screen and (max-height: 800px) {
+  #X2Button {
+    margin-top: -25vh;
+  }
+}
+@media screen and (max-width: 700px) {
+  #X2Button {
+    margin-top: -28vh;
+  }
 }
 #X2Button:hover {
   cursor: pointer;

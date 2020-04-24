@@ -19,6 +19,29 @@
   margin-top: 2rem;
   font-size: 1.3rem;
 }
+@media screen and (max-width: 900px) {
+  .home-display h2 {
+    font-size: 1.5rem;
+  }
+  .home-display h1 {
+    margin-top: 2rem;
+    font-size: 1rem;
+  }
+}
+@media screen and (max-width: 700px) {
+  .home-display h2 {
+    font-size: 1.2rem;
+  }
+  .home-display h1 {
+    margin-top: 2rem;
+    font-size: 0.8rem;
+  }
+}
+@media screen and (max-width: 600px) {
+  .home-display h2 {
+    font-size: 1rem;
+  }
+}
 
 .sign-center {
   width: 100vw;

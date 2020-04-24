@@ -7,19 +7,34 @@
   display: grid;
   grid-template-areas: "none left middle middle right right";
 }
-.navigation-bar img {
-  width: 5vh;
-  height: 5vh;
-}
 .navigation-bar h1 {
   font-size: 2rem;
   margin-top: 5px;
   color: #e7faff;
 }
+.navigation-bar img {
+  width: 5vh;
+  height: 5vh;
+}
 
 .left-part {
   grid-area: left;
   display: flex;
+}
+@media screen and (max-height: 800px) {
+  .left-part h1 {
+    font-size: 1.5rem;
+  }
+}
+@media screen and (max-height: 700px) {
+  .left-part h1 {
+    font-size: 1.3rem;
+  }
+}
+@media screen and (max-height: 600px) {
+  .left-part h1 {
+    font-size: 1rem;
+  }
 }
 
 .middle-part {
@@ -37,6 +52,21 @@
 }
 .right-part h1:hover {
   cursor: pointer;
+}
+@media screen and (max-height: 800px) {
+  .right-part h1 {
+    font-size: 1.2rem;
+  }
+}
+@media screen and (max-height: 700px) {
+  .right-part h1 {
+    font-size: 1rem;
+  }
+}
+@media screen and (max-height: 600px) {
+  .right-part h1 {
+    font-size: 0.8rem;
+  }
 }
 
 /*# sourceMappingURL=navigationBar.css.map */
