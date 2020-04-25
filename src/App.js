@@ -51,7 +51,8 @@ class App extends Component {
   }
 
   addComment(nameOfChannel, authorValue, dateValue, contentValue) {
-    fetch('http://localhost:3000/' + nameOfChannel, {
+    if(contentValue!==""){
+      fetch('http://localhost:3000/' + nameOfChannel, {
       method: 'POST',
       body: JSON.stringify({
         author: authorValue,
@@ -71,6 +72,8 @@ class App extends Component {
     this.fetchData("WhyNotGardening");
     this.fetchData("FootballMadness");
     this.fetchData("accounts");
+    }
+    
 
   }
 

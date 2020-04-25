@@ -30,23 +30,21 @@
     color:blue;
 }
 .post img{
-    height: 4vh;
-    width: 4vh;
+    height: 8vh;
+    width: 8vh;
+    margin-right: 1vw;
 }
 hr{
-    margin-left: 2vw;
     border: 1px solid $background-color;
     height: 1px;
-    width: 100%;
+    width: 98%;
     
 }
 .post {
-    margin-left: 9vw;
-    width: 94%;
+    width: 90%;
     display: flex;
     justify-content: flex-start;
     h1 {
-        margin-right: 0.5rem;
         color: $background-color;
         font-size: 1rem;
     }
@@ -57,17 +55,16 @@ hr{
     font-size: 0.7rem;
 }
 .input-container {
-    width: 100%;
+    width: 98%;
     display: flex;
+    justify-content: center;
     margin: {
         top: 3vh;
-        left: 12vw;
     }
     input {
         width: 80%;
         height: 1rem;
         margin: {
-            left: 1%;
             top: 1.4%;
         }
     }
@@ -91,4 +88,24 @@ hr{
 }
 .visibleInput {
     display: flex;
+}
+#content{
+    margin-top: -2vh;
+    margin-left: 12%;
+}
+.emojis{
+    margin-left: 2vw;
+    width:25%;
+    height:4vh;
+    background-color: white;
+    @include flex-box();
+    img{
+        width:2vw;
+        height: 2vh;
+        margin-left: 1vw;
+        margin-right: 1vw;
+        &:hover{
+            cursor: pointer;
+        }
+    }
 }

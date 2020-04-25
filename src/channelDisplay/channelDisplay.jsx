@@ -9,7 +9,21 @@ class ChannelDisplay extends Component {
             inputId: "hiddenInput"
         }
     }
+    settingState(value){
+        this.setState({
+            newPost: this.state.newPost+value
+        })
+    }
     inputChange(e) {
+        for (let i = 0; i < this.state.newPost.length; i++) {
+            if(this.state.newPost[i]===":" && this.state.newPost[i+1]==="("){
+                console.log("sad detected");
+            }else if(this.state.newPost[i]===";" && this.state.newPost[i+1]===")"){
+                console.log("wink detected");
+            }else if(this.state.newPost[i]===":" && this.state.newPost[i+1]==="|"){
+                console.log("angry detected");
+            }
+        }
         this.setState({
             newPost: e.target.value
         })
@@ -62,14 +76,14 @@ class ChannelDisplay extends Component {
                     }
                     return (
                         <>
-                            <hr/>
+                            <hr />
                             <div className="post">
                                 <img src={imgSrc} />
                                 <h1 id="author">{element.author}</h1>
                                 <h2 id="time">{timeDif}</h2>
                             </div>
                             <div className="post">
-                            <h1>{element.content}</h1>
+                                <h1 id="content">{element.content}</h1>
                             </div>
                         </>
                     );
@@ -92,8 +106,14 @@ class ChannelDisplay extends Component {
                         <input value={this.state.newPost} class={this.state.inputId} onChange={(e) => this.inputChange(e)} />
                         <button class={this.state.inputId} onClick={() => this.props.comment(this.props.name, this.props.logedAs, new Date(), this.state.newPost)}><img alt="" src="https://img.icons8.com/color/48/000000/chat.png" /></button>
                     </div>
+                    <div class="emojis">
+                        <img onClick={()=>this.settingState(":(")} class={this.state.inputId} src="https://img.icons8.com/ios/50/000000/sad.png" />
+                        <img onClick={()=>this.settingState(":|")}class={this.state.inputId} src="https://img.icons8.com/ios/50/000000/angry.png" />
+                        <img onClick={()=>this.settingState(";)")} class={this.state.inputId} src="https://img.icons8.com/windows/32/000000/wink.png"/>
+                        <img onClick={()=>this.settingState(":P")} class={this.state.inputId} src="https://img.icons8.com/ios/50/000000/tongue-out.png"/>                 
+                     </div>
                 </div>
-                <img alt="" src="https://www.creativevirtual.com/wp-content/uploads/2018/10/people-on-devices-707x350.png"></img>
+                <img alt="" src="https://www.creativevirtual.com/wp-content/uploads/2018/10/people-on-devices-707x350.png" />
             </div>
         );
     }
