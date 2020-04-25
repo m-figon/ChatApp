@@ -51,6 +51,15 @@ class App extends Component {
   }
 
   addComment(nameOfChannel, authorValue, dateValue, contentValue) {
+    for (let i = 0; i < contentValue.length; i++) {
+      if(contentValue[i]===":" && contentValue[i+1]==="("){
+          console.log("sad detected");
+      }else if(contentValue[i]===";" && contentValue[i+1]===")"){
+          console.log("wink detected");
+      }else if(contentValue[i]===":" && contentValue[i+1]==="|"){
+          console.log("angry detected");
+      }
+  }
     if(contentValue!==""){
       fetch('http://localhost:3000/' + nameOfChannel, {
       method: 'POST',
