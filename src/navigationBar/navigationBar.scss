@@ -1,6 +1,6 @@
 @import "../_module.scss";
 .navigation-bar {
-    @include width-height(100vw,5vh);
+    @include width-height(100vw, 5vh);
     position: fixed;
     z-index: 3;
     background-color: $main-color;
@@ -12,14 +12,15 @@
         color: $background-color;
     }
     img {
-        @include width-height(5vh,5vh);
+        filter: brightness(1.2) grayscale(40%);
+        @include width-height(5vh, 5vh);
     }
 }
 
 .left-part {
     grid-area: left;
     display: flex;
-    
+
     @media screen and (max-height: 800px) {
         h1 {
             font-size: 1.5rem;
@@ -32,12 +33,27 @@
     }
     @media screen and (max-height: 600px) {
         h1 {
-            font-size: 1.0rem;
+            font-size: 1rem;
         }
     }
 }
 .middle-part {
     grid-area: middle;
+    @include flex-box();
+    margin-top: -1vh;
+    input {
+        width: 60%;
+        height: 2vh;
+    }
+    button {
+        width: 2vw;
+        height: 2.6vh;
+    }
+    img {
+        filter: opacity(40%);
+        height: 100%;
+        width: 100%;
+    }
 }
 .right-part {
     display: flex;
@@ -50,7 +66,7 @@
             cursor: pointer;
         }
     }
-    img{
+    img {
         margin-top: -2vh;
         height: 5vh;
         width: 5vw;
@@ -62,7 +78,7 @@
     }
     @media screen and (max-height: 700px) {
         h1 {
-            font-size: 1.0rem;
+            font-size: 1rem;
         }
     }
     @media screen and (max-height: 600px) {

@@ -62,7 +62,7 @@ class App extends Component {
         "Content-type": "application/json; charset=UTF-8"
       }
     })
-    
+
     this.fetchData("channels");
     this.fetchData("GamingArmy");
     this.fetchData("ElMusico");
@@ -83,7 +83,7 @@ class App extends Component {
       register: !this.state.register
     })
   }
-  settingState(array1, value1, array2, value2,array3,value3) {
+  settingState(array1, value1, array2, value2, array3, value3) {
     this.setState({
       [array1]: value1,
       [array2]: value2,
@@ -93,7 +93,7 @@ class App extends Component {
   render() {
     console.log("accounts: " + this.state.accounts);
     const navigationProps = {
-      logedImg: this.state.logedImg, settingState: this.settingState, loginOperation: this.state.loginOperation, logedAs: this.state.logedAs, registerHandler: this.settingRegister, loginHandler: this.settingLogin
+       channels: this.state.channels, logedImg: this.state.logedImg, settingState: this.settingState, loginOperation: this.state.loginOperation, logedAs: this.state.logedAs, registerHandler: this.settingRegister, loginHandler: this.settingLogin
     };
     const channelProps = {
       logedAs: this.state.logedAs, comment: this.addComment, GamingArmy: this.state.GamingArmy, ElMusico: this.state.ElMusico,
@@ -141,7 +141,7 @@ class App extends Component {
         return (
           <>
             <NavigationBar {...navigationProps} />
-            <ChannelDisplay {...channelProps}  name={channelName}/>
+            <ChannelDisplay {...channelProps} name={channelName} />
           </>
         );
       }
@@ -150,7 +150,7 @@ class App extends Component {
           <>
             <div class="blured">
               <NavigationBar {...navigationProps} />
-              <ChannelDisplay {...channelProps}  name={channelName}/>
+              <ChannelDisplay {...channelProps} name={channelName} />
             </div>
             <Login settingState={this.settingState} loginHandler={this.settingLogin} />
           </>
@@ -161,7 +161,7 @@ class App extends Component {
           <>
             <div class="blured">
               <NavigationBar {...navigationProps} />
-              <ChannelDisplay {...channelProps}  name={channelName}/>
+              <ChannelDisplay {...channelProps} name={channelName} />
             </div>
             <Register registerHandler={this.settingRegister} settingState={this.settingState} loginHandler={this.settingLogin} />
           </>

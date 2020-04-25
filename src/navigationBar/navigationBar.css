@@ -13,6 +13,7 @@
   color: #e7faff;
 }
 .navigation-bar img {
+  filter: brightness(1.2) grayscale(40%);
   width: 5vh;
   height: 5vh;
 }
@@ -39,6 +40,23 @@
 
 .middle-part {
   grid-area: middle;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: -1vh;
+}
+.middle-part input {
+  width: 60%;
+  height: 2vh;
+}
+.middle-part button {
+  width: 2vw;
+  height: 2.6vh;
+}
+.middle-part img {
+  filter: opacity(40%);
+  height: 100%;
+  width: 100%;
 }
 
 .right-part {
