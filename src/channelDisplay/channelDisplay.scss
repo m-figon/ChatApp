@@ -1,7 +1,6 @@
 @import "../_module.scss";
 .channel-display {
     position: absolute;
-    margin-top: 5vh;
     background-color: $background-color;
 
     @include width-height(100vw, 100vh);
@@ -13,7 +12,6 @@
     }
 }
 .channel {
-    margin-top: 5vh;
     background-color: $main-color;
     z-index: 3;
     @include width-height(50vw, 85vh);
@@ -89,6 +87,7 @@ hr{
 .visibleInput {
     display: flex;
 }
+
 #content{
     margin-top: -2vh;
     margin-left: 12%;
@@ -113,4 +112,10 @@ hr{
 }
 .end-of-scroll{
     margin-top: 6vh;
+}
+#hiddenInput {
+    display: none;
+}
+#visibleInput {
+    display: flex;
 }

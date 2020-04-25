@@ -1,6 +1,5 @@
 .channel-display {
   position: absolute;
-  margin-top: 5vh;
   background-color: #e7faff;
   width: 100vw;
   height: 100vh;
@@ -16,7 +15,6 @@
 }
 
 .channel {
-  margin-top: 5vh;
   background-color: #0090b4;
   z-index: 3;
   width: 50vw;
@@ -126,6 +124,14 @@ hr {
 
 .end-of-scroll {
   margin-top: 6vh;
+}
+
+#hiddenInput {
+  display: none;
+}
+
+#visibleInput {
+  display: flex;
 }
 
 /*# sourceMappingURL=channelDisplay.css.map */

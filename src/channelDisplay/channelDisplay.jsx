@@ -7,12 +7,18 @@ class ChannelDisplay extends Component {
         super();
         this.state = {
             newPost: "",
-            inputId: "hiddenInput"
+            inputId: "hiddenInput",
+            GamingArmy: [],
+            ElMusico: [],
+            WeLoveCooking: [],
+            Fitnez: [],
+            WhyNotGardening: [],
+            FootballMadness: [],
         }
     }
-    settingState(value){
+    settingState(value) {
         this.setState({
-            newPost: this.state.newPost+value
+            newPost: this.state.newPost + value
         })
     }
     inputChange(e) {
@@ -20,7 +26,24 @@ class ChannelDisplay extends Component {
             newPost: e.target.value
         })
     }
+    fetchData(array) {
+        fetch("http://localhost:3000/" + array)
+            .then(response => response.json())
+            .then(json => {
+                this.setState({
+                    [array]: json
+                });
+            })
+    }
+
     componentDidMount() {
+        
+        this.fetchData("GamingArmy");
+        this.fetchData("ElMusico");
+        this.fetchData("WeLoveCooking");
+        this.fetchData("Fitnez");
+        this.fetchData("WhyNotGardening");
+        this.fetchData("FootballMadness");
         if (this.props.logedAs !== "") {
             this.setState({
                 inputId: "visibleInput"
@@ -29,10 +52,12 @@ class ChannelDisplay extends Component {
         const node = ReactDOM.findDOMNode(this);
         if (node instanceof HTMLElement) {
             const child = node.querySelector('.end-of-scroll');
-            //console.log("input:" + child);
+            console.log("input:" + child);
             child.scrollIntoView({ behavior: 'auto', block: 'start' })
+            //child.scrollBy(0,50);
         }
     }
+
     render() {
         var timeDif;
         var messages;
@@ -75,7 +100,7 @@ class ChannelDisplay extends Component {
                                 <h2 id="time">{timeDif}</h2>
                             </div>
                             <div className="post">
-                                <h1 id="content">{ ReactEmoji.emojify(element.content)}</h1>
+                                <h1 id="content">{ReactEmoji.emojify(element.content)}</h1>
                             </div>
                         </>
                     );
@@ -83,12 +108,12 @@ class ChannelDisplay extends Component {
                 })
             }
         }
-        displayPosts(this.props.name, "GamingArmy", this.props.GamingArmy, this.props.accounts);
-        displayPosts(this.props.name, "ElMusico", this.props.ElMusico, this.props.accounts);
-        displayPosts(this.props.name, "WeLoveCooking", this.props.WeLoveCooking, this.props.accounts);
-        displayPosts(this.props.name, "Fitnez", this.props.Fitnez, this.props.accounts);
-        displayPosts(this.props.name, "WhyNotGardening", this.props.WhyNotGardening, this.props.accounts);
-        displayPosts(this.props.name, "FootballMadness", this.props.FootballMadness, this.props.accounts);
+        displayPosts(this.props.name, "GamingArmy", this.state.GamingArmy, this.props.accounts);
+        displayPosts(this.props.name, "ElMusico", this.state.ElMusico, this.props.accounts);
+        displayPosts(this.props.name, "WeLoveCooking", this.state.WeLoveCooking, this.props.accounts);
+        displayPosts(this.props.name, "Fitnez", this.state.Fitnez, this.props.accounts);
+        displayPosts(this.props.name, "WhyNotGardening", this.state.WhyNotGardening, this.props.accounts);
+        displayPosts(this.props.name, "FootballMadness", this.state.FootballMadness, this.props.accounts);
         return (
             <div className="channel-display">
                 <div className="channel">
@@ -99,20 +124,20 @@ class ChannelDisplay extends Component {
                         <input value={this.state.newPost} class={this.state.inputId} onChange={(e) => this.inputChange(e)} />
                         <button class={this.state.inputId} onClick={() => this.props.comment(this.props.name, this.props.logedAs, new Date(), this.state.newPost)}><img alt="" src="https://img.icons8.com/color/48/000000/chat.png" /></button>
                     </div>
-                    <div class="emojis">
-                        <h1 onClick={()=>this.settingState(":)")} class={this.state.inputId}>{ ReactEmoji.emojify(":)")}</h1>
-                        <h1 onClick={()=>this.settingState(":(")} class={this.state.inputId}>{ ReactEmoji.emojify(":(")}</h1>
-                        <h1 onClick={()=>this.settingState(":D")} class={this.state.inputId}>{ ReactEmoji.emojify(":D")}</h1>
-                        <h1 onClick={()=>this.settingState(":P")} class={this.state.inputId}>{ ReactEmoji.emojify(":P")}</h1>
-                        <h1 onClick={()=>this.settingState(":/")} class={this.state.inputId}>{ ReactEmoji.emojify(":/")}</h1>  
-                        <h1 onClick={()=>this.settingState(":*")} class={this.state.inputId}>{ ReactEmoji.emojify(":*")}</h1>    
-                        <h1 onClick={()=>this.settingState(":'(")} class={this.state.inputId}>{ ReactEmoji.emojify(":'(")}</h1> 
-                        <h1 onClick={()=>this.settingState(">:(")} class={this.state.inputId}>{ ReactEmoji.emojify(">:(")}</h1>   
-                        <h1 id="last-one" onClick={()=>this.settingState(":o")} class={this.state.inputId}>{ ReactEmoji.emojify(":o")}</h1>   
-                     </div>
-                     <div>
-                         <h1 class="end-of-scroll"></h1>
-                     </div>
+                    <div id={this.state.inputId} class="emojis">
+                        <h1 onClick={() => this.settingState(":)")} class={this.state.inputId}>{ReactEmoji.emojify(":)")}</h1>
+                        <h1 onClick={() => this.settingState(":(")} class={this.state.inputId}>{ReactEmoji.emojify(":(")}</h1>
+                        <h1 onClick={() => this.settingState(":D")} class={this.state.inputId}>{ReactEmoji.emojify(":D")}</h1>
+                        <h1 onClick={() => this.settingState(":P")} class={this.state.inputId}>{ReactEmoji.emojify(":P")}</h1>
+                        <h1 onClick={() => this.settingState(":/")} class={this.state.inputId}>{ReactEmoji.emojify(":/")}</h1>
+                        <h1 onClick={() => this.settingState(":*")} class={this.state.inputId}>{ReactEmoji.emojify(":*")}</h1>
+                        <h1 onClick={() => this.settingState(":'(")} class={this.state.inputId}>{ReactEmoji.emojify(":'(")}</h1>
+                        <h1 onClick={() => this.settingState(">:(")} class={this.state.inputId}>{ReactEmoji.emojify(">:(")}</h1>
+                        <h1 id="last-one" onClick={() => this.settingState(":o")} class={this.state.inputId}>{ReactEmoji.emojify(":o")}</h1>
+                    </div>
+                    <div>
+                        <h1 class="end-of-scroll"></h1>
+                    </div>
                 </div>
                 <img alt="" src="https://www.creativevirtual.com/wp-content/uploads/2018/10/people-on-devices-707x350.png" />
             </div>
