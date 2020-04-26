@@ -101,6 +101,21 @@ hr {
   margin-top: -2vh;
   margin-left: 12%;
 }
+@media screen and (max-width: 1400px) {
+  #content {
+    margin-left: 15%;
+  }
+}
+@media screen and (max-width: 900px) {
+  #content {
+    margin-left: 18%;
+  }
+}
+@media screen and (max-width: 700px) {
+  #content {
+    margin-left: 21%;
+  }
+}
 #content img {
   width: 1rem;
   height: 1rem;

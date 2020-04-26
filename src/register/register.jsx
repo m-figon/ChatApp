@@ -16,15 +16,32 @@ class Register extends Component{
             tooltipEmailId: "hidden",
             tooltipAccountId: "hidden",
             tooltipPasswordId: "hidden",
-            tooltipPassword2Id: "hidden"
+            tooltipPassword2Id: "hidden",
+            img1Id: "",
+            img2Id: "",
+            img3Id: ""
 
         }
         this.checkValue = this.checkValue.bind(this);
     }
-    settingImg(array,e){
+    settingImg(array,e,imgId){
         this.setState({
-            [array]: e.target.src
+            [array]: e.target.src,
         })
+        if(eval("this.state."+imgId)==="selected"){
+            this.setState({
+                img1Id: "",
+                img2Id: "",
+                img3Id: ""
+            })
+        }else{
+            this.setState({
+                img1Id: "",
+                img2Id: "",
+                img3Id: "",
+                [imgId]: "selected"
+            })
+        }
     }
     onInputChange(array,e){
         this.setState({
@@ -87,9 +104,9 @@ class Register extends Component{
                     <h1>Confirm password</h1><input id={this.state.password2Id} value={this.state.password2Value} onChange={(e)=>this.onInputChange("password2Value",e)}/><div id={this.state.tooltipPassword2Id} class="password2Tooltip">Passwords doesn't match or confirm password is empty</div>
                     <h1>Choose avatar</h1>
                     <div class="flex">
-                        <img onClick={(e)=>this.settingImg("imgValue",e)} src="https://img.icons8.com/wired/64/000000/user.png"/>
-                        <img onClick={(e)=>this.settingImg("imgValue",e)} src="https://img.icons8.com/nolan/64/user.png"/>
-                        <img onClick={(e)=>this.settingImg("imgValue",e)} src="https://img.icons8.com/carbon-copy/100/000000/user.png"/>
+                        <img id={this.state.img1Id} onClick={(e)=>this.settingImg("imgValue",e,"img1Id")} src="https://img.icons8.com/wired/64/000000/user.png"/>
+                        <img id={this.state.img2Id} onClick={(e)=>this.settingImg("imgValue",e,"img2Id")} src="https://img.icons8.com/nolan/64/user.png"/>
+                        <img id={this.state.img3Id} onClick={(e)=>this.settingImg("imgValue",e,"img3Id")} src="https://img.icons8.com/carbon-copy/100/000000/user.png"/>
                     </div>
                     <button onClick={()=>this.validateData()} id="registerButton">Register</button>
                     </div>

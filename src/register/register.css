@@ -150,12 +150,27 @@
     margin-left: 20vw;
   }
 }
+@media screen and (max-width: 700px) {
+  #X2Button {
+    margin-left: 23vw;
+  }
+}
+@media screen and (max-width: 500px) {
+  #X2Button {
+    margin-left: 25vw;
+  }
+}
+@media screen and (max-width: 400px) {
+  #X2Button {
+    margin-left: 22vw;
+  }
+}
 @media screen and (max-height: 800px) {
   #X2Button {
     margin-top: -35vh;
   }
 }
-@media screen and (max-width: 700px) {
+@media screen and (max-height: 700px) {
   #X2Button {
     margin-top: -40vh;
   }
@@ -175,8 +190,13 @@
   height: 7vh;
 }
 .flex img:hover {
-  box-shadow: 0px 0px 30px 9px #e7faff;
+  width: 9vw;
+  height: 9vh;
   cursor: pointer;
+}
+
+#selected {
+  border: 4px solid lime;
 }
 
 /*# sourceMappingURL=register.css.map */

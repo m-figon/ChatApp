@@ -1,6 +1,21 @@
 import React, { Component } from 'react'
 
-class TimeDisplay extends Component {
+class TimeDisplay extends Component {  
+    constructor(){
+        super();
+        this.state={
+            currentDate: new Date()
+        }
+    }
+    componentDidMount() {
+        setInterval(() => {
+            
+                this.setState({
+                    currentDate: new Date()
+                });
+            
+        }, 5000);
+    }
     render() {
         var timeDif;
         function timeCondition(condition, text, value) {
@@ -13,9 +28,8 @@ class TimeDisplay extends Component {
                 }
             }
         }
-        const currentDate = new Date();
         const postDate = new Date(this.props.date);
-        timeDif = (currentDate.getTime() - postDate.getTime()) / 1000;
+        timeDif = (this.state.currentDate.getTime() - postDate.getTime()) / 1000;
         timeCondition(timeDif >= 0 && timeDif < 60, "sec", 1);
         timeCondition(timeDif >= 60 && timeDif < 3600, "min", 60);
         timeCondition(timeDif >= 3600 && timeDif < 86400, "hour", 3600);
