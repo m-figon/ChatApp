@@ -77,7 +77,8 @@
 .emailTooltip,
 .accountTooltip,
 .passwordTooltip,
-.password2Tooltip {
+.password2Tooltip,
+.selectImgId {
   position: absolute;
   background-color: #0090b4;
   padding-left: 5px;
@@ -87,6 +88,22 @@
   font-size: 1rem;
   border-radius: 6px;
   color: white;
+}
+.emailTooltip h1,
+.accountTooltip h1,
+.passwordTooltip h1,
+.password2Tooltip h1,
+.selectImgId h1 {
+  font-size: 0.7rem;
+}
+@media screen and (max-width: 1100px) {
+  .emailTooltip h1,
+.accountTooltip h1,
+.passwordTooltip h1,
+.password2Tooltip h1,
+.selectImgId h1 {
+    font-size: 0.5rem;
+  }
 }
 
 .for-blur {
@@ -101,26 +118,37 @@
 
 .emailTooltip {
   margin-left: 15vw;
-  margin-top: -17vh;
-  height: 2vh;
+  margin-top: -23vh;
+  width: 10vw;
+  height: 3vh;
 }
 
 .accountTooltip {
   margin-left: 15vw;
-  margin-top: -5vh;
+  margin-top: -11.5vh;
+  width: 10vw;
   height: 6vh;
 }
 
 .passwordTooltip {
   margin-left: 15vw;
-  margin-top: 5vh;
-  height: 12vh;
+  margin-top: -0.5vh;
+  width: 10vw;
+  height: 8.5vh;
 }
 
 .password2Tooltip {
   margin-left: 15vw;
-  margin-top: 15vh;
-  height: 6vh;
+  margin-top: 8vh;
+  width: 10vw;
+  height: 5vh;
+}
+
+.selectImgId {
+  margin-left: 15vw;
+  margin-top: 14vh;
+  width: 10vw;
+  height: 3vh;
 }
 
 #hidden {

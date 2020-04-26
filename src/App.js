@@ -19,8 +19,7 @@ class App extends Component {
       loginOperation: "Sign in"
     }
     this.addComment = this.addComment.bind(this);
-    this.settingLogin = this.settingLogin.bind(this);
-    this.settingRegister = this.settingRegister.bind(this);
+    this.settingOpositeState = this.settingOpositeState.bind(this);
     this.settingState = this.settingState.bind(this);
   }
   fetchData(array) {
@@ -39,33 +38,25 @@ class App extends Component {
   }
 
   addComment(nameOfChannel, authorValue, dateValue, contentValue) {
-    if(contentValue!==""){
+    if (contentValue !== "") {
       fetch('http://localhost:3000/' + nameOfChannel, {
-      method: 'POST',
-      body: JSON.stringify({
-        author: authorValue,
-        date: dateValue,
-        content: contentValue,
-      }),
-      headers: {
-        "Content-type": "application/json; charset=UTF-8"
-      }
-    })
-
-    this.fetchData("channels");
-    this.fetchData("accounts");
+        method: 'POST',
+        body: JSON.stringify({
+          author: authorValue,
+          date: dateValue,
+          content: contentValue,
+        }),
+        headers: {
+          "Content-type": "application/json; charset=UTF-8"
+        }
+      })
+      this.fetchData("channels");
+      this.fetchData("accounts");
     }
-    
-
   }
-
-  settingLogin() {
+  settingOpositeState(array) {
     this.setState({
-      login: !this.state.login
-    })
-  } settingRegister() {
-    this.setState({
-      register: !this.state.register
+      [array]: eval("!this.state." + array)
     })
   }
   settingState(array1, value1, array2, value2, array3, value3) {
@@ -78,7 +69,7 @@ class App extends Component {
   render() {
     console.log("accounts: " + this.state.accounts);
     const navigationProps = {
-       channels: this.state.channels, logedImg: this.state.logedImg, settingState: this.settingState, loginOperation: this.state.loginOperation, logedAs: this.state.logedAs, registerHandler: this.settingRegister, loginHandler: this.settingLogin
+      channels: this.state.channels, logedImg: this.state.logedImg, settingState: this.settingState, loginOperation: this.state.loginOperation, logedAs: this.state.logedAs, settingOpositeState: this.settingOpositeState
     };
     const channelProps = {
       logedAs: this.state.logedAs, comment: this.addComment, GamingArmy: this.state.GamingArmy, ElMusico: this.state.ElMusico,
@@ -99,7 +90,7 @@ class App extends Component {
               <NavigationBar {...navigationProps} />
               <HomeDisplay servers={this.state.channels} />
             </div>
-            <Login settingState={this.settingState} loginHandler={this.settingLogin} />
+            <Login settingState={this.settingState} settingOpositeState={this.settingOpositeState} />
           </>
         );
       } else if (!this.state.login && this.state.register) {
@@ -109,11 +100,10 @@ class App extends Component {
               <NavigationBar {...navigationProps} />
               <HomeDisplay servers={this.state.channels} />
             </div>
-            <Register registerHandler={this.settingRegister} settingState={this.settingState} loginHandler={this.settingLogin} />
+            <Register settingOpositeState={this.settingOpositeState} settingState={this.settingState} />
           </>
         );
       }
-
     }
     const ChannelComponent = (props) => {
       var channelName;
@@ -137,7 +127,7 @@ class App extends Component {
               <NavigationBar {...navigationProps} />
               <ChannelDisplay {...channelProps} name={channelName} />
             </div>
-            <Login settingState={this.settingState} loginHandler={this.settingLogin} />
+            <Login settingState={this.settingState} settingOpositeState={this.settingOpositeState} />
           </>
         );
       }
@@ -148,7 +138,7 @@ class App extends Component {
               <NavigationBar {...navigationProps} />
               <ChannelDisplay {...channelProps} name={channelName} />
             </div>
-            <Register registerHandler={this.settingRegister} settingState={this.settingState} loginHandler={this.settingLogin} />
+            <Register settingOpositeState={this.settingOpositeState} settingState={this.settingState} />
           </>
         );
       }
@@ -160,7 +150,6 @@ class App extends Component {
       </>
     );
   }
-
 }
 
 export default App;

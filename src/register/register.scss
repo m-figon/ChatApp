@@ -1,9 +1,10 @@
 @import "../_module.scss";
-@mixin margins-width($left, $top, $height) {
+@mixin margins-size($left, $top, $width, $height) {
     margin: {
         left: $left;
         top: $top;
     }
+    width: $width;
     height: $height;
 }
 .register {
@@ -68,7 +69,8 @@
 .emailTooltip,
 .accountTooltip,
 .passwordTooltip,
-.password2Tooltip {
+.password2Tooltip,
+.selectImgId {
     position: absolute;
     background-color: $main-color;
     padding:{
@@ -79,6 +81,10 @@
     font-size: 1rem;
     border-radius: 6px;
     color: white;
+    h1{font-size: 0.7rem;}
+    @media screen and (max-width: 1100px) {
+        h1{font-size: 0.5rem;}
+    }
 }
 .for-blur {
     @include flex-box();
@@ -87,17 +93,21 @@
     @include width-height(100%, 100%);
 }
 .emailTooltip {
-    @include margins-width(15vw, -17vh, 2vh);
+    @include margins-size(15vw, -23vh,10vw,3vh);
 }
 .accountTooltip {
-    @include margins-width(15vw, -5vh, 6vh);
+    @include margins-size(15vw, -11.5vh,10vw, 6vh);
 }
 .passwordTooltip {
-    @include margins-width(15vw, 5vh, 12vh);
+    @include margins-size(15vw, -0.5vh,10vw, 8.5vh);
 }
 .password2Tooltip {
-    @include margins-width(15vw, 15vh, 6vh);
+    @include margins-size(15vw, 8vh,10vw, 5vh);
 }
+.selectImgId {
+    @include margins-size(15vw, 14vh,10vw, 3vh);
+}
+
 #hidden {
     display: none;
 }

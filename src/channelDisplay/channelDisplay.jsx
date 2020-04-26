@@ -14,16 +14,16 @@ class ChannelDisplay extends Component {
             WhyNotGardening: [],
             FootballMadness: [],
             newPost: "",
-            channelArray:[
-                "GamingArmy","ElMusico","WeLoveCooking","Fitnez","WhyNotGardening","FootballMadness"
+            channelArray: [
+                "GamingArmy", "ElMusico", "WeLoveCooking", "Fitnez", "WhyNotGardening", "FootballMadness"
             ],
-            emojiArray:[
-                ":)",":(",":D",":P",":/",":*",":'(",">:(",":o"
+            emojiArray: [
+                ":)", ":(", ":D", ":P", ":/", ":*", ":'(", ">:(", ":o"
             ],
             inputId: "hiddenInput"
         }
     }
-    settingState(value) {
+    addingEmoji(value) {
         this.setState({
             newPost: this.state.newPost + value
         })
@@ -44,8 +44,8 @@ class ChannelDisplay extends Component {
     }
 
     componentDidMount() {
-        for(const item of this.state.channelArray){
-                this.fetchData(item);
+        for (const item of this.state.channelArray) {
+            this.fetchData(item);
         }
         if (this.props.logedAs !== "") {
             this.setState({
@@ -60,16 +60,16 @@ class ChannelDisplay extends Component {
             //child.scrollBy(0,50);
         }
     }
-    
+
     render() {
-        const EmojiComponent = () =>{
-            var emojis=this.state.emojiArray.map((elem)=>{
-                return(
-                    <h1 onClick={() => this.settingState(elem)} class={this.state.inputId}>{ReactEmoji.emojify(elem)}</h1>
+        const EmojiComponent = () => {
+            var emojis = this.state.emojiArray.map((elem) => {
+                return (
+                    <h1 onClick={() => this.addingEmoji(elem)} class={this.state.inputId}>{ReactEmoji.emojify(elem)}</h1>
                 );
-                
+
             })
-            return(emojis);
+            return (emojis);
         }
         var messages;
         function displayPosts(propsName, name, array, accountsArray) {
@@ -85,9 +85,9 @@ class ChannelDisplay extends Component {
                         <>
                             <hr />
                             <div className="post">
-                                <img src={imgSrc} />
+                                <img alt="" src={imgSrc} />
                                 <h1 id="author">{element.author}</h1>
-                                <TimeDisplay date={element.date}/>
+                                <TimeDisplay date={element.date} />
                             </div>
                             <div className="post">
                                 <h1 id="content">{ReactEmoji.emojify(element.content)}</h1>
@@ -98,8 +98,8 @@ class ChannelDisplay extends Component {
                 })
             }
         }
-        for(const item of this.state.channelArray){
-            displayPosts(this.props.name, item, eval("this.state."+item), this.props.accounts);
+        for (const item of this.state.channelArray) {
+            displayPosts(this.props.name, item, eval("this.state." + item), this.props.accounts);
         }
         return (
             <div className="channel-display">
@@ -112,7 +112,7 @@ class ChannelDisplay extends Component {
                         <button class={this.state.inputId} onClick={() => this.props.comment(this.props.name, this.props.logedAs, new Date(), this.state.newPost)}><img alt="" src="https://img.icons8.com/color/48/000000/chat.png" /></button>
                     </div>
                     <div id={this.state.inputId} class="emojis">
-                        <EmojiComponent/>
+                        <EmojiComponent />
                     </div>
                     <div>
                         <h1 class="end-of-scroll"></h1>

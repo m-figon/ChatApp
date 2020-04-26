@@ -1,19 +1,17 @@
 import React, { Component } from 'react'
 
-class TimeDisplay extends Component {  
-    constructor(){
+class TimeDisplay extends Component {
+    constructor() {
         super();
-        this.state={
+        this.state = {
             currentDate: new Date()
         }
     }
     componentDidMount() {
         setInterval(() => {
-            
-                this.setState({
-                    currentDate: new Date()
-                });
-            
+            this.setState({
+                currentDate: new Date()
+            });
         }, 5000);
     }
     render() {

@@ -13,32 +13,32 @@ class NavigationBar extends Component {
             this.props.settingState("logedAs", "",
                 "loginOperation", "Sign in", "logedImg", "");
         } else if (this.props.loginOperation === "Sign in") {
-            this.props.loginHandler();
+            this.props.settingOpositeState("login");
         }
     }
-    settingInput(array,e){
+    settingInput(array, e) {
         this.setState({
             [array]: e.target.value
         })
     }
-    
+
     render() {
-    const ConditionalLinkButton = () =>{
-        var correct = false;
-        var url;
-        for(const elem of this.props.channels){
-            if(elem.name===this.state.searchedValue){
-                console.log("correct channel!");
-                correct = true;
-                url="/"+this.state.searchedValue;
+        const ConditionalLinkButton = () => {
+            var correct = false;
+            var url;
+            for (const elem of this.props.channels) {
+                if (elem.name === this.state.searchedValue) {
+                    console.log("correct channel!");
+                    correct = true;
+                    url = "/" + this.state.searchedValue;
+                }
+            }
+            if (correct) {
+                return (<Link to={url} style={{ textDecoration: 'none' }}><button ><img alt="" src="https://img.icons8.com/color/48/000000/chat.png" /></button></Link>);
+            } else {
+                return (<button ><img alt="" src="https://img.icons8.com/color/48/000000/chat.png" /></button>);
             }
         }
-        if(correct){
-            return(<Link to={url} style={{ textDecoration: 'none' }}><button ><img alt="" src="https://img.icons8.com/color/48/000000/chat.png" /></button></Link>);
-        }else{
-            return(<button ><img alt="" src="https://img.icons8.com/color/48/000000/chat.png" /></button>);
-        }
-    }
         if (this.props.loginOperation === "Sign in") {
             return (
                 <div className="navigation-bar">
@@ -48,11 +48,11 @@ class NavigationBar extends Component {
                     </div>
                     <div className="middle-part">
                         <input value={this.state.searchedValue} onChange={(e) => this.settingInput("searchedValue", e)} />
-                        <ConditionalLinkButton/>
+                        <ConditionalLinkButton />
                     </div>
                     <div className="right-part">
                         <h1 onClick={() => this.login()}>{this.props.loginOperation}</h1>
-                        <h1 onClick={() => this.props.registerHandler()}>Register</h1>
+                        <h1 onClick={() => this.props.settingOpositeState("register")}>Register</h1>
                     </div>
 
                 </div>
@@ -66,12 +66,12 @@ class NavigationBar extends Component {
                     </div>
                     <div className="middle-part">
                         <input value={this.state.searchedValue} onChange={(e) => this.settingInput("searchedValue", e)} />
-                        <ConditionalLinkButton/>
+                        <ConditionalLinkButton />
                     </div>
                     <div className="right-part">
                         <h1 onClick={() => this.login()}>{this.props.loginOperation}</h1>
-                        <h1 onClick={() => this.props.registerHandler()}>Register</h1>
-                        <img src={this.props.logedImg} />
+                        <h1 onClick={() => this.props.settingOpositeState("register")}>Register</h1>
+                        <img alt="" src={this.props.logedImg} />
                         <h1> {this.props.logedAs}</h1>
                     </div>
                 </div>
