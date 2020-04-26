@@ -2,18 +2,25 @@ import React, { Component } from 'react'
 import ReactDOM from 'react-dom';
 import './channelDisplay.css';
 import ReactEmoji from 'react-emoji';
+import TimeDisplay from './timeDisplay/timeDisplay.jsx';
 class ChannelDisplay extends Component {
     constructor() {
         super();
         this.state = {
-            newPost: "",
-            inputId: "hiddenInput",
             GamingArmy: [],
             ElMusico: [],
             WeLoveCooking: [],
             Fitnez: [],
             WhyNotGardening: [],
             FootballMadness: [],
+            newPost: "",
+            channelArray:[
+                "GamingArmy","ElMusico","WeLoveCooking","Fitnez","WhyNotGardening","FootballMadness"
+            ],
+            emojiArray:[
+                ":)",":(",":D",":P",":/",":*",":'(",">:(",":o"
+            ],
+            inputId: "hiddenInput"
         }
     }
     settingState(value) {
@@ -37,13 +44,9 @@ class ChannelDisplay extends Component {
     }
 
     componentDidMount() {
-        
-        this.fetchData("GamingArmy");
-        this.fetchData("ElMusico");
-        this.fetchData("WeLoveCooking");
-        this.fetchData("Fitnez");
-        this.fetchData("WhyNotGardening");
-        this.fetchData("FootballMadness");
+        for(const item of this.state.channelArray){
+                this.fetchData(item);
+        }
         if (this.props.logedAs !== "") {
             this.setState({
                 inputId: "visibleInput"
@@ -57,34 +60,21 @@ class ChannelDisplay extends Component {
             //child.scrollBy(0,50);
         }
     }
-
+    
     render() {
-        var timeDif;
-        var messages;
-        function timeCondition(condition, text, value) {
-            if (condition) {
-                timeDif = Math.floor(timeDif / value);
-                if (timeDif === 1) {
-                    timeDif += " " + text + " ago"
-                } else {
-                    timeDif += " " + text + "s ago"
-                }
-            }
+        const EmojiComponent = () =>{
+            var emojis=this.state.emojiArray.map((elem)=>{
+                return(
+                    <h1 onClick={() => this.settingState(elem)} class={this.state.inputId}>{ReactEmoji.emojify(elem)}</h1>
+                );
+                
+            })
+            return(emojis);
         }
+        var messages;
         function displayPosts(propsName, name, array, accountsArray) {
             if (propsName === name) {
                 messages = array.map((element) => {
-
-                    const currentDate = new Date();
-                    const postDate = new Date(element.date);
-                    timeDif = (currentDate.getTime() - postDate.getTime()) / 1000;
-                    timeCondition(timeDif >= 0 && timeDif < 60, "sec", 1);
-                    timeCondition(timeDif >= 60 && timeDif < 3600, "min", 60);
-                    timeCondition(timeDif >= 3600 && timeDif < 86400, "hour", 3600);
-                    timeCondition(timeDif >= 86400 && timeDif < 86400 * 30, "day", 86400);
-                    timeCondition(timeDif >= 86400 * 30 && timeDif < 86400 * 30 * 12, "month", 2592000);
-                    timeCondition(timeDif >= 86400 * 30 * 12, "year", 2592000 * 12);
-
                     var imgSrc;
                     for (const item of accountsArray) {
                         if (element.author === item.account) {
@@ -97,7 +87,7 @@ class ChannelDisplay extends Component {
                             <div className="post">
                                 <img src={imgSrc} />
                                 <h1 id="author">{element.author}</h1>
-                                <h2 id="time">{timeDif}</h2>
+                                <TimeDisplay date={element.date}/>
                             </div>
                             <div className="post">
                                 <h1 id="content">{ReactEmoji.emojify(element.content)}</h1>
@@ -108,12 +98,9 @@ class ChannelDisplay extends Component {
                 })
             }
         }
-        displayPosts(this.props.name, "GamingArmy", this.state.GamingArmy, this.props.accounts);
-        displayPosts(this.props.name, "ElMusico", this.state.ElMusico, this.props.accounts);
-        displayPosts(this.props.name, "WeLoveCooking", this.state.WeLoveCooking, this.props.accounts);
-        displayPosts(this.props.name, "Fitnez", this.state.Fitnez, this.props.accounts);
-        displayPosts(this.props.name, "WhyNotGardening", this.state.WhyNotGardening, this.props.accounts);
-        displayPosts(this.props.name, "FootballMadness", this.state.FootballMadness, this.props.accounts);
+        for(const item of this.state.channelArray){
+            displayPosts(this.props.name, item, eval("this.state."+item), this.props.accounts);
+        }
         return (
             <div className="channel-display">
                 <div className="channel">
@@ -125,15 +112,7 @@ class ChannelDisplay extends Component {
                         <button class={this.state.inputId} onClick={() => this.props.comment(this.props.name, this.props.logedAs, new Date(), this.state.newPost)}><img alt="" src="https://img.icons8.com/color/48/000000/chat.png" /></button>
                     </div>
                     <div id={this.state.inputId} class="emojis">
-                        <h1 onClick={() => this.settingState(":)")} class={this.state.inputId}>{ReactEmoji.emojify(":)")}</h1>
-                        <h1 onClick={() => this.settingState(":(")} class={this.state.inputId}>{ReactEmoji.emojify(":(")}</h1>
-                        <h1 onClick={() => this.settingState(":D")} class={this.state.inputId}>{ReactEmoji.emojify(":D")}</h1>
-                        <h1 onClick={() => this.settingState(":P")} class={this.state.inputId}>{ReactEmoji.emojify(":P")}</h1>
-                        <h1 onClick={() => this.settingState(":/")} class={this.state.inputId}>{ReactEmoji.emojify(":/")}</h1>
-                        <h1 onClick={() => this.settingState(":*")} class={this.state.inputId}>{ReactEmoji.emojify(":*")}</h1>
-                        <h1 onClick={() => this.settingState(":'(")} class={this.state.inputId}>{ReactEmoji.emojify(":'(")}</h1>
-                        <h1 onClick={() => this.settingState(">:(")} class={this.state.inputId}>{ReactEmoji.emojify(">:(")}</h1>
-                        <h1 id="last-one" onClick={() => this.settingState(":o")} class={this.state.inputId}>{ReactEmoji.emojify(":o")}</h1>
+                        <EmojiComponent/>
                     </div>
                     <div>
                         <h1 class="end-of-scroll"></h1>
