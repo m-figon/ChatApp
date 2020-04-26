@@ -90,10 +90,17 @@ class Register extends Component {
         } else { correctFlag = false; }
         if (this.checkValue(!(this.state.passwordValue === this.state.password2Value && this.state.password2Value !== ""), "password2Id", "tooltipPassword2Id")) {
         } else { correctFlag = false; }
-        console.log(this.state.img1Id, this.state.img2Id, this.state.img3Id)
-        if (this.checkValue(this.state.img1Id === "" && this.state.img2Id === "" && this.state.img3Id === ""), "", "tooltipSelectImgId") {
-            console.log("choose img")
-        } else { correctFlag = false; }
+        if (this.state.img1Id === "" && this.state.img2Id === "" && this.state.img3Id === "") {
+            this.setState({
+                tooltipSelectImgId: "visible"
+            })
+            correctFlag = false;
+        }
+        else {
+            this.setState({
+                tooltipSelectImgId: "hidden"
+            })
+        }
         if (correctFlag) {
             this.addUser(this.state.emailValue, this.state.accountValue, this.state.passwordValue, this.state.imgValue);
         }
