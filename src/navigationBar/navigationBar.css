@@ -5,6 +5,7 @@
   z-index: 3;
   background-color: #0090b4;
   display: grid;
+  border: 3px solid black;
   grid-template-areas: "none left middle middle right right";
 }
 .navigation-bar h1 {
@@ -63,10 +64,12 @@
 .middle-part input {
   width: 60%;
   height: 2vh;
+  border: 2px solid black;
 }
 .middle-part button {
   width: 2vw;
   height: 2.6vh;
+  border: 2px solid black;
 }
 .middle-part img {
   filter: opacity(40%);
@@ -98,8 +101,11 @@
 }
 .right-part img {
   margin-top: -2vh;
-  height: 5vh;
-  width: 5vw;
+  height: 4vh;
+  width: 4vw;
+  background-color: #e7faff;
+  border-radius: 50%;
+  border: 3px solid #1bd1ff;
 }
 @media screen and (max-width: 600px) {
   .right-part h1 {

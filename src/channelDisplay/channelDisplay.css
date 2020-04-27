@@ -24,6 +24,7 @@
   flex-direction: column;
   align-items: center;
   overflow: scroll;
+  border: 4px solid black;
 }
 @media screen and (max-width: 1300px) {
   .channel {
@@ -40,6 +41,13 @@
   height: 8vh;
   width: 8vh;
   margin-right: 1vw;
+}
+
+#post-img {
+  background-color: #e7faff;
+  filter: opacity(100%);
+  border-radius: 50%;
+  border: 3px solid #1bd1ff;
 }
 
 hr {
@@ -147,6 +155,27 @@ hr {
 
 #visibleInput {
   display: flex;
+}
+
+::-webkit-scrollbar {
+  width: 0.5vw;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey;
+  border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #1bd1ff;
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #1bd1ff;
 }
 
 /*# sourceMappingURL=channelDisplay.css.map */

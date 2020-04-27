@@ -86,7 +86,7 @@ export class SettingsContent extends Component {
                             <h1>Account name: {element.account}</h1>
                             <h1>Email: {element.email}</h1>
                             <h1>Avatar:</h1>
-                            <img src={element.img} />
+                            <img id="post-img" src={element.img} />
                         </>
                     );
                 } else {

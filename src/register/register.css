@@ -216,6 +216,9 @@
   border-radius: 50%;
   width: 7vw;
   height: 7vh;
+  background-color: #e7faff;
+  border: 3px solid #1bd1ff;
+  filter: opacity(100%);
 }
 .flex img:hover {
   width: 9vw;

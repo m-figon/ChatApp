@@ -5,6 +5,7 @@
     z-index: 3;
     background-color: $main-color;
     display: grid;
+    border: 3px solid black;
     grid-template-areas: "none left middle middle right right";
     h1 {
         font-size: 2rem;
@@ -57,10 +58,12 @@
     input {
         width: 60%;
         height: 2vh;
+        border: 2px solid black;
     }
     button {
         width: 2vw;
         height: 2.6vh;
+        border: 2px solid black;
     }
     img {
         filter: opacity(40%);
@@ -92,8 +95,11 @@
     }
     img {
         margin-top: -2vh;
-        height: 5vh;
-        width: 5vw;
+        height: 4vh;
+        width: 4vw;
+        background-color: $background-color;
+        border-radius: 50%;
+        border: 3px solid darken($background-color,40%);
     }
     @media screen and (max-width: 600px) {
         h1 {

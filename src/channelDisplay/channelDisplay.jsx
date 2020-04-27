@@ -85,7 +85,7 @@ class ChannelDisplay extends Component {
                         <>
                             <hr />
                             <div className="post">
-                                <img alt="" src={imgSrc} />
+                                <img id="post-img" alt="" src={imgSrc} />
                                 <h1 id="author">{element.author}</h1>
                                 <TimeDisplay date={element.date} />
                             </div>

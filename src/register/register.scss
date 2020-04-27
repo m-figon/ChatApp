@@ -157,6 +157,9 @@
         border-radius: 50%;
         width: 7vw;
         height: 7vh;
+        background-color: $background-color;
+        border: 3px solid darken($background-color,40%);
+        filter: opacity(100%);
         &:hover{
             width: 9vw;
             height: 9vh;
