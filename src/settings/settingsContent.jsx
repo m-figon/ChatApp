@@ -1,12 +1,16 @@
 import React, { Component } from 'react'
 
-export class Password extends Component {
+export class SettingsContent extends Component {
     constructor(){
         super();
         this.state={
             oldPasswordValue: "",
             newPasswordValue: "",
-            currentPasswordValue: ""
+            currentPasswordValue: "",
+            img1Id: "",
+            img2Id: "",
+            img3Id: "",
+            imgValue: ""
         }
     }
     inputChanging(array,e){
@@ -31,6 +35,40 @@ export class Password extends Component {
           "Content-type": "application/json; charset=UTF-8"
         }
       })
+        }
+    }
+    changeAvatar(item){
+        if(this.state.imgValue!==""){
+            fetch('http://localhost:3000/accounts/'+item.id, {
+        method: 'PUT',
+        body: JSON.stringify({
+          email: item.email,
+          account: item.account,
+          img: this.state.imgValue,
+          password: item.password
+        }),
+        headers: {
+          "Content-type": "application/json; charset=UTF-8"
+        }
+      })
+        }
+    }
+    settingImg(e, imgId) {
+        if (eval("this.state." + imgId) === "selected") {
+            this.setState({
+                img1Id: "",
+                img2Id: "",
+                img3Id: "",
+                imgValue: ""
+            })
+        } else {
+            this.setState({
+                img1Id: "",
+                img2Id: "",
+                img3Id: "",
+                [imgId]: "selected",
+                imgValue: e.target.src,
+            })
         }
     }
     render() {
@@ -69,11 +107,13 @@ export class Password extends Component {
                 return (
                     <>
                         <h2>Choose new avtar</h2>
-                        <div class="flex">
-                            <img alt="" onClick={(e) => this.settingImg("imgValue", e, "img1Id")} src="https://img.icons8.com/wired/64/000000/user.png" />
-                            <img alt="" onClick={(e) => this.settingImg("imgValue", e, "img2Id")} src="https://img.icons8.com/nolan/64/user.png" />
-                            <img alt="" onClick={(e) => this.settingImg("imgValue", e, "img3Id")} src="https://img.icons8.com/carbon-copy/100/000000/user.png" />
+                        <div class="flex-imgs">
+                            <img id={this.state.img1Id} alt="" onClick={(e) => this.settingImg(e, "img1Id")} src="https://img.icons8.com/wired/64/000000/user.png" />
+                            <img id={this.state.img2Id} alt="" onClick={(e) => this.settingImg(e, "img2Id")} src="https://img.icons8.com/nolan/64/user.png" />
+                            <img id={this.state.img3Id} alt="" onClick={(e) => this.settingImg(e, "img3Id")} src="https://img.icons8.com/carbon-copy/100/000000/user.png" />
                         </div>
+                        <button onClick={()=>this.changeAvatar(element)}id="img-button">Change</button>
+
                     </>
                 );
             }
@@ -82,4 +122,4 @@ export class Password extends Component {
     }
 }
 
-export default Password;
+export default SettingsContent;

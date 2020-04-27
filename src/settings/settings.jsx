@@ -1,13 +1,16 @@
 import React, { Component } from 'react'
 import './settings.css';
-import Password from './password.jsx';
+import SettingsContent from './settingsContent.jsx';
 class Settings extends Component {
     constructor() {
         super();
         this.state = {
             emailValue: "gogobatman@gmail.com",
             accountValue: "Gogobatman",
-            currentState: "none"
+            currentState: "none",
+            txt1Id: "",
+            txt2Id: "",
+            txt3Id: ""
         }
     }
     /*
@@ -25,30 +28,35 @@ class Settings extends Component {
       })
     }
     */
-    settingState(array, value) {
+    settingState(array, value,array2,value2) {
         this.setState({
-            [array]: value
+            txt1Id: "",
+            txt2Id: "",
+            txt3Id: "",
+            [array]: value,
+            [array2]: value2
         })
     }
-    
+
     render() {
         return (
             <div>
                 <div className="home-display">
                     <div className="sign-center">
-                        <div className="options-div">
-                            <h1 onClick={() => this.settingState("currentState", "none")}>{this.props.logedAs}</h1>
-                            <hr></hr>
-                            <h1 onClick={() => this.settingState("currentState", "password")}>Change password</h1>
-                            <hr></hr>
-                            <h1 onClick={() => this.settingState("currentState", "avatar")}>Change avatar</h1>
-                            <hr></hr>
-                        </div>
-                        {/* if change password*/}
                         <div className="content-div">
-                            <Password currentState={this.state.currentState} accounts={this.props.accounts} logedAs={this.props.logedAs}/>
+                            <div className="options-div">
+                                <div className="left">
+                                    <h1 id={this.state.txt1Id} onClick={() => this.settingState("currentState", "none","txt1Id","chosen")}>{this.props.logedAs}</h1>
+                                </div>
+                                <div className="middle">
+                                    <h1 id={this.state.txt2Id} onClick={() => this.settingState("currentState", "password","txt2Id","chosen")}>Change password</h1>
+                                </div>
+                                <div className="right">
+                                    <h1 id={this.state.txt3Id} onClick={() => this.settingState("currentState", "avatar","txt3Id","chosen")}>Change avatar</h1>
+                                </div>
+                            </div>
+                            <SettingsContent currentState={this.state.currentState} accounts={this.props.accounts} logedAs={this.props.logedAs} />
                         </div>
-                        {/* if change password*/}
                     </div>
                     <img alt="" src="https://www.creativevirtual.com/wp-content/uploads/2018/10/people-on-devices-707x350.png"></img>
                 </div>
