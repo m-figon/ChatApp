@@ -6,6 +6,7 @@ import HomeDisplay from './homeDisplay/homeDisplay.jsx';
 import ChannelDisplay from './channelDisplay/channelDisplay.jsx';
 import Login from './login/login.jsx';
 import Register from './register/register.jsx';
+import Settings from './settings/settings.jsx';
 class App extends Component {
   constructor() {
     super();
@@ -143,10 +144,41 @@ class App extends Component {
         );
       }
     }
+    const SettingsComponent = () => {
+      if (!this.state.login && !this.state.register) {
+        return (
+          <>
+            <NavigationBar {...navigationProps} />
+            <Settings logedAs={this.state.logedAs}/>
+          </>
+        );
+      } else if (this.state.login && !this.state.register) {
+        return (
+          <>
+            <div class="blured">
+              <NavigationBar {...navigationProps} />
+              <Settings logedAs={this.state.logedAs}/>
+            </div>
+            <Login settingState={this.settingState} settingOpositeState={this.settingOpositeState} />
+          </>
+        );
+      } else if (!this.state.login && this.state.register) {
+        return (
+          <>
+            <div class="blured">
+              <NavigationBar {...navigationProps} />
+              <Settings logedAs={this.state.logedAs}/>
+            </div>
+            <Register settingOpositeState={this.settingOpositeState} settingState={this.settingState} />
+          </>
+        );
+      }
+    }
     return (
       <>
         <Route exact path="/" component={HomeComponent} />
         <Route exact path="/:channel" component={ChannelComponent} />
+        <Route exact path="/:account/settings" component={SettingsComponent} />
       </>
     );
   }

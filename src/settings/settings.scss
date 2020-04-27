@@ -1,0 +1,45 @@
+@import "../_module.scss";
+.home-display {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    img {
+        @include width-height(100%,100%);
+        filter: opacity(40%);
+    }
+    h2,
+    h1 {
+        color: $background-color;
+        z-index: 3;
+    }
+    h2 {
+        font-size: 2rem;
+    }
+    h1 {
+        margin-top: 2rem;
+        font-size: 1.3rem;
+    }
+}
+
+.sign-center {
+    @include width-height(100vw,100vh);
+    position: absolute;
+    @include flex-box();
+}
+.options-div {
+    background-color: $main-color;
+    z-index: 3;
+    @include width-height(20vw,60vh);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 5vw;
+}
+.content-div{
+    background-color: $main-color;
+    z-index: 3;
+    @include width-height(30vw,60vh);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

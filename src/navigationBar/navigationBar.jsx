@@ -58,6 +58,7 @@ class NavigationBar extends Component {
                 </div>
             );
         } else if (this.props.loginOperation === " Sign out") {
+            var link = "/" + this.props.logedAs + "/Settings"
             return (
                 <div className="navigation-bar">
                     <div className="left-part">
@@ -72,7 +73,7 @@ class NavigationBar extends Component {
                         <h1 onClick={() => this.login()}>{this.props.loginOperation}</h1>
                         <h1 onClick={() => this.props.settingOpositeState("register")}>Register</h1>
                         <img alt="" src={this.props.logedImg} />
-                        <h1> {this.props.logedAs}</h1>
+                        <Link to={link} style={{ textDecoration: 'none' }}><h1> {this.props.logedAs}</h1>></Link>
                     </div>
                 </div>
             );
