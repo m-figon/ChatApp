@@ -42,4 +42,34 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    img{
+        height:10vh;
+        width:10vw;
+    }
+}
+.flex{
+    display: flex;
+    img{
+        margin-left: 1vw;
+        margin-right: 1vw;
+        border-radius: 50%;
+        width: 7vw;
+        height: 7vh;
+        &:hover{
+            width: 9vw;
+            height: 9vh;
+            cursor: pointer;
+        }
+    }
+}
+#password-button {
+    margin-top: 5vh;
+    @include width-height(4rem, 2rem);
+    background-color: $background-color;
+    border-radius: 8px;
+    border: 2px solid black;
+    color: $main-color;
+    &:hover {
+        cursor: pointer;
+    }
 }

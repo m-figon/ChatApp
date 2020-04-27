@@ -1,12 +1,13 @@
 import React, { Component } from 'react'
 import './settings.css';
+import Password from './password.jsx';
 class Settings extends Component {
     constructor() {
         super();
         this.state = {
             emailValue: "gogobatman@gmail.com",
             accountValue: "Gogobatman",
-            oldPasswordValue: "",
+            currentState: "none"
         }
     }
     /*
@@ -24,25 +25,28 @@ class Settings extends Component {
       })
     }
     */
+    settingState(array, value) {
+        this.setState({
+            [array]: value
+        })
+    }
+    
     render() {
         return (
             <div>
                 <div className="home-display">
                     <div className="sign-center">
                         <div className="options-div">
-                            <h1>{this.props.logedAs}</h1>
+                            <h1 onClick={() => this.settingState("currentState", "none")}>{this.props.logedAs}</h1>
                             <hr></hr>
-                            <h1>Change password</h1>
+                            <h1 onClick={() => this.settingState("currentState", "password")}>Change password</h1>
                             <hr></hr>
-                            <h1>Change avatar</h1>
+                            <h1 onClick={() => this.settingState("currentState", "avatar")}>Change avatar</h1>
                             <hr></hr>
                         </div>
                         {/* if change password*/}
                         <div className="content-div">
-                            <h1>Changing password</h1>
-                            <h1>Enter your old password</h1><input value="password" type="password"/>
-                            <h1>Enter new password</h1><input value="password" type="password"/>
-                            <h1>Confirm new password</h1><input value="password" type="password"/>
+                            <Password currentState={this.state.currentState} accounts={this.props.accounts} logedAs={this.props.logedAs}/>
                         </div>
                         {/* if change password*/}
                     </div>

@@ -149,7 +149,7 @@ class App extends Component {
         return (
           <>
             <NavigationBar {...navigationProps} />
-            <Settings logedAs={this.state.logedAs}/>
+            <Settings logedAs={this.state.logedAs} accounts={this.state.accounts}/>
           </>
         );
       } else if (this.state.login && !this.state.register) {
@@ -157,7 +157,7 @@ class App extends Component {
           <>
             <div class="blured">
               <NavigationBar {...navigationProps} />
-              <Settings logedAs={this.state.logedAs}/>
+              <Settings logedAs={this.state.logedAs} accounts={this.state.accounts}/>
             </div>
             <Login settingState={this.settingState} settingOpositeState={this.settingOpositeState} />
           </>
@@ -167,7 +167,7 @@ class App extends Component {
           <>
             <div class="blured">
               <NavigationBar {...navigationProps} />
-              <Settings logedAs={this.state.logedAs}/>
+              <Settings logedAs={this.state.logedAs} accounts={this.state.accounts}/>
             </div>
             <Register settingOpositeState={this.settingOpositeState} settingState={this.settingState} />
           </>
