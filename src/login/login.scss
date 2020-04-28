@@ -7,19 +7,19 @@
     position: absolute;
     z-index: 5;
     @include width-height(35vw,45vh);
-    background-color: #ffffff;
-    border-radius: 3%;
+    background-color: $main-color;
+    border: 4px solid $black-color;
     @include flex-box();
     flex-direction: column;
-    background:  url('https://www.creativevirtual.com/wp-content/uploads/2018/10/people-on-devices-707x350.png');
     input{
         font-size: 1.5rem;
+        border: 3px solid $black-color;
         width:50%;
-        border: 2px solid  $main-color;
+        background-color: $bright-color;
     }
     h1{
         font-size: 1.5rem;
-        color: $background-color;
+        color: $bright-color;
     }
     @media screen and (max-width: 1100px) {
         input{
@@ -51,10 +51,10 @@
 #loginButton{
     margin-top: 5vh;
     @include width-height(4rem,2rem);
-    background-color: $main-color;
+    background-color: $bright-color;
     border-radius: 8px;
-    border: 2px solid black;
-    color: white;
+    border: 2px solid $black-color;
+    color: $black-color;
     &:hover{
         cursor: pointer;
     }
@@ -79,7 +79,7 @@
     height: 1.2rem;
     font-size: 1rem;
     border-radius: 6px;
-    color: white;
+    color: $bright-color;
 }
 #hidden{
     display: none;
@@ -105,10 +105,10 @@
     @media screen and (max-width: 700px) {
         margin-top: -18vh;
     }
-    background-color: $main-color;
+    background-color: $bright-color;
     border-radius: 8px;
-    border: 2px solid black;
-    color: white;
+    border: 2px solid $black-color;
+    color: $black-color;
     &:hover{
         cursor: pointer;
     }

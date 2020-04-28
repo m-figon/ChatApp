@@ -9,7 +9,7 @@
     }
     h2,
     h1 {
-        color: $background-color;
+        color: $bright-color;
         z-index: 3;
     }
     h2 {
@@ -58,5 +58,5 @@
     flex-direction: column;
     align-items: center;
     overflow: scroll;
-    border: 4px solid black;
+    border: 4px solid $black-color;
 }

@@ -9,7 +9,7 @@
     }
     h2,
     h1 {
-        color: $background-color;
+        color: $bright-color;
         z-index: 3;
     }
     h2 {
@@ -28,7 +28,7 @@
     flex-direction: column;
 }
 .options-div {
-    background-color: $main-color;
+    background-color: darken($main-color,5%);
     z-index: 3;
     display: grid;
     grid-template-areas: "left middle right";
@@ -39,6 +39,7 @@
     }
     width: 100%;
     height: 10vh;
+    border-bottom: 1px solid black;
 }
 .left {
     grid-area: left;
@@ -64,12 +65,13 @@
     align-items: center;
     img {
         height: 10vh;
-        width: 10vw;
+        width: 10vh;
     }
     border: 0.2vw solid #1b1b1b;
     input {
         font-size: 1rem;
         border: 2px solid #1b1b1b;
+        background-color: $bright-color;
     }
 }
 .flex-imgs {
@@ -80,13 +82,13 @@
         margin-left: 1vw;
         margin-right: 1vw;
         border-radius: 50%;
-        width: 7vw;
-        height: 7vh;
-        background-color: $background-color;
-        border: 3px solid darken($background-color,40%);
+        width: 8vh;
+        height: 8vh;
+        background-color: $bright-color;
+        border: 3px solid darken($bright-color,40%);
         filter: opacity(100%);
         &:hover {
-            width: 9vw;
+            width: 9vh;
             height: 9vh;
             cursor: pointer;
         }
@@ -96,7 +98,7 @@
 #img-button {
     margin-top: 5vh;
     @include width-height(4rem, 2rem);
-    background-color: $background-color;
+    background-color: $bright-color;
     border-radius: 8px;
     border: 2px solid black;
     color: $main-color;

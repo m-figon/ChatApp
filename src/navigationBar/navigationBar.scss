@@ -5,12 +5,12 @@
     z-index: 3;
     background-color: $main-color;
     display: grid;
-    border: 3px solid black;
+    border: 3px solid $black-color;
     grid-template-areas: "none left middle middle right right";
     h1 {
         font-size: 2rem;
         margin-top: 5px;
-        color: $background-color;
+        color: $bright-color;
     }
     img {
         filter: brightness(1.2) grayscale(40%);
@@ -58,12 +58,14 @@
     input {
         width: 60%;
         height: 2vh;
-        border: 2px solid black;
+        border: 2px solid $black-color;
+        background-color: $bright-color;
     }
     button {
         width: 2vw;
         height: 2.6vh;
-        border: 2px solid black;
+        border: 2px solid $black-color;
+        background-color: $bright-color;
     }
     img {
         filter: opacity(40%);
@@ -95,11 +97,11 @@
     }
     img {
         margin-top: -2vh;
+        width: 4vh;
         height: 4vh;
-        width: 4vw;
-        background-color: $background-color;
+        background-color: $bright-color;
         border-radius: 50%;
-        border: 3px solid darken($background-color,40%);
+        border: 3px solid darken($bright-color,40%);
     }
     @media screen and (max-width: 600px) {
         h1 {

@@ -28,7 +28,7 @@ class Settings extends Component {
       })
     }
     */
-    settingState(array, value,array2,value2) {
+    settingState(array, value, array2, value2) {
         this.setState({
             txt1Id: "",
             txt2Id: "",
@@ -46,13 +46,14 @@ class Settings extends Component {
                         <div className="content-div">
                             <div className="options-div">
                                 <div className="left">
-                                    <h1 id={this.state.txt1Id} onClick={() => this.settingState("currentState", "none","txt1Id","chosen")}>{this.props.logedAs}</h1>
+                                    <h1 id={this.state.txt1Id} onClick={() => this.settingState("currentState", "none", "txt1Id", "chosen")}>{this.props.logedAs}</h1>
                                 </div>
                                 <div className="middle">
-                                    <h1 id={this.state.txt2Id} onClick={() => this.settingState("currentState", "password","txt2Id","chosen")}>Change password</h1>
+                                    <h1 id={this.state.txt2Id} onClick={() => this.settingState("currentState", "password", "txt2Id", "chosen")}>Change password</h1>
+
                                 </div>
                                 <div className="right">
-                                    <h1 id={this.state.txt3Id} onClick={() => this.settingState("currentState", "avatar","txt3Id","chosen")}>Change avatar</h1>
+                                    <h1 id={this.state.txt3Id} onClick={() => this.settingState("currentState", "avatar", "txt3Id", "chosen")}>Change avatar</h1>
                                 </div>
                             </div>
                             <SettingsContent currentState={this.state.currentState} accounts={this.props.accounts} logedAs={this.props.logedAs} />

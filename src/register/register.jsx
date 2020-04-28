@@ -119,9 +119,9 @@ class Register extends Component {
                         <div id={this.state.tooltipSelectImgId} class="selectImgId"><h1>Please choose avatar</h1></div>
 
                         <div class="flex">
-                            <img alt="" id={this.state.img1Id} onClick={(e) => this.settingImg("imgValue", e, "img1Id")} src="https://img.icons8.com/wired/64/000000/user.png" />
-                            <img alt="" id={this.state.img2Id} onClick={(e) => this.settingImg("imgValue", e, "img2Id")} src="https://img.icons8.com/nolan/64/user.png" />
-                            <img alt="" id={this.state.img3Id} onClick={(e) => this.settingImg("imgValue", e, "img3Id")} src="https://img.icons8.com/carbon-copy/100/000000/user.png" />
+                            <img alt="" id={this.state.img1Id} onClick={(e) => this.settingImg("imgValue", e, "img1Id")} src="https://robohash.org/77set=set6" />
+                            <img alt="" id={this.state.img2Id} onClick={(e) => this.settingImg("imgValue", e, "img2Id")} src="https://robohash.org/77set=set10" />
+                            <img alt="" id={this.state.img3Id} onClick={(e) => this.settingImg("imgValue", e, "img3Id")} src="https://robohash.org/77set=set20" />
                         </div>
                         <button onClick={() => this.validateData()} id="registerButton">Register</button>
                     </div>

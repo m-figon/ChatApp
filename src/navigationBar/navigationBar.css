@@ -3,15 +3,15 @@
   height: 5vh;
   position: fixed;
   z-index: 3;
-  background-color: #0090b4;
+  background-color: #007c9b;
   display: grid;
-  border: 3px solid black;
+  border: 3px solid #333333;
   grid-template-areas: "none left middle middle right right";
 }
 .navigation-bar h1 {
   font-size: 2rem;
   margin-top: 5px;
-  color: #e7faff;
+  color: #cef5ff;
 }
 .navigation-bar img {
   filter: brightness(1.2) grayscale(40%);
@@ -64,12 +64,14 @@
 .middle-part input {
   width: 60%;
   height: 2vh;
-  border: 2px solid black;
+  border: 2px solid #333333;
+  background-color: #cef5ff;
 }
 .middle-part button {
   width: 2vw;
   height: 2.6vh;
-  border: 2px solid black;
+  border: 2px solid #333333;
+  background-color: #cef5ff;
 }
 .middle-part img {
   filter: opacity(40%);
@@ -101,11 +103,11 @@
 }
 .right-part img {
   margin-top: -2vh;
+  width: 4vh;
   height: 4vh;
-  width: 4vw;
-  background-color: #e7faff;
+  background-color: #cef5ff;
   border-radius: 50%;
-  border: 3px solid #1bd1ff;
+  border: 3px solid #02ccff;
 }
 @media screen and (max-width: 600px) {
   .right-part h1 {

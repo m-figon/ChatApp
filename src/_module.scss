@@ -1,5 +1,7 @@
-$main-color: #0090b4;
-$background-color: lighten($main-color, 60%);
+$main-color: #007c9b;
+//#0090b4
+$bright-color: lighten($main-color, 60%);
+$black-color: #333333;
 @mixin flex-box() {
     display: flex;
     justify-content: center;

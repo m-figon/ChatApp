@@ -108,9 +108,9 @@ export class SettingsContent extends Component {
                     <>
                         <h2>Choose new avtar</h2>
                         <div class="flex-imgs">
-                            <img id={this.state.img1Id} alt="" onClick={(e) => this.settingImg(e, "img1Id")} src="https://img.icons8.com/wired/64/000000/user.png" />
-                            <img id={this.state.img2Id} alt="" onClick={(e) => this.settingImg(e, "img2Id")} src="https://img.icons8.com/nolan/64/user.png" />
-                            <img id={this.state.img3Id} alt="" onClick={(e) => this.settingImg(e, "img3Id")} src="https://img.icons8.com/carbon-copy/100/000000/user.png" />
+                            <img id={this.state.img1Id} alt="" onClick={(e) => this.settingImg(e, "img1Id")} src="https://robohash.org/77set=set6" />
+                            <img id={this.state.img2Id} alt="" onClick={(e) => this.settingImg(e, "img2Id")} src="https://robohash.org/77set=set10" />
+                            <img id={this.state.img3Id} alt="" onClick={(e) => this.settingImg(e, "img3Id")} src="https://robohash.org/77set=set20" />
                         </div>
                         <button onClick={()=>this.changeAvatar(element)}id="img-button">Change</button>
 
