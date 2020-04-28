@@ -73,7 +73,7 @@
 .password2Tooltip,
 .selectImgId {
     position: absolute;
-    background-color: $main-color;
+    background-color: $bright-color;
     padding:{
         left: 5px;
         right: 5px;
@@ -81,8 +81,9 @@
     @include width-height(4rem, 10vw);
     font-size: 1rem;
     border-radius: 6px;
-    color: $bright-color;
-    h1{font-size: 0.7rem;}
+    h1{font-size: 0.7rem;
+        color: $main-color;
+    }
     @media screen and (max-width: 1100px) {
         h1{font-size: 0.5rem;}
     }

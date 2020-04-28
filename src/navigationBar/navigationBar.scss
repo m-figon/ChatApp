@@ -13,7 +13,7 @@
         color: $bright-color;
     }
     img {
-        filter: brightness(1.2) grayscale(40%);
+        filter: brightness(1.4) grayscale(40%);
         @include width-height(5vh, 5vh);
     }
     @media screen and (max-width: 600px) {
@@ -102,6 +102,8 @@
         background-color: $bright-color;
         border-radius: 50%;
         border: 3px solid darken($bright-color,40%);
+        filter: brightness(100%) grayscale(0%);
+        margin-right: 0.5vw;
     }
     @media screen and (max-width: 600px) {
         h1 {

@@ -83,7 +83,7 @@
 
 .tooltip {
   position: absolute;
-  background-color: #007c9b;
+  background-color: #cef5ff;
   margin-top: -6vh;
   margin-left: 12vw;
   padding-left: 5px;
@@ -91,7 +91,7 @@
   height: 1.2rem;
   font-size: 1rem;
   border-radius: 6px;
-  color: #cef5ff;
+  color: #007c9b;
 }
 
 #hidden {

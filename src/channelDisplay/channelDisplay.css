@@ -3,23 +3,15 @@
   background-color: #cef5ff;
   width: 100vw;
   height: 100vh;
-  position: absolute;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.channel-display img {
-  width: 100vw;
-  height: 100vh;
-  filter: opacity(40%);
-}
 
 .channel {
   background-color: #007c9b;
-  z-index: 3;
   width: 50vw;
   height: 85vh;
-  position: absolute;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -33,13 +25,14 @@
   }
 }
 
-#author {
-  color: blue;
+#author,
+#nick-name {
+  color: #02ccff;
 }
 
 .post img {
-  height: 8vh;
   width: 8vh;
+  height: 8vh;
   margin-right: 1vw;
 }
 
@@ -52,8 +45,8 @@
 
 hr {
   border: 1px solid #cef5ff;
-  height: 1px;
   width: 98%;
+  height: 1px;
 }
 
 .post {
@@ -82,11 +75,13 @@ hr {
   height: 1rem;
   margin-top: 1.4%;
   background-color: #cef5ff;
+  border: 2px solid #333333;
 }
 .input-container button {
   margin-top: 0.8rem;
   width: 2vw;
   height: 1.5rem;
+  border: 2px solid #333333;
   background-color: #cef5ff;
 }
 .input-container h1 {
@@ -97,6 +92,7 @@ hr {
 .input-container img {
   width: 100%;
   height: 100%;
+  filter: opacity(40%);
 }
 
 .hiddenInput {
@@ -164,19 +160,16 @@ hr {
   width: 0.5vw;
 }
 
-/* Track */
 ::-webkit-scrollbar-track {
   box-shadow: inset 0 0 5px grey;
   border-radius: 10px;
 }
 
-/* Handle */
 ::-webkit-scrollbar-thumb {
   background: #02ccff;
   border-radius: 10px;
 }
 
-/* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
   background: #02ccff;
 }

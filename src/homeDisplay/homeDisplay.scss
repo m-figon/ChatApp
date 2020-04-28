@@ -1,16 +1,11 @@
 @import "../_module.scss";
 .home-display {
     position: absolute;
-    width: 100vw;
-    height: 100vh;
-    img {
-        @include width-height(100%,100%);
-        filter: opacity(40%);
-    }
+    @include width-height(100vw,100vh);
+    background-color: $bright-color;
     h2,
     h1 {
         color: $bright-color;
-        z-index: 3;
     }
     h2 {
         font-size: 2rem;
@@ -46,14 +41,11 @@
 
 .sign-center {
     @include width-height(100vw,100vh);
-    position: absolute;
     @include flex-box();
 }
 .sign-div {
     background-color: $main-color;
-    z-index: 3;
     @include width-height(30vw,60vh);
-    position: absolute;
     display: flex;
     flex-direction: column;
     align-items: center;

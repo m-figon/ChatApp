@@ -59,7 +59,6 @@ class Settings extends Component {
                             <SettingsContent currentState={this.state.currentState} accounts={this.props.accounts} logedAs={this.props.logedAs} />
                         </div>
                     </div>
-                    <img alt="" src="https://www.creativevirtual.com/wp-content/uploads/2018/10/people-on-devices-707x350.png"></img>
                 </div>
             </div>
         );

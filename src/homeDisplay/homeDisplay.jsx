@@ -22,7 +22,6 @@ class HomeDisplay extends Component {
                         {display}
                     </div>
                 </div>
-                <img alt="" src="https://www.creativevirtual.com/wp-content/uploads/2018/10/people-on-devices-707x350.png"></img>
             </div>
         );
     }

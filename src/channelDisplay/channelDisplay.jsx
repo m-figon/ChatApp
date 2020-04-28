@@ -107,7 +107,7 @@ class ChannelDisplay extends Component {
                     {messages}
                     <hr></hr>
                     <div class="input-container">
-                        <h1>{this.props.logedAs}</h1>
+                        <h1 id="nick-name">{this.props.logedAs}</h1>
                         <input value={this.state.newPost} class={this.state.inputId} onChange={(e) => this.inputChange(e)} />
                         <button class={this.state.inputId} onClick={() => this.props.comment(this.props.name, this.props.logedAs, new Date(), this.state.newPost)}><img alt="" src="https://img.icons8.com/color/48/000000/chat.png" /></button>
                     </div>
@@ -118,7 +118,6 @@ class ChannelDisplay extends Component {
                         <h1 class="end-of-scroll"></h1>
                     </div>
                 </div>
-                <img alt="" src="https://www.creativevirtual.com/wp-content/uploads/2018/10/people-on-devices-707x350.png" />
             </div>
         );
     }

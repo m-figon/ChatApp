@@ -108,7 +108,7 @@ export class SettingsContent extends Component {
                     <>
                         <h2>Choose new avtar</h2>
                         <div class="flex-imgs">
-                            <img id={this.state.img1Id} alt="" onClick={(e) => this.settingImg(e, "img1Id")} src="https://robohash.org/77set=set6" />
+                            <img id={this.state.img1Id} alt="" onClick={(e) => this.settingImg(e, "img1Id")} src="https://robohash.org/77set=set7" />
                             <img id={this.state.img2Id} alt="" onClick={(e) => this.settingImg(e, "img2Id")} src="https://robohash.org/77set=set10" />
                             <img id={this.state.img3Id} alt="" onClick={(e) => this.settingImg(e, "img3Id")} src="https://robohash.org/77set=set20" />
                         </div>

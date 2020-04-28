@@ -2,20 +2,12 @@
 .channel-display {
     position: absolute;
     background-color: $bright-color;
-
     @include width-height(100vw, 100vh);
-    position: absolute;
     @include flex-box;
-    img {
-        @include width-height(100vw, 100vh);
-        filter: opacity(40%);
-    }
 }
 .channel {
     background-color: $main-color;
-    z-index: 3;
     @include width-height(50vw, 85vh);
-    position: absolute;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -24,27 +16,24 @@
         @include width-height(70vw, 85vh);
     }
     border: 4px solid $black-color;
-
 }
-#author{
-    color:blue;
+#author,
+#nick-name {
+    color: darken($bright-color, 40%);
 }
-.post img{
-    height: 8vh;
-    width: 8vh;
+.post img {
+    @include width-height(8vh, 8vh);
     margin-right: 1vw;
 }
-#post-img{
+#post-img {
     background-color: $bright-color;
     filter: opacity(100%);
     border-radius: 50%;
-    border: 3px solid darken($bright-color,40%);
+    border: 3px solid darken($bright-color, 40%);
 }
-hr{
+hr {
     border: 1px solid $bright-color;
-    height: 1px;
-    width: 98%;
-    
+    @include width-height(98%, 1px);
 }
 .post {
     width: 90%;
@@ -54,12 +43,12 @@ hr{
         color: $bright-color;
         font-size: 1rem;
     }
-      
 }
 #time {
     color: $bright-color;
     font-size: 0.7rem;
 }
+
 .input-container {
     width: 98%;
     display: flex;
@@ -68,16 +57,17 @@ hr{
         top: 0vh;
     }
     input {
-        width: 80%;
-        height: 1rem;
+        @include width-height(80%, 1rem);
         margin: {
             top: 1.4%;
         }
         background-color: $bright-color;
+        border: 2px solid $black-color;
     }
     button {
         margin-top: 0.8rem;
         @include width-height(2vw, 1.5rem);
+        border: 2px solid $black-color;
         background-color: $bright-color;
     }
 
@@ -89,6 +79,7 @@ hr{
 
     img {
         @include width-height(100%, 100%);
+        filter: opacity(40%);
     }
 }
 .hiddenInput {
@@ -98,39 +89,35 @@ hr{
     display: flex;
 }
 
-#content{
+#content {
     margin-top: -2vh;
     margin-left: 12%;
-    @media screen and (max-width: 1400px){
+    @media screen and (max-width: 1400px) {
         margin-left: 15%;
     }
-    @media screen and (max-width: 900px){
+    @media screen and (max-width: 900px) {
         margin-left: 18%;
     }
-    @media screen and (max-width: 700px){
+    @media screen and (max-width: 700px) {
         margin-left: 21%;
     }
-    img{
-        width: 1rem;
-        height: 1rem;
+    img {
+        @include width-height(1rem, 1rem);
         filter: opacity(100%);
     }
 }
-.emojis{
+.emojis {
     margin-left: 2vw;
-    width:20vw;
-    height:4vh;
+    @include width-height(20vw, 4vh);
     border-radius: 1rem;
     background-color: $bright-color;
     @include flex-box();
-    img{
-        width:2vw;
-        height: 2vh;
+    img {
+        @include width-height(2vw, 2vh);
         filter: opacity(100%);
-
     }
 }
-.end-of-scroll{
+.end-of-scroll {
     margin-top: 6vh;
 }
 #hiddenInput {
@@ -141,21 +128,15 @@ hr{
 }
 ::-webkit-scrollbar {
     width: 0.5vw;
-  }
-  
-  /* Track */
-  ::-webkit-scrollbar-track {
-    box-shadow: inset 0 0 5px grey; 
+}
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey;
     border-radius: 10px;
-  }
-   
-  /* Handle */
-  ::-webkit-scrollbar-thumb {
-    background: darken($bright-color,40%);
+}
+::-webkit-scrollbar-thumb {
+    background: darken($bright-color, 40%);
     border-radius: 10px;
-  }
-  
-  /* Handle on hover */
-  ::-webkit-scrollbar-thumb:hover {
-    background: darken($bright-color,40%);
-  }
+}
+::-webkit-scrollbar-thumb:hover {
+    background: darken($bright-color, 40%);
+}

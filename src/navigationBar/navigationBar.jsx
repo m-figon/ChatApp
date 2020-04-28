@@ -5,7 +5,8 @@ class NavigationBar extends Component {
     constructor() {
         super();
         this.state = {
-            searchedValue: ""
+            searchedValue: "Search for channel name",
+            firstSearch: true
         }
     }
     login() {
@@ -21,7 +22,14 @@ class NavigationBar extends Component {
             [array]: e.target.value
         })
     }
-
+    firstSearchHandler(){
+        if(this.state.firstSearch){
+            this.setState({
+                searchedValue: "",
+                firstSearch: false
+            })
+        }
+    }
     render() {
         const ConditionalLinkButton = () => {
             var correct = false;
@@ -47,7 +55,7 @@ class NavigationBar extends Component {
                         <Link to="/" style={{ textDecoration: 'none' }}><h1>Chat app</h1></Link>
                     </div>
                     <div className="middle-part">
-                        <input value={this.state.searchedValue} onChange={(e) => this.settingInput("searchedValue", e)} />
+                        <input value={this.state.searchedValue} onFocus={()=>this.firstSearchHandler()} onChange={(e) => this.settingInput("searchedValue", e)} />
                         <ConditionalLinkButton />
                     </div>
                     <div className="right-part">
@@ -73,7 +81,7 @@ class NavigationBar extends Component {
                         <h1 onClick={() => this.login()}>{this.props.loginOperation}</h1>
                         <h1 onClick={() => this.props.settingOpositeState("register")}>Register</h1>
                         <img alt="" src={this.props.logedImg} />
-                        <Link to={link} style={{ textDecoration: 'none' }}><h1> {this.props.logedAs}</h1>></Link>
+                        <Link to={link} style={{ textDecoration: 'none' }}><h1> {this.props.logedAs}</h1></Link>
                     </div>
                 </div>
             );

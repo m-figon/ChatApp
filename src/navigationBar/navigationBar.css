@@ -14,7 +14,7 @@
   color: #cef5ff;
 }
 .navigation-bar img {
-  filter: brightness(1.2) grayscale(40%);
+  filter: brightness(1.4) grayscale(40%);
   width: 5vh;
   height: 5vh;
 }
@@ -108,6 +108,8 @@
   background-color: #cef5ff;
   border-radius: 50%;
   border: 3px solid #02ccff;
+  filter: brightness(100%) grayscale(0%);
+  margin-right: 0.5vw;
 }
 @media screen and (max-width: 600px) {
   .right-part h1 {

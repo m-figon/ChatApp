@@ -44,10 +44,7 @@
     flex-direction: column;
     backdrop-filter: blur(3px);
     @include width-height(100%,100%);
-
 }
-
-
 #loginButton{
     margin-top: 5vh;
     @include width-height(4rem,2rem);
@@ -67,7 +64,7 @@
 }
 .tooltip{
     position: absolute;
-    background-color: $main-color;
+    background-color: $bright-color;
     margin:{
         top: -6vh;
         left: 12vw;
@@ -79,7 +76,7 @@
     height: 1.2rem;
     font-size: 1rem;
     border-radius: 6px;
-    color: $bright-color;
+    color: $main-color;
 }
 #hidden{
     display: none;

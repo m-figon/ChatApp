@@ -81,14 +81,13 @@
 .password2Tooltip,
 .selectImgId {
   position: absolute;
-  background-color: #007c9b;
+  background-color: #cef5ff;
   padding-left: 5px;
   padding-right: 5px;
   width: 4rem;
   height: 10vw;
   font-size: 1rem;
   border-radius: 6px;
-  color: #cef5ff;
 }
 .emailTooltip h1,
 .accountTooltip h1,
@@ -96,6 +95,7 @@
 .password2Tooltip h1,
 .selectImgId h1 {
   font-size: 0.7rem;
+  color: #007c9b;
 }
 @media screen and (max-width: 1100px) {
   .emailTooltip h1,
