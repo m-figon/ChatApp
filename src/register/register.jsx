@@ -110,7 +110,9 @@ class Register extends Component {
             <div class="register">
                 <div class="register-form">
                     <div class="for-blur">
-                        <button id="X2Button" onClick={() => this.props.settingOpositeState("register")}>X</button>
+                        <div className="cancel-register-button">
+                            <button id="X2Button" onClick={() => this.props.settingOpositeState("register")}>X</button>
+                        </div>
                         <h1>Email</h1><input id={this.state.emailId} value={this.state.emailValue} onChange={(e) => this.onInputChange("emailValue", e)} /><div id={this.state.tooltipEmailId} class="emailTooltip"><h1>Invalid email address</h1></div>
                         <h1>Login</h1><input id={this.state.accountId} value={this.state.loginValue} onChange={(e) => this.onInputChange("accountValue", e)} /><div id={this.state.tooltipAccountId} class="accountTooltip"><h1>Account name should be a letter,digit between 4-10 letters</h1></div>
                         <h1>Password</h1><input id={this.state.passwordId} value={this.state.passwordValue} onChange={(e) => this.onInputChange("passwordValue", e)} /><div id={this.state.tooltipPasswordId} class="passwordTooltip"><h1>Password must contain one uppercase, one lowercase letter,number,special sig, have from 18 to 13 letters length</h1></div>

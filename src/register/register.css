@@ -11,7 +11,7 @@
   z-index: 5;
   border: 4px solid #333333;
   width: 43vw;
-  height: 65vh;
+  height: 70vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -22,6 +22,7 @@
   font-size: 1.5rem;
   border: 3px solid #333333;
   background-color: #cef5ff;
+  z-index: 7;
 }
 .register-form h1 {
   font-size: 1.5rem;
@@ -45,12 +46,12 @@
 }
 @media screen and (max-height: 900px) {
   .register-form {
-    height: 80vh;
+    height: 85vh;
   }
 }
 @media screen and (max-height: 700px) {
   .register-form {
-    height: 85vh;
+    height: 90vh;
   }
 }
 
@@ -62,6 +63,7 @@
   border-radius: 8px;
   border: 2px solid #333333;
   color: #333333;
+  z-index: 7;
 }
 #registerButton:hover {
   cursor: pointer;
@@ -88,6 +90,7 @@
   height: 10vw;
   font-size: 1rem;
   border-radius: 6px;
+  z-index: 7;
 }
 .emailTooltip h1,
 .accountTooltip h1,
@@ -165,44 +168,6 @@
   border-radius: 8px;
   border: 2px solid #333333;
   color: #333333;
-  position: absolute;
-  margin-left: 15vw;
-  margin-top: -30vh;
-}
-@media screen and (max-width: 1200px) {
-  #X2Button {
-    margin-left: 17vw;
-  }
-}
-@media screen and (max-width: 900px) {
-  #X2Button {
-    margin-left: 20vw;
-  }
-}
-@media screen and (max-width: 700px) {
-  #X2Button {
-    margin-left: 23vw;
-  }
-}
-@media screen and (max-width: 500px) {
-  #X2Button {
-    margin-left: 25vw;
-  }
-}
-@media screen and (max-width: 400px) {
-  #X2Button {
-    margin-left: 22vw;
-  }
-}
-@media screen and (max-height: 800px) {
-  #X2Button {
-    margin-top: -35vh;
-  }
-}
-@media screen and (max-height: 700px) {
-  #X2Button {
-    margin-top: -40vh;
-  }
 }
 #X2Button:hover {
   cursor: pointer;
@@ -220,6 +185,7 @@
   background-color: #cef5ff;
   border: 3px solid #02ccff;
   filter: opacity(100%);
+  z-index: 7;
 }
 .flex img:hover {
   width: 9vh;
@@ -229,6 +195,18 @@
 
 #selected {
   border: 4px solid lime;
+}
+
+.cancel-register-button {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+  position: absolute;
+  margin-left: -5%;
+  margin-top: 5%;
+  width: 100%;
+  height: 100%;
+  z-index: 6;
 }
 
 /*# sourceMappingURL=register.css.map */

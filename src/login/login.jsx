@@ -28,7 +28,7 @@ class Login extends Component {
     }
     validateData() {
         var loginFlag = false;
-        for(const element of this.state.accounts){
+        for (const element of this.state.accounts) {
             if (element.account === this.state.loginValue && element.password === this.state.passwordValue) {
                 loginFlag = true;
                 this.props.settingState("logedAs", this.state.loginValue, "loginOperation", " Sign out", "logedImg", element.img);
@@ -48,7 +48,9 @@ class Login extends Component {
             <div class="login">
                 <div class="login-form">
                     <div class="for-blur">
-                        <button id="X1Button" onClick={() => this.props.settingOpositeState("login")}>X</button>
+                        <div className="cancel-button">
+                            <button id="X1Button" onClick={() => this.props.settingOpositeState("login")}>X</button>
+                        </div>
                         <h1>Login</h1><input id={this.state.loginId} value={this.state.loginValue} onChange={(e) => this.onInputChange("loginValue", e)} /><div id={this.state.tooltipId} class="tooltip">Invalid account</div>
                         <h1>Password</h1><input id={this.state.passwordId} value={this.state.passwordValue} onChange={(e) => this.onInputChange("passwordValue", e)} />
                         <button onClick={() => this.validateData()} id="loginButton">Login</button>
