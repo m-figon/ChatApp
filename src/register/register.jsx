@@ -113,12 +113,12 @@ class Register extends Component {
                         <div className="cancel-register-button">
                             <button id="X2Button" onClick={() => this.props.settingOpositeState("register")}>X</button>
                         </div>
-                        <h1>Email</h1><input id={this.state.emailId} value={this.state.emailValue} onChange={(e) => this.onInputChange("emailValue", e)} /><div id={this.state.tooltipEmailId} class="emailTooltip"><h1>Invalid email address</h1></div>
-                        <h1>Login</h1><input id={this.state.accountId} value={this.state.loginValue} onChange={(e) => this.onInputChange("accountValue", e)} /><div id={this.state.tooltipAccountId} class="accountTooltip"><h1>Account name should be a letter,digit between 4-10 letters</h1></div>
-                        <h1>Password</h1><input id={this.state.passwordId} value={this.state.passwordValue} onChange={(e) => this.onInputChange("passwordValue", e)} /><div id={this.state.tooltipPasswordId} class="passwordTooltip"><h1>Password must contain one uppercase, one lowercase letter,number,special sig, have from 18 to 13 letters length</h1></div>
-                        <h1>Confirm password</h1><input id={this.state.password2Id} value={this.state.password2Value} onChange={(e) => this.onInputChange("password2Value", e)} /><div id={this.state.tooltipPassword2Id} class="password2Tooltip"><h1>Passwords doesn't match or confirm password is empty</h1></div>
+                        <h1>Email</h1><input id={this.state.emailId} value={this.state.emailValue} onChange={(e) => this.onInputChange("emailValue", e)} />
+                        <h1>Login</h1><input id={this.state.accountId} value={this.state.loginValue} onChange={(e) => this.onInputChange("accountValue", e)} />
+                        <h1>Password</h1><input id={this.state.passwordId} value={this.state.passwordValue} onChange={(e) => this.onInputChange("passwordValue", e)}/>
+                        <h1>Confirm password</h1><input id={this.state.password2Id} value={this.state.password2Value} onChange={(e) => this.onInputChange("password2Value", e)}/>
                         <h1>Choose avatar</h1>
-                        <div id={this.state.tooltipSelectImgId} class="selectImgId"><h1>Please choose avatar</h1></div>
+                        
 
                         <div class="flex">
                             <img alt="" id={this.state.img1Id} onClick={(e) => this.settingImg("imgValue", e, "img1Id")} src="https://robohash.org/77set=set7" />
@@ -126,6 +126,13 @@ class Register extends Component {
                             <img alt="" id={this.state.img3Id} onClick={(e) => this.settingImg("imgValue", e, "img3Id")} src="https://robohash.org/77set=set20" />
                         </div>
                         <button onClick={() => this.validateData()} id="registerButton">Register</button>
+                        <div class="register-tootlips">
+                        <div id={this.state.tooltipEmailId} class="emailTooltip"><h1>Invalid email address</h1></div>
+                        <div id={this.state.tooltipAccountId} class="accountTooltip"><h1>Account name should be a letter,digit between 4-10 letters</h1></div>
+                        <div id={this.state.tooltipPasswordId} class="passwordTooltip"><h1>Password must contain one uppercase, one lowercase letter,number,special sig, have from 18 to 13 letters length</h1></div>
+                        <div id={this.state.tooltipPassword2Id} class="password2Tooltip"><h1>Passwords doesn't match or confirm password is empty</h1></div>
+                        <div id={this.state.tooltipSelectImgId} class="selectImgId"><h1>Please choose avatar</h1></div>
+                        </div>
                     </div>
                 </div>
             </div>
