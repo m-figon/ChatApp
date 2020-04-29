@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import './channelDisplay.css';
 import ReactEmoji from 'react-emoji';
 import TimeDisplay from './timeDisplay/timeDisplay.jsx';
+import { Link } from 'react-router-dom';
 class ChannelDisplay extends Component {
     constructor() {
         super();
@@ -72,7 +73,7 @@ class ChannelDisplay extends Component {
             return (emojis);
         }
         var messages;
-        function displayPosts(propsName, name, array, accountsArray) {
+        function displayPosts(propsName, name, array, accountsArray,setingStateHandler) {
             if (propsName === name) {
                 messages = array.map((element) => {
                     var imgSrc;
@@ -86,7 +87,9 @@ class ChannelDisplay extends Component {
                             <hr />
                             <div className="post">
                                 <img id="post-img" alt="" src={imgSrc} />
-                                <h1 id="author">{element.author}</h1>
+                                <Link onClick={()=>setingStateHandler("accountInspect",element.author)}key={element.id} to={{
+                                    pathname: "info/"+element.author,
+                                }} style={{ textDecoration: 'none' }}><h1 id="author">{element.author}</h1></Link>
                                 <TimeDisplay date={element.date} />
                             </div>
                             <div className="post">
@@ -99,7 +102,7 @@ class ChannelDisplay extends Component {
             }
         }
         for (const item of this.state.channelArray) {
-            displayPosts(this.props.name, item, eval("this.state." + item), this.props.accounts);
+            displayPosts(this.props.name, item, eval("this.state." + item), this.props.accounts,this.props.settingState);
         }
         return (
             <div className="channel-display">

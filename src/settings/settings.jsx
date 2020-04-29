@@ -13,21 +13,6 @@ class Settings extends Component {
             txt3Id: ""
         }
     }
-    /*
-    updateJSON(){
-        fetch('http://localhost:3000/FootballMadness/1', {
-        method: 'PUT',
-        body: JSON.stringify({
-          author: "testAuthor",
-          date: "2018-01-19T14:25:43.511Z",
-          content: "PUT test",
-        }),
-        headers: {
-          "Content-type": "application/json; charset=UTF-8"
-        }
-      })
-    }
-    */
     settingState(array, value, array2, value2) {
         this.setState({
             txt1Id: "",

@@ -7,6 +7,7 @@ import ChannelDisplay from './channelDisplay/channelDisplay.jsx';
 import Login from './login/login.jsx';
 import Register from './register/register.jsx';
 import Settings from './settings/settings.jsx';
+import Info from './info/info.jsx';
 class App extends Component {
   constructor() {
     super();
@@ -17,6 +18,7 @@ class App extends Component {
       register: false,
       logedAs: "",
       logedImg: "",
+      accountInspect: "",
       loginOperation: "Sign in"
     }
     this.addComment = this.addComment.bind(this);
@@ -73,9 +75,17 @@ class App extends Component {
       channels: this.state.channels, logedImg: this.state.logedImg, settingState: this.settingState, loginOperation: this.state.loginOperation, logedAs: this.state.logedAs, settingOpositeState: this.settingOpositeState
     };
     const channelProps = {
-      logedAs: this.state.logedAs, comment: this.addComment, GamingArmy: this.state.GamingArmy, ElMusico: this.state.ElMusico,
+      settingState: this.settingState,logedAs: this.state.logedAs, comment: this.addComment, GamingArmy: this.state.GamingArmy, ElMusico: this.state.ElMusico,
       WeLoveCooking: this.state.WeLoveCooking, Fitnez: this.state.Fitnez, WhyNotGardening: this.state.WhyNotGardening, FootballMadness: this.state.FootballMadness, accounts: this.state.accounts
     };
+   const InfoComponent = (props) => {
+      return (
+        <>
+          <NavigationBar {...navigationProps} />
+          <Info accountInspect={this.state.accountInspect} accounts={this.state.accounts}/>
+        </>
+      );
+    }
     const HomeComponent = () => {
       if (!this.state.login && !this.state.register) {
         return (
@@ -179,6 +189,7 @@ class App extends Component {
         <Route exact path="/" component={HomeComponent} />
         <Route exact path="/:channel" component={ChannelComponent} />
         <Route exact path="/:account/settings" component={SettingsComponent} />
+        <Route exact path="/info/:account" component={InfoComponent} />
       </>
     );
   }
