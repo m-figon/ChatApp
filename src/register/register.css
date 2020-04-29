@@ -160,7 +160,7 @@
 }
 
 #visible {
-  display: block;
+  display: flex;
 }
 
 #X2Button {
