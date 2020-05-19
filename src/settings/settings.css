@@ -10,7 +10,7 @@
 }
 .home-display h2,
 .home-display h1 {
-  color: #cef5ff;
+  color: #e4f3fe;
   z-index: 3;
 }
 .home-display h2 {
@@ -56,7 +56,7 @@
 }
 
 .options-div {
-  background-color: #006882;
+  background-color: #035493;
   z-index: 3;
   display: grid;
   grid-template-areas: "left middle right";
@@ -93,7 +93,7 @@
 }
 
 .content-div {
-  background-color: #007c9b;
+  background-color: #0462ac;
   z-index: 3;
   width: 40vw;
   height: 65vh;
@@ -109,7 +109,7 @@
 .content-div input {
   font-size: 1rem;
   border: 2px solid #1b1b1b;
-  background-color: #cef5ff;
+  background-color: #e4f3fe;
 }
 
 .flex-imgs {
@@ -125,8 +125,8 @@
   border-radius: 50%;
   width: 8vh;
   height: 8vh;
-  background-color: #cef5ff;
-  border: 3px solid #02ccff;
+  background-color: #e4f3fe;
+  border: 3px solid #1c98fa;
   filter: opacity(100%);
 }
 .flex-imgs img:hover {
@@ -140,10 +140,10 @@
   margin-top: 5vh;
   width: 4rem;
   height: 2rem;
-  background-color: #cef5ff;
+  background-color: #e4f3fe;
   border-radius: 8px;
   border: 2px solid black;
-  color: #007c9b;
+  color: #0462ac;
 }
 #password-button:hover,
 #img-button:hover {

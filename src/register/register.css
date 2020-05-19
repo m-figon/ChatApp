@@ -9,24 +9,25 @@
 .register-form {
   position: absolute;
   z-index: 5;
-  border: 4px solid #333333;
   width: 43vw;
   height: 70vh;
+  background-color: #00000060;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background-color: #007c9b;
+  border-radius: 20px;
 }
 .register-form input {
   font-size: 1.5rem;
-  border: 3px solid #333333;
-  background-color: #cef5ff;
+  border: 1px solid #25252573;
+  background-color: #e4f3fe;
+  border-radius: 5px;
   z-index: 7;
 }
 .register-form h1 {
   font-size: 1.5rem;
-  color: #cef5ff;
+  color: #e4f3fe;
 }
 @media screen and (max-width: 1100px) {
   .register-form input {
@@ -59,7 +60,7 @@
   margin-top: 5vh;
   width: 4rem;
   height: 2rem;
-  background-color: #cef5ff;
+  background-color: #e4f3fe;
   border-radius: 8px;
   border: 2px solid #333333;
   color: #333333;
@@ -83,7 +84,7 @@
 .password2Tooltip,
 .selectImgId {
   position: absolute;
-  background-color: #cef5ff;
+  background-color: #e4f3fe;
   padding-left: 5px;
   padding-right: 5px;
   width: 4rem;
@@ -91,7 +92,7 @@
   font-size: 1rem;
   border-radius: 6px;
   z-index: 7;
-  border: 2px solid black;
+  border: 1px solid #25252573;
 }
 .emailTooltip h1,
 .accountTooltip h1,
@@ -99,7 +100,7 @@
 .password2Tooltip h1,
 .selectImgId h1 {
   font-size: 0.7rem;
-  color: #007c9b;
+  color: #0462ac;
 }
 @media screen and (max-width: 1100px) {
   .emailTooltip h1,
@@ -185,9 +186,9 @@
 }
 
 #X2Button {
-  background-color: #cef5ff;
+  background-color: #e4f3fe;
   border-radius: 8px;
-  border: 2px solid #333333;
+  border: 1px solid #25252573;
   color: #333333;
 }
 #X2Button:hover {
@@ -203,8 +204,8 @@
   border-radius: 50%;
   width: 8vh;
   height: 8vh;
-  background-color: #cef5ff;
-  border: 3px solid #02ccff;
+  background-color: #e4f3fe;
+  border: 3px solid #1c98fa;
   filter: opacity(100%);
   z-index: 7;
 }

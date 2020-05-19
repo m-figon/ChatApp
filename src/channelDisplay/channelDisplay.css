@@ -1,6 +1,10 @@
 .channel-display {
   position: absolute;
-  background-color: #cef5ff;
+  background: url("../bg.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: 100% 100%;
   width: 100vw;
   height: 100vh;
   display: flex;
@@ -9,14 +13,14 @@
 }
 
 .channel {
-  background-color: #007c9b;
+  background-color: #0463ac81;
   width: 50vw;
   height: 85vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   overflow: scroll;
-  border: 4px solid #333333;
+  border: 1.5px solid #25252573;
 }
 @media screen and (max-width: 1300px) {
   .channel {
@@ -27,7 +31,7 @@
 
 #author,
 #nick-name {
-  color: #02ccff;
+  color: #1c98fa;
 }
 
 .post img {
@@ -37,14 +41,14 @@
 }
 
 #post-img {
-  background-color: #cef5ff;
+  background-color: #e4f3fe;
   filter: opacity(100%);
   border-radius: 50%;
-  border: 3px solid #02ccff;
+  border: 3px solid #1c98fa;
 }
 
 hr {
-  border: 1px solid #cef5ff;
+  border: 1px solid #e4f3fe;
   width: 98%;
   height: 1px;
 }
@@ -55,12 +59,12 @@ hr {
   justify-content: flex-start;
 }
 .post h1 {
-  color: #cef5ff;
+  color: #e4f3fe;
   font-size: 1rem;
 }
 
 #time {
-  color: #cef5ff;
+  color: #e4f3fe;
   font-size: 0.7rem;
 }
 
@@ -74,7 +78,7 @@ hr {
   width: 80%;
   height: 1rem;
   margin-top: 1.4%;
-  background-color: #cef5ff;
+  background-color: #e4f3fe;
   border: 2px solid #333333;
 }
 .input-container button {
@@ -82,11 +86,11 @@ hr {
   width: 2vw;
   height: 1.5rem;
   border: 2px solid #333333;
-  background-color: #cef5ff;
+  background-color: #e4f3fe;
 }
 .input-container h1 {
   margin-right: 0rem;
-  color: #cef5ff;
+  color: #e4f3fe;
   font-size: 1rem;
 }
 .input-container img {
@@ -133,7 +137,7 @@ hr {
   width: 20vw;
   height: 4vh;
   border-radius: 1rem;
-  background-color: #cef5ff;
+  background-color: #e4f3fe;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -166,12 +170,12 @@ hr {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #02ccff;
+  background: #1c98fa;
   border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #02ccff;
+  background: #1c98fa;
 }
 
 /*# sourceMappingURL=channelDisplay.css.map */

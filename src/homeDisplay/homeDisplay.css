@@ -2,11 +2,15 @@
   position: absolute;
   width: 100vw;
   height: 100vh;
-  background-color: #cef5ff;
+  background: url("../bg.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: 100% 100%;
 }
 .home-display h2,
 .home-display h1 {
-  color: #cef5ff;
+  color: #e4f3fe;
 }
 .home-display h2 {
   font-size: 2rem;
@@ -48,14 +52,14 @@
 }
 
 .sign-div {
-  background-color: #007c9b;
+  background-color: #0463ac81;
   width: 30vw;
   height: 60vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   overflow: scroll;
-  border: 4px solid #333333;
+  border: 1.5px solid #25252573;
 }
 
 /*# sourceMappingURL=homeDisplay.css.map */

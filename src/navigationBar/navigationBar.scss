@@ -3,9 +3,9 @@
     @include width-height(100vw, 5vh);
     position: fixed;
     z-index: 3;
-    background-color: $main-color;
+    background-color: $alpha-color;
     display: grid;
-    border: 3px solid $black-color;
+    border-bottom: 1.5px solid #25252573;
     grid-template-areas: "none left middle middle right right";
     h1 {
         font-size: 2rem;
@@ -63,13 +63,13 @@
     input {
         width: 60%;
         height: 2vh;
-        border: 2px solid $black-color;
+        border: 1px solid $black-color;
         background-color: $bright-color;
     }
     button {
         width: 2vw;
         height: 2.6vh;
-        border: 2px solid $black-color;
+        border: 1px solid $black-color;
         background-color: $bright-color;
     }
     img {
@@ -103,7 +103,7 @@
         height: 4vh;
         background-color: $bright-color;
         border-radius: 50%;
-        border: 3px solid darken($bright-color,40%);
+        border: 1.5px solid darken($bright-color,40%);
         filter: brightness(100%) grayscale(0%);
         margin-right: 0.5vw;
     }

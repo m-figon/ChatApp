@@ -3,15 +3,15 @@
   height: 5vh;
   position: fixed;
   z-index: 3;
-  background-color: #007c9b;
+  background-color: #0463ac81;
   display: grid;
-  border: 3px solid #333333;
+  border-bottom: 1.5px solid #25252573;
   grid-template-areas: "none left middle middle right right";
 }
 .navigation-bar h1 {
   font-size: 2rem;
   margin-top: 5px;
-  color: #cef5ff;
+  color: #e4f3fe;
 }
 .navigation-bar img {
   filter: brightness(1.4) grayscale(40%);
@@ -69,14 +69,14 @@
 .middle-part input {
   width: 60%;
   height: 2vh;
-  border: 2px solid #333333;
-  background-color: #cef5ff;
+  border: 1px solid #333333;
+  background-color: #e4f3fe;
 }
 .middle-part button {
   width: 2vw;
   height: 2.6vh;
-  border: 2px solid #333333;
-  background-color: #cef5ff;
+  border: 1px solid #333333;
+  background-color: #e4f3fe;
 }
 .middle-part img {
   filter: opacity(40%);
@@ -108,9 +108,9 @@
   margin-top: -2vh;
   width: 4vh;
   height: 4vh;
-  background-color: #cef5ff;
+  background-color: #e4f3fe;
   border-radius: 50%;
-  border: 3px solid #02ccff;
+  border: 1.5px solid #1c98fa;
   filter: brightness(100%) grayscale(0%);
   margin-right: 0.5vw;
 }
