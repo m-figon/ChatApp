@@ -52,7 +52,6 @@
     flex-direction: column;
 }
 .options-div {
-    background-color: darken($main-color, 5%);
     z-index: 3;
     display: grid;
     grid-template-areas: "left middle right";
@@ -67,21 +66,22 @@
 }
 .left {
     grid-area: left;
-    border-bottom: 0.1vw solid #1b1b1b;
+    border-bottom: 1.5px solid #25252573;
     @include flex-box();
 }
 .middle {
     grid-area: middle;
-    border-bottom: 0.1vw solid #1b1b1b;
+    border-bottom: 1.5px solid #25252573;
     @include flex-box();
 }
 .right {
     grid-area: right;
-    border-bottom: 0.1vw solid #1b1b1b;
+    border-bottom: 1.5px solid #25252573;
     @include flex-box();
 }
 .content-div {
-    background-color: $main-color;
+    border-radius: 10px;
+    background-color: $alpha-color;
     z-index: 3;
     @include width-height(40vw, 65vh);
     display: flex;
@@ -91,11 +91,12 @@
         height: 10vh;
         width: 10vh;
     }
-    border: 0.2vw solid #1b1b1b;
+    border: 1.5px solid #25252573;
     input {
         font-size: 1rem;
-        border: 2px solid #1b1b1b;
+        border: 1px solid #25252573;
         background-color: $bright-color;
+        border-radius: 5px;
     }
 }
 .flex-imgs {
@@ -108,9 +109,10 @@
         border-radius: 50%;
         width: 8vh;
         height: 8vh;
-        background-color: $bright-color;
-        border: 3px solid darken($bright-color, 40%);
+        background-color: #ffffff1e;
         filter: opacity(100%);
+        border-radius: 50%;
+        border: 2px solid darken($main-color, 10%);
         &:hover {
             width: 9vh;
             height: 9vh;
@@ -122,9 +124,9 @@
 #img-button {
     margin-top: 5vh;
     @include width-height(4rem, 2rem);
+    border: 1px solid #25252573;
     background-color: $bright-color;
-    border-radius: 8px;
-    border: 2px solid black;
+    border-radius: 5px;
     color: $main-color;
     &:hover {
         cursor: pointer;

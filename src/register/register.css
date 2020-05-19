@@ -204,9 +204,10 @@
   border-radius: 50%;
   width: 8vh;
   height: 8vh;
-  background-color: #e4f3fe;
-  border: 3px solid #1c98fa;
+  background-color: #ffffff1e;
   filter: opacity(100%);
+  border-radius: 50%;
+  border: 2px solid #03467a;
   z-index: 7;
 }
 .flex img:hover {

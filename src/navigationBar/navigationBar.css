@@ -67,16 +67,18 @@
   margin-top: -1vh;
 }
 .middle-part input {
+  padding-left: 2%;
   width: 60%;
-  height: 2vh;
-  border: 1px solid #333333;
-  background-color: #e4f3fe;
+  height: 2.2vh;
+  border: 0 solid #333333;
+  background-color: #00000059;
+  color: white;
 }
 .middle-part button {
   width: 2vw;
-  height: 2.6vh;
-  border: 1px solid #333333;
-  background-color: #e4f3fe;
+  height: 2.4vh;
+  border: 0 solid #333333;
+  background-color: #00000059;
 }
 .middle-part img {
   filter: opacity(40%);
@@ -108,10 +110,10 @@
   margin-top: -2vh;
   width: 4vh;
   height: 4vh;
-  background-color: #e4f3fe;
+  background-color: #ffffff1e;
+  filter: opacity(100%);
   border-radius: 50%;
-  border: 1.5px solid #1c98fa;
-  filter: brightness(100%) grayscale(0%);
+  border: 2px solid #03467a;
   margin-right: 0.5vw;
 }
 @media screen and (max-width: 600px) {

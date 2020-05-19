@@ -9,7 +9,7 @@
 }
 .register {
     @include flex-box();
-    @include width-height(100wh,100vh);
+    @include width-height(100wh, 100vh);
 }
 .register-form {
     position: absolute;
@@ -24,15 +24,15 @@
         border: 1px solid #25252573;
         background-color: $bright-color;
         border-radius: 5px;
-        z-index:7;
+        z-index: 7;
     }
     h1 {
         font-size: 1.5rem;
         color: $bright-color;
     }
     @media screen and (max-width: 1100px) {
-        input{
-            width:65%;
+        input {
+            width: 65%;
         }
     }
     @media screen and (max-width: 800px) {
@@ -40,8 +40,8 @@
         h1 {
             font-size: 1.3rem;
         }
-        input{
-            width:80%;
+        input {
+            width: 80%;
         }
     }
     @media screen and (max-height: 900px) {
@@ -51,18 +51,18 @@
         height: 90vh;
     }
 }
-   
+
 #registerButton {
     margin-top: 5vh;
     @include width-height(4rem, 2rem);
     background-color: $bright-color;
     border-radius: 8px;
-    border: 2px solid $black-color;
+    border: 1px solid #25252573;
     color: $black-color;
     &:hover {
         cursor: pointer;
     }
-    z-index:7;
+    z-index: 7;
 }
 #correct {
     border: 2px solid rgb(0, 255, 0);
@@ -77,23 +77,28 @@
 .selectImgId {
     position: absolute;
     background-color: $bright-color;
-    padding:{
+    padding: {
         left: 5px;
         right: 5px;
-    }   
+    }
     @include width-height(4rem, 10vw);
     font-size: 1rem;
     border-radius: 6px;
-    h1{font-size: 0.7rem;
+    h1 {
+        font-size: 0.7rem;
         color: $main-color;
     }
     @media screen and (max-width: 1100px) {
-        h1{font-size: 0.5rem;}
+        h1 {
+            font-size: 0.5rem;
+        }
     }
     @media screen and (max-height: 1100px) {
-        h1{font-size: 0.5rem;}
+        h1 {
+            font-size: 0.5rem;
+        }
     }
-    z-index:7;
+    z-index: 7;
     border: 1px solid #25252573;
 }
 .for-blur {
@@ -103,21 +108,21 @@
     @include width-height(100%, 100%);
 }
 .emailTooltip {
-    @include margins-size(0,-20vh,10vw,3vh);
+    @include margins-size(0, -20vh, 10vw, 3vh);
 }
 .accountTooltip {
-    @include margins-size(0,-8vh,10vw, 6vh);
+    @include margins-size(0, -8vh, 10vw, 6vh);
 }
 .passwordTooltip {
-    @include margins-size(0,3vh,10vw, 9.5vh);
+    @include margins-size(0, 3vh, 10vw, 9.5vh);
 }
 .password2Tooltip {
-    @include margins-size(0,11vh,10vw, 5vh);
+    @include margins-size(0, 11vh, 10vw, 5vh);
 }
 .selectImgId {
-    @include margins-size(0,16vh,10vw, 3vh);
+    @include margins-size(0, 16vh, 10vw, 3vh);
 }
-.register-tootlips{
+.register-tootlips {
     width: 100%;
     height: 100%;
     position: absolute;
@@ -140,37 +145,37 @@
         cursor: pointer;
     }
 }
-.flex{
+.flex {
     display: flex;
-    img{
+    img {
         margin-left: 1vw;
         margin-right: 1vw;
         border-radius: 50%;
         width: 8vh;
         height: 8vh;
-        background-color: $bright-color;
-        border: 3px solid darken($bright-color,40%);
+        background-color: #ffffff1e;
         filter: opacity(100%);
-        &:hover{
+        border-radius: 50%;
+        border: 2px solid darken($main-color, 10%);
+        &:hover {
             width: 9vh;
             height: 9vh;
             cursor: pointer;
         }
-        z-index:7;
-
+        z-index: 7;
     }
 }
-#selected{
+#selected {
     border: 4px solid rgb(0, 255, 0);
 }
-.cancel-register-button{
+.cancel-register-button {
     display: flex;
     justify-content: flex-end;
-    align-items: flex-start;    
+    align-items: flex-start;
     position: absolute;
     margin-left: -5%;
     margin-top: 5%;
-    width:100%;
-    height:100%;
-    z-index:6;
+    width: 100%;
+    height: 100%;
+    z-index: 6;
 }

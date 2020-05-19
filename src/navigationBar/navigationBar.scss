@@ -61,16 +61,18 @@
     @include flex-box();
     margin-top: -1vh;
     input {
+        padding-left: 2%;
         width: 60%;
-        height: 2vh;
-        border: 1px solid $black-color;
-        background-color: $bright-color;
+        height: 2.2vh;
+        border: 0 solid $black-color;
+        background-color: #00000059;
+        color: white;
     }
     button {
         width: 2vw;
-        height: 2.6vh;
-        border: 1px solid $black-color;
-        background-color: $bright-color;
+        height: 2.4vh;
+        border: 0 solid $black-color;
+        background-color: #00000059;
     }
     img {
         filter: opacity(40%);
@@ -101,10 +103,10 @@
         margin-top: -2vh;
         width: 4vh;
         height: 4vh;
-        background-color: $bright-color;
+        background-color: #ffffff1e;
+        filter: opacity(100%);
         border-radius: 50%;
-        border: 1.5px solid darken($bright-color,40%);
-        filter: brightness(100%) grayscale(0%);
+        border: 2px solid darken($main-color, 10%);
         margin-right: 0.5vw;
     }
     @media screen and (max-width: 600px) {
