@@ -17,7 +17,6 @@
         text-shadow: 0 0 10px #fff, 0 0 20px #00b4e6;
     }
     img {
-        filter: brightness(1.4) grayscale(40%);
         @include width-height(5vh, 5vh);
     }
     @media screen and (max-width: 600px) {
@@ -29,10 +28,10 @@
 }
 @keyframes glow {
     from {
-      text-shadow: 0 0 5px #fff, 0 0 10px #00b4e6;
+      text-shadow: 0 0 4px #fff, 0 0 8px #00b4e6;
     }
     to {
-        text-shadow: 0 0 5px rgba(255, 255, 255, 0.801), 0 0 10px #019dc9c7;
+        text-shadow: 0 0 4px rgba(255, 255, 255, 0.801), 0 0 8px #019dc9c7;
     }
   }
 .left-part {

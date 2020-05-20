@@ -18,7 +18,7 @@
     background-color: #00000060;
     @include flex-box();
     flex-direction: column;
-    border-radius: 20px;
+    border-radius: 10px;
     input {
         font-size: 1.5rem;
         border: 1px solid #25252573;
@@ -65,7 +65,7 @@
     border: 0 solid #25252573;
     &:hover {
         cursor: pointer;
-        box-shadow: 0 0 15px -1px rgb(0, 180, 230);
+        background-color: #ffffff1e;
     }
     z-index: 7;
 }
@@ -148,7 +148,7 @@
     border: 0 solid #25252573;
     &:hover {
         cursor: pointer;
-        box-shadow: 0 0 15px -1px rgb(0, 180, 230);
+        background-color: #ffffff1e;
     }
 }
 .flex {
@@ -187,9 +187,9 @@
 }
 @keyframes glow {
     from {
-      text-shadow: 0 0 5px #fff, 0 0 10px #00b4e6;
+      text-shadow: 0 0 4px #fff, 0 0 8px #00b4e6;
     }
     to {
-        text-shadow: 0 0 5px rgba(255, 255, 255, 0.801), 0 0 10px #019dc9c7;
+        text-shadow: 0 0 4px rgba(255, 255, 255, 0.801), 0 0 8px #019dc9c7;
     }
   }

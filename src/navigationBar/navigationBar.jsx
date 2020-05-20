@@ -22,6 +22,20 @@ class NavigationBar extends Component {
             [array]: e.target.value
         })
     }
+    focus(){
+        if(this.state.searchedValue==="Search for channel name"){
+            this.setState({
+                searchedValue: "",
+            })
+        }
+    }
+    blur(){
+        if(this.state.searchedValue==="" || this.state.searchedValue===" "){
+            this.setState({
+                searchedValue: "Search for channel name",
+            })
+        }
+    }
     firstSearchHandler(){
         if(this.state.firstSearch){
             this.setState({
@@ -55,7 +69,7 @@ class NavigationBar extends Component {
                         <Link to="/" style={{ textDecoration: 'none' }}><h1>Chat app</h1></Link>
                     </div>
                     <div className="middle-part">
-                        <input value={this.state.searchedValue} onFocus={()=>this.firstSearchHandler()} onChange={(e) => this.settingInput("searchedValue", e)} />
+                        <input value={this.state.searchedValue} onFocus={()=>this.focus()} onBlur={()=>this.blur()} onChange={(e) => this.settingInput("searchedValue", e)} />
                         <ConditionalLinkButton />
                     </div>
                     <div className="right-part">

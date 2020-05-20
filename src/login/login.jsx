@@ -52,7 +52,7 @@ class Login extends Component {
                             <button id="X1Button" onClick={() => this.props.settingOpositeState("login")}>X</button>
                         </div>
                         <h1>Login</h1><input id={this.state.loginId} value={this.state.loginValue} onChange={(e) => this.onInputChange("loginValue", e)} />
-                        <h1>Password</h1><input id={this.state.passwordId} value={this.state.passwordValue} onChange={(e) => this.onInputChange("passwordValue", e)} />
+                        <h1>Password</h1><input id={this.state.passwordId} value={this.state.passwordValue} type="password" onChange={(e) => this.onInputChange("passwordValue", e)} />
                         <button onClick={() => this.validateData()} id="loginButton">Login</button>
                         <div className="div-position">
                             <div id={this.state.tooltipId} class="tooltip">Invalid account</div>
