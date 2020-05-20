@@ -29,6 +29,10 @@
     h1 {
         font-size: 1.5rem;
         color: $bright-color;
+        -webkit-animation: glow 3s ease-in-out infinite alternate;
+        -moz-animation: glow 3s ease-in-out infinite alternate;
+        animation: glow 3s ease-in-out infinite alternate;
+        text-shadow: 0 0 10px #fff, 0 0 20px #00b4e6;
     }
     @media screen and (max-width: 1100px) {
         input {
@@ -55,12 +59,13 @@
 #registerButton {
     margin-top: 5vh;
     @include width-height(4rem, 2rem);
-    background-color: $bright-color;
-    border-radius: 8px;
-    border: 1px solid #25252573;
-    color: $black-color;
+    background-color: $alpha-color;
+    border-radius: 5px;
+    color: $bright-color;
+    border: 0 solid #25252573;
     &:hover {
         cursor: pointer;
+        box-shadow: 0 0 15px -1px rgb(0, 180, 230);
     }
     z-index: 7;
 }
@@ -137,12 +142,13 @@
     display: flex;
 }
 #X2Button {
-    background-color: $bright-color;
-    border-radius: 8px;
-    border: 1px solid #25252573;
-    color: $black-color;
+    background-color: $alpha-color;
+    border-radius: 5px;
+    color: $bright-color;
+    border: 0 solid #25252573;
     &:hover {
         cursor: pointer;
+        box-shadow: 0 0 15px -1px rgb(0, 180, 230);
     }
 }
 .flex {
@@ -179,3 +185,11 @@
     height: 100%;
     z-index: 6;
 }
+@keyframes glow {
+    from {
+      text-shadow: 0 0 5px #fff, 0 0 10px #00b4e6;
+    }
+    to {
+        text-shadow: 0 0 5px rgba(255, 255, 255, 0.801), 0 0 10px #019dc9c7;
+    }
+  }

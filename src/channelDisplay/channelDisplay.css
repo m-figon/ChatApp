@@ -78,15 +78,19 @@ hr {
   width: 80%;
   height: 1rem;
   margin-top: 1.4%;
-  background-color: #e4f3fe;
-  border: 2px solid #333333;
+  border-radius: 5px;
+  background-color: #00000059;
+  color: white;
+  border: 1px solid #25252573;
 }
 .input-container button {
   margin-top: 0.8rem;
   width: 2vw;
   height: 1.5rem;
-  border: 2px solid #333333;
-  background-color: #e4f3fe;
+  border: 1px solid #25252573;
+  border-radius: 5px;
+  background-color: #00000059;
+  color: white;
 }
 .input-container h1 {
   margin-right: 0rem;
@@ -134,10 +138,12 @@ hr {
 
 .emojis {
   margin-left: 2vw;
+  border: 1px solid #25252573;
   width: 20vw;
   height: 4vh;
   border-radius: 1rem;
-  background-color: #e4f3fe;
+  background-color: #00000059;
+  color: white;
   display: flex;
   justify-content: center;
   align-items: center;

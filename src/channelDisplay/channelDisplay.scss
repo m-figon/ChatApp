@@ -33,7 +33,7 @@
     background-color: #ffffff1e;
     filter: opacity(100%);
     border-radius: 50%;
-    border:2px solid darken($main-color,10%);
+    border: 2px solid darken($main-color, 10%);
 }
 hr {
     border: 1px solid $bright-color;
@@ -65,14 +65,18 @@ hr {
         margin: {
             top: 1.4%;
         }
-        background-color: $bright-color;
-        border: 2px solid $black-color;
+        border-radius: 5px;
+        background-color: #00000059;
+        color: white;
+        border: 1px solid #25252573;
     }
     button {
         margin-top: 0.8rem;
         @include width-height(2vw, 1.5rem);
-        border: 2px solid $black-color;
-        background-color: $bright-color;
+        border: 1px solid #25252573;
+        border-radius: 5px;
+        background-color: #00000059;
+        color: white;
     }
 
     h1 {
@@ -112,9 +116,11 @@ hr {
 }
 .emojis {
     margin-left: 2vw;
+    border: 1px solid #25252573;
     @include width-height(20vw, 4vh);
     border-radius: 1rem;
-    background-color: $bright-color;
+    background-color: #00000059;
+    color: white;
     @include flex-box();
     img {
         @include width-height(2vw, 2vh);

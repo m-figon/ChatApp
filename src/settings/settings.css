@@ -142,14 +142,15 @@
   margin-top: 5vh;
   width: 4rem;
   height: 2rem;
-  border: 1px solid #25252573;
-  background-color: #e4f3fe;
+  background-color: #0463ac81;
   border-radius: 5px;
-  color: #0462ac;
+  color: #e4f3fe;
+  border: 0 solid #25252573;
 }
 #password-button:hover,
 #img-button:hover {
   cursor: pointer;
+  box-shadow: 0 0 15px -1px #00b4e6;
 }
 
 #chosen {

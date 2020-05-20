@@ -11,6 +11,10 @@
         font-size: 2rem;
         margin-top: 5px;
         color: $bright-color;
+        -webkit-animation: glow 3s ease-in-out infinite alternate;
+        -moz-animation: glow 3s ease-in-out infinite alternate;
+        animation: glow 3s ease-in-out infinite alternate;
+        text-shadow: 0 0 10px #fff, 0 0 20px #00b4e6;
     }
     img {
         filter: brightness(1.4) grayscale(40%);
@@ -21,10 +25,16 @@
             @include width-height(4vh, 4vh);
         }
         @include width-height(100vw, 4vh);
-
     }
 }
-
+@keyframes glow {
+    from {
+      text-shadow: 0 0 5px #fff, 0 0 10px #00b4e6;
+    }
+    to {
+        text-shadow: 0 0 5px rgba(255, 255, 255, 0.801), 0 0 10px #019dc9c7;
+    }
+  }
 .left-part {
     grid-area: left;
     display: flex;
@@ -54,7 +64,6 @@
             font-size: 1.3rem;
         }
     }
-    
 }
 .middle-part {
     grid-area: middle;

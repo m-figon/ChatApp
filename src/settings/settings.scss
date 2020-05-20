@@ -124,12 +124,13 @@
 #img-button {
     margin-top: 5vh;
     @include width-height(4rem, 2rem);
-    border: 1px solid #25252573;
-    background-color: $bright-color;
+    background-color: $alpha-color;
     border-radius: 5px;
-    color: $main-color;
+    color: $bright-color;
+    border: 0 solid #25252573;
     &:hover {
         cursor: pointer;
+        box-shadow: 0 0 15px -1px rgb(0, 180, 230);
     }
 }
 #chosen {
