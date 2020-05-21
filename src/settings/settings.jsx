@@ -35,7 +35,6 @@ class Settings extends Component {
                                 </div>
                                 <div className="middle">
                                     <h1 id={this.state.txt2Id} onClick={() => this.settingState("currentState", "password", "txt2Id", "chosen")}>Change password</h1>
-
                                 </div>
                                 <div className="right">
                                     <h1 id={this.state.txt3Id} onClick={() => this.settingState("currentState", "avatar", "txt3Id", "chosen")}>Change avatar</h1>

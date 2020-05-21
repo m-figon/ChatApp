@@ -12,10 +12,7 @@
   font-size: 2rem;
   margin-top: 5px;
   color: #e4f3fe;
-  -webkit-animation: glow 3s ease-in-out infinite alternate;
-  -moz-animation: glow 3s ease-in-out infinite alternate;
-  animation: glow 3s ease-in-out infinite alternate;
-  text-shadow: 0 0 10px #fff, 0 0 20px #00b4e6;
+  text-shadow: 0 0 5px #fff, 0 0 10px #00b4e6;
 }
 .navigation-bar img {
   width: 5vh;
@@ -32,14 +29,6 @@
   }
 }
 
-@keyframes glow {
-  from {
-    text-shadow: 0 0 4px #fff, 0 0 8px #00b4e6;
-  }
-  to {
-    text-shadow: 0 0 4px rgba(255, 255, 255, 0.801), 0 0 8px #019dc9c7;
-  }
-}
 .left-part {
   grid-area: left;
   display: flex;

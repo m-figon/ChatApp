@@ -29,10 +29,7 @@
     h1 {
         font-size: 1.5rem;
         color: $bright-color;
-        -webkit-animation: glow 3s ease-in-out infinite alternate;
-        -moz-animation: glow 3s ease-in-out infinite alternate;
-        animation: glow 3s ease-in-out infinite alternate;
-        text-shadow: 0 0 10px #fff, 0 0 20px #00b4e6;
+        text-shadow: 0 0 5px #fff, 0 0 10px #00b4e6;
     }
     @media screen and (max-width: 1100px) {
         input {
@@ -70,10 +67,10 @@
     z-index: 7;
 }
 #correct {
-    border: 2px solid rgb(0, 255, 0);
+    border: 1.5px solid rgb(0, 255, 0, 0.7);
 }
 #incorrect {
-    border: 2px solid rgb(255, 0, 0);
+    border: 1.5px solid rgba(255, 0, 0, 0.7);
 }
 .emailTooltip,
 .accountTooltip,
@@ -172,7 +169,7 @@
     }
 }
 #selected {
-    border: 4px solid rgb(0, 255, 0);
+    border: 1.5px solid rgb(0, 255, 0, 0.7);
 }
 .cancel-register-button {
     display: flex;
@@ -185,11 +182,3 @@
     height: 100%;
     z-index: 6;
 }
-@keyframes glow {
-    from {
-      text-shadow: 0 0 4px #fff, 0 0 8px #00b4e6;
-    }
-    to {
-        text-shadow: 0 0 4px rgba(255, 255, 255, 0.801), 0 0 8px #019dc9c7;
-    }
-  }

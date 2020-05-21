@@ -28,10 +28,7 @@
 .register-form h1 {
   font-size: 1.5rem;
   color: #e4f3fe;
-  -webkit-animation: glow 3s ease-in-out infinite alternate;
-  -moz-animation: glow 3s ease-in-out infinite alternate;
-  animation: glow 3s ease-in-out infinite alternate;
-  text-shadow: 0 0 10px #fff, 0 0 20px #00b4e6;
+  text-shadow: 0 0 5px #fff, 0 0 10px #00b4e6;
 }
 @media screen and (max-width: 1100px) {
   .register-form input {
@@ -76,11 +73,11 @@
 }
 
 #correct {
-  border: 2px solid lime;
+  border: 1.5px solid rgba(0, 255, 0, 0.7);
 }
 
 #incorrect {
-  border: 2px solid red;
+  border: 1.5px solid rgba(255, 0, 0, 0.7);
 }
 
 .emailTooltip,
@@ -223,7 +220,7 @@
 }
 
 #selected {
-  border: 4px solid lime;
+  border: 1.5px solid rgba(0, 255, 0, 0.7);
 }
 
 .cancel-register-button {
@@ -236,15 +233,6 @@
   width: 100%;
   height: 100%;
   z-index: 6;
-}
-
-@keyframes glow {
-  from {
-    text-shadow: 0 0 4px #fff, 0 0 8px #00b4e6;
-  }
-  to {
-    text-shadow: 0 0 4px rgba(255, 255, 255, 0.801), 0 0 8px #019dc9c7;
-  }
 }
 
 /*# sourceMappingURL=register.css.map */

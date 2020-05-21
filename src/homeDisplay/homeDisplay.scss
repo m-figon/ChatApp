@@ -17,9 +17,6 @@
     h1 {
         margin-top: 2rem;
         font-size: 1.3rem;
-        -webkit-animation: glow 3s ease-in-out infinite alternate;
-        -moz-animation: glow 3s ease-in-out infinite alternate;
-        animation: glow 3s ease-in-out infinite alternate;
         text-shadow: 0 0 5px #fff, 0 0 10px #00b4e6;
     }
     @media screen and (max-width: 900px) {
@@ -46,14 +43,6 @@
         }
     }
 }
-@keyframes glow {
-    from {
-      text-shadow: 0 0 4px #fff, 0 0 8px #00b4e6;
-    }
-    to {
-        text-shadow: 0 0 4px rgba(255, 255, 255, 0.801), 0 0 8px #019dc9c7;
-    }
-  }
 .sign-center {
     @include width-height(100vw,100vh);
     @include flex-box();
