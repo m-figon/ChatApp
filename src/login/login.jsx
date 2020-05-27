@@ -26,6 +26,7 @@ class Login extends Component {
                 });
             })
     }
+    
     validateData() {
         var loginFlag = false;
         for (const element of this.state.accounts) {
@@ -45,17 +46,17 @@ class Login extends Component {
     }
     render() {
         return (
-            <div class="login">
-                <div class="login-form">
-                    <div class="for-blur">
+            <div className="login">
+                <div className="login-form">
+                    <div className="for-blur">
                         <div className="cancel-button">
                             <button id="X1Button" onClick={() => this.props.settingOpositeState("login")}>X</button>
                         </div>
-                        <h1>Login</h1><input id={this.state.loginId} value={this.state.loginValue} onChange={(e) => this.onInputChange("loginValue", e)} />
-                        <h1>Password</h1><input id={this.state.passwordId} value={this.state.passwordValue} type="password" onChange={(e) => this.onInputChange("passwordValue", e)} />
+                        <h1>Login</h1><input autoComplete="off" id={this.state.loginId} value={this.state.loginValue} onChange={(e) => this.onInputChange("loginValue", e)} />
+                        <h1>Password</h1><input autoComplete="off" id={this.state.passwordId} value={this.state.passwordValue} type="password" onChange={(e) => this.onInputChange("passwordValue", e)} />
                         <button onClick={() => this.validateData()} id="loginButton">Login</button>
                         <div className="div-position">
-                            <div id={this.state.tooltipId} class="tooltip">Invalid account</div>
+                            <div id={this.state.tooltipId} className="tooltip">Invalid account</div>
                         </div>
                     </div>
                 </div>

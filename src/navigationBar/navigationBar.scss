@@ -20,36 +20,30 @@
         img {
             @include width-height(4vh, 4vh);
         }
-        @include width-height(100vw, 4vh);
     }
 }
 .left-part {
     grid-area: left;
     display: flex;
-
-    @media screen and (max-height: 800px) {
-        h1 {
-            font-size: 1.5rem;
-        }
-    }
+    align-items: center;
     @media screen and (max-width: 850px) {
         h1 {
             font-size: 1.3rem;
         }
     }
-    @media screen and (max-height: 700px) {
+    @media screen and (max-width: 600px), screen and (max-height: 800px) {
         h1 {
-            font-size: 1.3rem;
+            font-size: 1.2rem;
         }
     }
-    @media screen and (max-height: 600px) {
+    @media screen and (max-height: 700px) {
         h1 {
             font-size: 1rem;
         }
     }
-    @media screen and (max-width: 600px) {
+    @media screen and (max-height: 600px) {
         h1 {
-            font-size: 1.3rem;
+            font-size: 0.8rem;
         }
     }
 }
@@ -70,6 +64,10 @@
         height: 2.4vh;
         border: 0 solid $black-color;
         background-color: #00000059;
+        &:hover{
+            cursor: pointer;
+            background-color: #94939359;
+        }
     }
     img {
         filter: opacity(40%);
@@ -106,12 +104,12 @@
         border: 2px solid darken($main-color, 10%);
         margin-right: 0.5vw;
     }
-    @media screen and (max-width: 600px) {
+    @media screen and (max-width: 850px) {
         h1 {
-            font-size: 1.2rem;
+            font-size: 1.3rem;
         }
     }
-    @media screen and (max-height: 800px) {
+    @media screen and (max-width: 600px), screen and (max-height: 800px) {
         h1 {
             font-size: 1.2rem;
         }
@@ -126,9 +124,5 @@
             font-size: 0.8rem;
         }
     }
-    @media screen and (max-width: 850px) {
-        h1 {
-            font-size: 1.3rem;
-        }
-    }
+    
 }

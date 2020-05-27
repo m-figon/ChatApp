@@ -14,6 +14,7 @@
     }
     h2 {
         font-size: 1.5rem;
+        margin-bottom: 0rem;
     }
     h1 {
         font-size: 1rem;
@@ -92,9 +93,13 @@
     border: 1.5px solid #25252573;
     input {
         font-size: 1rem;
+        height: 1.2rem;
         border: 1px solid #25252573;
         background-color: $bright-color;
         border-radius: 5px;
+    }
+    @media screen and (max-width: 600px) {
+        @include width-height(20rem, 30rem);
     }
 }
 .flex-imgs {
@@ -115,6 +120,16 @@
             width: 5.5rem;
             height: 5.5rem;
             cursor: pointer;
+        }
+    }
+    @media screen and (max-width: 600px) {
+        img {
+            width: 4rem;
+            height: 4rem;
+            &:hover {
+                width: 4.5rem;
+                height: 4.5rem;
+            }
         }
     }
 }

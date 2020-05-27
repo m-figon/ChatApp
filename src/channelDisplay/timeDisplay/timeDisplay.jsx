@@ -6,14 +6,24 @@ class TimeDisplay extends Component {
         this.state = {
             currentDate: new Date()
         }
+        this._isMounted = false;
+
     }
     componentDidMount() {
-        setInterval(() => {
-            this.setState({
-                currentDate: new Date()
-            });
-        }, 5000);
+        this._isMounted = true;
+        
+            setInterval(() => {
+                if(this._isMounted){
+                this.setState({
+                    currentDate: new Date()
+                });
+            }
+            }, 5000);
+        
     }
+    componentWillUnmount() {
+        this._isMounted = false;
+      }
     render() {
         var timeDif;
         function timeCondition(condition, text, value) {

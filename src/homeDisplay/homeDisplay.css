@@ -54,14 +54,20 @@
 
 .sign-div {
   background-color: #0463ac81;
-  width: 30vw;
-  height: 60vh;
+  width: 25rem;
+  height: 30rem;
   border-radius: 5px;
   display: flex;
   flex-direction: column;
   align-items: center;
   overflow: scroll;
   border: 1.5px solid #25252573;
+}
+@media screen and (max-width: 600px) {
+  .sign-div {
+    width: 15rem;
+    height: 25rem;
+  }
 }
 
 /*# sourceMappingURL=homeDisplay.css.map */

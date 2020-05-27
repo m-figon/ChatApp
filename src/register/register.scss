@@ -14,20 +14,21 @@
 .register-form {
     position: absolute;
     z-index: 5;
-    @include width-height(43vw, 70vh);
+    @include width-height(43vw, 65vh);
     background-color: #00000060;
     @include flex-box();
     flex-direction: column;
     border-radius: 10px;
     input {
-        font-size: 1.5rem;
+        font-size: 1.2rem;
+        height: 1.3rem;
         border: 1px solid #25252573;
         background-color: $bright-color;
         border-radius: 5px;
         z-index: 7;
     }
     h1 {
-        font-size: 1.5rem;
+        font-size: 1.3rem;
         color: $bright-color;
         text-shadow: 0 0 5px #fff, 0 0 10px #00b4e6;
     }
@@ -78,6 +79,8 @@
 .password2Tooltip,
 .selectImgId {
     position: absolute;
+    top: 17.5rem;
+    left:35.5rem;
     background-color: $bright-color;
     padding: {
         left: 5px;

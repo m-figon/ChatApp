@@ -19,10 +19,6 @@
   height: 5vh;
 }
 @media screen and (max-width: 600px) {
-  .navigation-bar {
-    width: 100vw;
-    height: 4vh;
-  }
   .navigation-bar img {
     width: 4vh;
     height: 4vh;
@@ -32,30 +28,26 @@
 .left-part {
   grid-area: left;
   display: flex;
-}
-@media screen and (max-height: 800px) {
-  .left-part h1 {
-    font-size: 1.5rem;
-  }
+  align-items: center;
 }
 @media screen and (max-width: 850px) {
   .left-part h1 {
     font-size: 1.3rem;
   }
 }
-@media screen and (max-height: 700px) {
+@media screen and (max-width: 600px), screen and (max-height: 800px) {
   .left-part h1 {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
   }
 }
-@media screen and (max-height: 600px) {
+@media screen and (max-height: 700px) {
   .left-part h1 {
     font-size: 1rem;
   }
 }
-@media screen and (max-width: 600px) {
+@media screen and (max-height: 600px) {
   .left-part h1 {
-    font-size: 1.3rem;
+    font-size: 0.8rem;
   }
 }
 
@@ -79,6 +71,10 @@
   height: 2.4vh;
   border: 0 solid #333333;
   background-color: #00000059;
+}
+.middle-part button:hover {
+  cursor: pointer;
+  background-color: #94939359;
 }
 .middle-part img {
   filter: opacity(40%);
@@ -116,12 +112,12 @@
   border: 2px solid #03467a;
   margin-right: 0.5vw;
 }
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 850px) {
   .right-part h1 {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
   }
 }
-@media screen and (max-height: 800px) {
+@media screen and (max-width: 600px), screen and (max-height: 800px) {
   .right-part h1 {
     font-size: 1.2rem;
   }
@@ -134,11 +130,6 @@
 @media screen and (max-height: 600px) {
   .right-part h1 {
     font-size: 0.8rem;
-  }
-}
-@media screen and (max-width: 850px) {
-  .right-part h1 {
-    font-size: 1.3rem;
   }
 }
 

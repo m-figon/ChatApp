@@ -24,22 +24,29 @@ class App extends Component {
     this.addComment = this.addComment.bind(this);
     this.settingOpositeState = this.settingOpositeState.bind(this);
     this.settingState = this.settingState.bind(this);
+    this._isMounted = false;
+
   }
   fetchData(array) {
     fetch("http://localhost:3000/" + array)
       .then(response => response.json())
       .then(json => {
+        if (this._isMounted) {
         this.setState({
           [array]: json
         });
+      }
       })
   }
   componentDidMount() {
-    //console.log('fetching');
-    this.fetchData("channels");
-    this.fetchData("accounts");
+    this._isMounted = true;
+      //console.log('fetching');
+      this.fetchData("channels");
+      this.fetchData("accounts");
   }
-
+  componentWillUnmount() {
+    this._isMounted = false;
+  }
   addComment(nameOfChannel, authorValue, dateValue, contentValue) {
     if (contentValue !== "") {
       fetch('http://localhost:3000/' + nameOfChannel, {
@@ -58,16 +65,20 @@ class App extends Component {
     }
   }
   settingOpositeState(array) {
+    if (this._isMounted) {
     this.setState({
       [array]: eval("!this.state." + array)
     })
   }
+  }
   settingState(array1, value1, array2, value2, array3, value3) {
+    if (this._isMounted) {
     this.setState({
       [array1]: value1,
       [array2]: value2,
       [array3]: value3
     })
+  }
   }
   render() {
     console.log("accounts: " + this.state.accounts);
@@ -75,14 +86,14 @@ class App extends Component {
       channels: this.state.channels, logedImg: this.state.logedImg, settingState: this.settingState, loginOperation: this.state.loginOperation, logedAs: this.state.logedAs, settingOpositeState: this.settingOpositeState
     };
     const channelProps = {
-      settingState: this.settingState,logedAs: this.state.logedAs, comment: this.addComment, GamingArmy: this.state.GamingArmy, ElMusico: this.state.ElMusico,
+      settingState: this.settingState, logedAs: this.state.logedAs, comment: this.addComment, GamingArmy: this.state.GamingArmy, ElMusico: this.state.ElMusico,
       WeLoveCooking: this.state.WeLoveCooking, Fitnez: this.state.Fitnez, WhyNotGardening: this.state.WhyNotGardening, FootballMadness: this.state.FootballMadness, accounts: this.state.accounts
     };
-   const InfoComponent = (props) => {
+    const InfoComponent = (props) => {
       return (
         <>
           <NavigationBar {...navigationProps} />
-          <Info accountInspect={this.state.accountInspect} accounts={this.state.accounts}/>
+          <Info accountInspect={this.state.accountInspect} accounts={this.state.accounts} />
         </>
       );
     }
@@ -97,7 +108,7 @@ class App extends Component {
       } else if (this.state.login && !this.state.register) {
         return (
           <>
-            <div class="blured">
+            <div className="blured">
               <NavigationBar {...navigationProps} />
               <HomeDisplay servers={this.state.channels} />
             </div>
@@ -107,7 +118,7 @@ class App extends Component {
       } else if (!this.state.login && this.state.register) {
         return (
           <>
-            <div class="blured">
+            <div className="blured">
               <NavigationBar {...navigationProps} />
               <HomeDisplay servers={this.state.channels} />
             </div>
@@ -118,7 +129,7 @@ class App extends Component {
     }
     const ChannelComponent = (props) => {
       var channelName;
-      this.state.channels.forEach(element => {
+       this.state.channels.forEach(element => {
         if ('/' + element.name === props.location.pathname) {
           channelName = element.name;
         }
@@ -134,7 +145,7 @@ class App extends Component {
       else if (this.state.login && !this.state.register) {
         return (
           <>
-            <div class="blured">
+            <div className="blured">
               <NavigationBar {...navigationProps} />
               <ChannelDisplay {...channelProps} name={channelName} />
             </div>
@@ -145,7 +156,7 @@ class App extends Component {
       else if (!this.state.login && this.state.register) {
         return (
           <>
-            <div class="blured">
+            <div className="blured">
               <NavigationBar {...navigationProps} />
               <ChannelDisplay {...channelProps} name={channelName} />
             </div>
@@ -159,15 +170,15 @@ class App extends Component {
         return (
           <>
             <NavigationBar {...navigationProps} />
-            <Settings logedAs={this.state.logedAs} accounts={this.state.accounts}/>
+            <Settings logedAs={this.state.logedAs} accounts={this.state.accounts} />
           </>
         );
       } else if (this.state.login && !this.state.register) {
         return (
           <>
-            <div class="blured">
+            <div className="blured">
               <NavigationBar {...navigationProps} />
-              <Settings logedAs={this.state.logedAs} accounts={this.state.accounts}/>
+              <Settings logedAs={this.state.logedAs} accounts={this.state.accounts} />
             </div>
             <Login settingState={this.settingState} settingOpositeState={this.settingOpositeState} />
           </>
@@ -175,9 +186,9 @@ class App extends Component {
       } else if (!this.state.login && this.state.register) {
         return (
           <>
-            <div class="blured">
+            <div className="blured">
               <NavigationBar {...navigationProps} />
-              <Settings logedAs={this.state.logedAs} accounts={this.state.accounts}/>
+              <Settings logedAs={this.state.logedAs} accounts={this.state.accounts} />
             </div>
             <Register settingOpositeState={this.settingOpositeState} settingState={this.settingState} />
           </>

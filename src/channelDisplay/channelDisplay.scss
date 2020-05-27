@@ -20,6 +20,10 @@
     @media screen and (max-width: 1300px) {
         @include width-height(70vw, 85vh);
     }
+    @media screen and (max-width: 700px) {
+        @include width-height(90vw, 85vh);
+
+    }
     border: 1.5px solid #25252573;
 }
 #author,
@@ -67,7 +71,7 @@ hr {
         border: 1px solid #25252573;
     }
     button {
-        @include width-height(2vw, 1.5rem);
+        @include width-height(2rem, 1.5rem);
         border: 1px solid #25252573;
         border-radius: 5px;
         background-color: #00000059;
@@ -123,6 +127,13 @@ hr {
         @include width-height(2vw, 2vh);
         filter: opacity(100%);
     }
+    @media screen and (max-width: 700px) {
+        @include width-height(10rem, 2rem);
+
+        img {
+            @include width-height(1rem,1rem);
+        }
+    }
 }
 .end-of-scroll {
     margin-top: 6vh;
@@ -134,7 +145,7 @@ hr {
     display: flex;
 }
 ::-webkit-scrollbar {
-    width: 0.5vw;
+    width: 0.5rem;
 }
 ::-webkit-scrollbar-track {
     box-shadow: inset 0 0 5px grey;

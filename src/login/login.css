@@ -19,7 +19,8 @@
   border-radius: 10px;
 }
 .login-form input {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
+  height: 1.3rem;
   border: 1px solid #25252573;
   border-radius: 5px;
   width: 50%;
@@ -27,7 +28,7 @@
   z-index: 7;
 }
 .login-form h1 {
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   color: #e4f3fe;
   z-index: 7;
   text-shadow: 0 0 5px #fff, 0 0 10px #00b4e6;

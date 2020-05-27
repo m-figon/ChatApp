@@ -33,7 +33,6 @@ input,select,button{
   color: #61dafb;
 }
 .blured{
-  margin-top: -2.3vh;
   filter: blur(3px) brightness(0.9);
 }
 @keyframes App-logo-spin {
