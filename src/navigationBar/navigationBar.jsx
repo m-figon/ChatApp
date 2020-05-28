@@ -8,6 +8,7 @@ class NavigationBar extends Component {
             searchedValue: "Search for channel name",
             firstSearch: true
         }
+        this._isMounted = false;
     }
     login() {
         if (this.props.loginOperation === " Sign out") {
@@ -17,31 +18,47 @@ class NavigationBar extends Component {
             this.props.settingOpositeState("login");
         }
     }
+    componentDidMount(){
+        this._isMounted = true;
+
+    }
+    componentWillUnmount() {
+        this._isMounted = false;
+      }
     settingInput(array, e) {
+        if(this._isMounted){
         this.setState({
             [array]: e.target.value
         })
     }
+    }
     focus(){
         if(this.state.searchedValue==="Search for channel name"){
-            this.setState({
-                searchedValue: "",
-            })
+            if(this._isMounted){
+                this.setState({
+                    searchedValue: "",
+                })
+            }
+            
         }
     }
     blur(){
         if(this.state.searchedValue==="" || this.state.searchedValue===" "){
+            if(this._isMounted){
             this.setState({
                 searchedValue: "Search for channel name",
             })
         }
+        }
     }
     firstSearchHandler(){
         if(this.state.firstSearch){
+            if(this._isMounted){
             this.setState({
                 searchedValue: "",
                 firstSearch: false
             })
+        }
         }
     }
     render() {
@@ -50,7 +67,7 @@ class NavigationBar extends Component {
             var url;
             for (const elem of this.props.channels) {
                 if (elem.name === this.state.searchedValue) {
-                    console.log("correct channel!");
+                    //console.log("correct channel!");
                     correct = true;
                     url = "/" + this.state.searchedValue;
                 }

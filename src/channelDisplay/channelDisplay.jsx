@@ -86,7 +86,7 @@ class ChannelDisplay extends Component {
         var messages;
         function displayPosts(propsName, name, array, accountsArray, setingStateHandler) {
             if (propsName === name) {
-                messages = array.map((element) => {
+                messages = array.map((element,index) => {
                     var imgSrc;
                     for (const item of accountsArray) {
                         if (element.author === item.account) {
@@ -96,12 +96,12 @@ class ChannelDisplay extends Component {
                     return (
                         <>
                             <hr />
-                            <div key={element.id} className="post">
+                            <div className="post">
                                 <img id="post-img" alt="" src={imgSrc} />
-                                <Link onClick={() => setingStateHandler("accountInspect", element.author)} key={element.id} to={{
+                                <Link onClick={() => setingStateHandler("accountInspect", element.author)}  to={{
                                     pathname: "info/" + element.author,
-                                }} style={{ textDecoration: 'none' }}><h1 id="author">{element.author}</h1></Link>
-                                <TimeDisplay date={element.date} />
+                                }} style={{ textDecoration: 'none' }}><h1 key={element.id} id="author">{element.author}</h1></Link>
+                                <TimeDisplay key={index} date={element.date} />
                             </div>
                             <div className="post">
                                 <h1 id="content">{ReactEmoji.emojify(element.content)}</h1>

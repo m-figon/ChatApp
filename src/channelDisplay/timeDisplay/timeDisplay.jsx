@@ -12,7 +12,7 @@ class TimeDisplay extends Component {
     componentDidMount() {
         this._isMounted = true;
         
-            setInterval(() => {
+        this.interval=setInterval(() => {
                 if(this._isMounted){
                 this.setState({
                     currentDate: new Date()
@@ -23,6 +23,8 @@ class TimeDisplay extends Component {
     }
     componentWillUnmount() {
         this._isMounted = false;
+        clearInterval(this.interval);
+
       }
     render() {
         var timeDif;

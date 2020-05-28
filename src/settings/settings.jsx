@@ -12,8 +12,16 @@ class Settings extends Component {
             txt2Id: "",
             txt3Id: ""
         }
+        this._isMounted=false;
+    }
+    componentDidMount(){
+        this._isMounted=true;
+    }
+    componentWillUnmount(){
+        this._isMounted=false;
     }
     settingState(array, value, array2, value2) {
+        if(this._isMounted){
         this.setState({
             txt1Id: "",
             txt2Id: "",
@@ -21,6 +29,7 @@ class Settings extends Component {
             [array]: value,
             [array2]: value2
         })
+    }
     }
 
     render() {

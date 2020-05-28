@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 class HomeDisplay extends Component {
     render() {
-        console.log(this.props.servers);
+        //console.log(this.props.servers);
 
         const display = this.props.servers.map((element) => {
             return (

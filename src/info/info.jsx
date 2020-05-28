@@ -7,7 +7,7 @@ function Info(props) {
             element = item;
         }
     }
-    console.log("info: " + element);
+    //console.log("info: " + element);
     return (
         <div className="home-display">
             <div className="sign-center">

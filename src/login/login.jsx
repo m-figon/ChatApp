@@ -11,22 +11,32 @@ class Login extends Component {
             tooltipId: "hidden",
             accounts: []
         }
+        this._isMounted = false;
     }
     onInputChange(array, e) {
-        this.setState({
-            [array]: e.target.value
-        })
+        if(this._isMounted){
+            this.setState({
+                [array]: e.target.value
+            })
+        }
+        
     }
     componentDidMount() {
+        this._isMounted = true;
+
         fetch("http://localhost:3000/accounts")
             .then(response => response.json())
             .then(json => {
+                if(this._isMounted){
                 this.setState({
                     accounts: json
                 });
+            }
             })
     }
-    
+    componentWillUnmount() {
+        this._isMounted = false;
+      }
     validateData() {
         var loginFlag = false;
         for (const element of this.state.accounts) {
@@ -36,7 +46,7 @@ class Login extends Component {
                 this.props.settingOpositeState("login");
             }
         }
-        if (!loginFlag) {
+        if (!loginFlag && this._isMounted) {
             this.setState({
                 loginId: "incorrect",
                 passwordId: "incorrect",
