@@ -23,7 +23,7 @@ export class SettingsContent extends Component {
         console.log(this.state.newPasswordValue);
         console.log(this.state.confirmPasswordValue);
         if(item.password===this.state.oldPasswordValue && this.state.newPasswordValue===this.state.confirmPasswordValue){
-            fetch('http://localhost:3000/accounts/'+item.id, {
+            fetch('https://rocky-citadel-32862.herokuapp.com/Chat/accounts/'+item.id, {
         method: 'PUT',
         body: JSON.stringify({
           email: item.email,
@@ -39,7 +39,7 @@ export class SettingsContent extends Component {
     }
     changeAvatar(item){
         if(this.state.imgValue!==""){
-            fetch('http://localhost:3000/accounts/'+item.id, {
+            fetch('https://rocky-citadel-32862.herokuapp.com/Chat/accounts/'+item.id, {
         method: 'PUT',
         body: JSON.stringify({
           email: item.email,

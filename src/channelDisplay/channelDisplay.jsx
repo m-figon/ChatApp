@@ -41,7 +41,7 @@ class ChannelDisplay extends Component {
     }
     }
     fetchData(array) {
-        fetch("http://localhost:3000/" + array)
+        fetch("https://rocky-citadel-32862.herokuapp.com/Chat/" + array)
             .then(response => response.json())
             .then(json => {
                 if (this._isMounted) {

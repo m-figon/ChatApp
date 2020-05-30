@@ -67,7 +67,7 @@ class Register extends Component {
         }
     }
     addUser(emailValue, accountValue, passwordValue, imgValue) {
-        fetch('http://localhost:3000/accounts', {
+        fetch('https://rocky-citadel-32862.herokuapp.com/Chat/accounts', {
             method: 'POST',
             body: JSON.stringify({
                 email: emailValue,

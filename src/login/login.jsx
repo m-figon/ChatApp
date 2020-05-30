@@ -24,7 +24,7 @@ class Login extends Component {
     componentDidMount() {
         this._isMounted = true;
 
-        fetch("http://localhost:3000/accounts")
+        fetch("https://rocky-citadel-32862.herokuapp.com/Chat/accounts")
             .then(response => response.json())
             .then(json => {
                 if(this._isMounted){

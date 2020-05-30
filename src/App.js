@@ -28,7 +28,7 @@ class App extends Component {
 
   }
   fetchData(array) {
-    fetch("http://localhost:3000/" + array)
+    fetch("https://rocky-citadel-32862.herokuapp.com/Chat/" + array)
       .then(response => response.json())
       .then(json => {
         if (this._isMounted) {
@@ -48,8 +48,9 @@ class App extends Component {
     this._isMounted = false;
   }
   addComment(nameOfChannel, authorValue, dateValue, contentValue) {
+    console.log('https://rocky-citadel-32862.herokuapp.com/Chat/' + nameOfChannel);
     if (contentValue !== "") {
-      fetch('http://localhost:3000/' + nameOfChannel, {
+      fetch('https://rocky-citadel-32862.herokuapp.com/Chat/' + nameOfChannel, {
         method: 'POST',
         body: JSON.stringify({
           author: authorValue,
