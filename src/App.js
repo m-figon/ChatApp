@@ -8,6 +8,7 @@ import Login from './login/login.jsx';
 import Register from './register/register.jsx';
 import Settings from './settings/settings.jsx';
 import Info from './info/info.jsx';
+import load from './load.gif';
 class App extends Component {
   constructor() {
     super();
@@ -19,7 +20,8 @@ class App extends Component {
       logedAs: "",
       logedImg: "",
       accountInspect: "",
-      loginOperation: "Sign in"
+      loginOperation: "Sign in",
+      loadingId: ""
     }
     this.addComment = this.addComment.bind(this);
     this.settingOpositeState = this.settingOpositeState.bind(this);
@@ -32,17 +34,25 @@ class App extends Component {
       .then(response => response.json())
       .then(json => {
         if (this._isMounted) {
-        this.setState({
-          [array]: json
-        });
-      }
+          this.setState({
+            [array]: json
+          });
+        }
       })
   }
   componentDidMount() {
     this._isMounted = true;
-      //console.log('fetching');
-      this.fetchData("channels");
-      this.fetchData("accounts");
+    //console.log('fetching');
+    this.fetchData("channels");
+    this.fetchData("accounts");
+    let interval = setInterval(() => {
+      if (document.readyState === "complete") {
+        this.setState({
+          loadingId: "hidden"
+        })
+        clearInterval(interval);
+      }
+    }, 500)
   }
   componentWillUnmount() {
     this._isMounted = false;
@@ -67,19 +77,19 @@ class App extends Component {
   }
   settingOpositeState(array) {
     if (this._isMounted) {
-    this.setState({
-      [array]: eval("!this.state." + array)
-    })
-  }
+      this.setState({
+        [array]: eval("!this.state." + array)
+      })
+    }
   }
   settingState(array1, value1, array2, value2, array3, value3) {
     if (this._isMounted) {
-    this.setState({
-      [array1]: value1,
-      [array2]: value2,
-      [array3]: value3
-    })
-  }
+      this.setState({
+        [array1]: value1,
+        [array2]: value2,
+        [array3]: value3
+      })
+    }
   }
   render() {
     console.log("accounts: " + this.state.accounts);
@@ -130,7 +140,7 @@ class App extends Component {
     }
     const ChannelComponent = (props) => {
       var channelName;
-       this.state.channels.forEach(element => {
+      this.state.channels.forEach(element => {
         if ('/' + element.name === props.location.pathname) {
           channelName = element.name;
         }
@@ -202,6 +212,9 @@ class App extends Component {
         <Route exact path="/:channel" component={ChannelComponent} />
         <Route exact path="/:account/settings" component={SettingsComponent} />
         <Route exact path="/info/:account" component={InfoComponent} />
+        <div className="loading" id={this.state.loadingId}>
+          <img src={load} />
+        </div>
       </>
     );
   }

@@ -1,6 +1,6 @@
 .App {
   text-align: center;
-  font-family: 'Titillium Web', sans-serif;
+  font-family: "Titillium Web", sans-serif;
 }
 
 .App-logo {
@@ -13,9 +13,11 @@
     animation: App-logo-spin infinite 20s linear;
   }
 }
-input,select,button{
+input,
+select,
+button {
   outline: none;
-  font-family: 'Titillium Web', sans-serif;
+  font-family: "Titillium Web", sans-serif;
   font-weight: 300;
 }
 .App-header {
@@ -32,7 +34,7 @@ input,select,button{
 .App-link {
   color: #61dafb;
 }
-.blured{
+.blured {
   filter: blur(3px) brightness(0.9);
 }
 @keyframes App-logo-spin {
@@ -48,11 +50,28 @@ input,select,button{
     text-shadow: 0 0 4px #fff, 0 0 8px #00b4e6;
   }
   to {
-      text-shadow: 0 0 4px rgba(255, 255, 255, 0.801), 0 0 8px #019dc9c7;
+    text-shadow: 0 0 4px rgba(255, 255, 255, 0.801), 0 0 8px #019dc9c7;
   }
 }
-h2{
+h2 {
   -webkit-animation: glow 3s ease-in-out infinite alternate;
-        -moz-animation: glow 3s ease-in-out infinite alternate;
-        animation: glow 3s ease-in-out infinite alternate;
+  -moz-animation: glow 3s ease-in-out infinite alternate;
+  animation: glow 3s ease-in-out infinite alternate;
+}
+.loading {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  width: 100vw;
+  height: 100vh;
+  background: rgb(9, 72, 116);
+  background: linear-gradient(90deg, rgba(9, 72, 116, 1) 0%, rgba(48, 52, 55, 1) 100%, rgba(0, 64, 103, 1) 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.loading img {
+  height: 1rem;
+  width: 1rem;
 }
