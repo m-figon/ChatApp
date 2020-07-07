@@ -18,7 +18,7 @@ To sign in use account 'test3' and password: 'Test3.user'
 
 ## Netlify app link 
 
-https://blog-mfigon.netlify.app/
+https://chat-mfigon.netlify.app/
 
 ## Nettlify portfolio link
 
