@@ -64,6 +64,7 @@
         height: 2.4vh;
         border: 0 solid $black-color;
         background-color: #00000059;
+        transition: background-color 500ms;
         &:hover{
             cursor: pointer;
             background-color: #94939359;

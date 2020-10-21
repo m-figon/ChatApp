@@ -9,6 +9,7 @@
     @include width-height(35vw,45vh);
     background-color: #00000060;
     @include flex-box();
+    @include zoom();
     flex-direction: column;
     border-radius: 10px;
     input{

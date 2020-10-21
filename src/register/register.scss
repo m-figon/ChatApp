@@ -15,6 +15,7 @@
     position: absolute;
     z-index: 5;
     @include width-height(30rem, 33rem);
+    @include zoom();
     background-color: #00000060;
     @include flex-box();
     flex-direction: column;

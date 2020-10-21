@@ -16,12 +16,34 @@
   background-color: #0463ac81;
   width: 50vw;
   height: 85vh;
+  -webkit-animation-name: fadeIn;
+  animation-name: fadeIn;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
   border-radius: 5px;
   display: flex;
   flex-direction: column;
   align-items: center;
   overflow: scroll;
   border: 1.5px solid #25252573;
+}
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 @media screen and (max-width: 1300px) {
   .channel {

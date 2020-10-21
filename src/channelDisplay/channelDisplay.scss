@@ -12,6 +12,7 @@
 .channel {
     background-color: $alpha-color;
     @include width-height(50vw, 85vh);
+    @include fade();
     border-radius: 5px;
     display: flex;
     flex-direction: column;

@@ -83,6 +83,7 @@
     background-color: $alpha-color;
     z-index: 3;
     @include width-height(30rem, 30rem);
+    @include fade();
     display: flex;
     flex-direction: column;
     align-items: center;

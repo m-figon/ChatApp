@@ -50,6 +50,7 @@
 .sign-div {
     background-color: $alpha-color;
     @include width-height(25rem,30rem);
+    @include fade();
     border-radius: 5px;
     display: flex;
     flex-direction: column;
